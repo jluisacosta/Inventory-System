@@ -2,18 +2,17 @@
 create table Proveedores
 (
 	id_proveedor serial not null,
-
 	razon_social varchar(50) not null,
 	rfc varchar(15) not null,
 	contacto varchar(50) not null,
 	ciudad varchar(50) not null,
+	cp varchar(5) not null,  
 	direccion varchar(50) not null, 
 	telefono varchar(15) not null,
 	email varchar(50) not null,
 
 	constraint PK_PROV primary key(id_proveedor)
 );
-
 
 create table Empleados
 (
@@ -31,13 +30,14 @@ create table Empleados
 create table Clientes
 (
 	id_cliente serial not null,
-	nombre varchar(50) not null,
 	razon_social varchar(50) not null,
 	rfc varchar(15) not null,
+	ciudad varchar(50) not null,
+	cp varchar(5) not null,
 	direccion varchar(50) not null,
 	telefono varchar(15) not null,
 	email varchar(50) not null,
-
+		
 	constraint PK_CLI primary key(id_cliente)
 );
 
