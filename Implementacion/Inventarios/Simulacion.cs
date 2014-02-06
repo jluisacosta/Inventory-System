@@ -68,7 +68,7 @@ namespace Inventarios
         {
             int idEmp = 2;//aleatorio entre todos los encargados de produ
             string fechaIni = "", fechaEnt = "";
-
+            
             string sql = "INSERT INTO ORDENES_PRODUCCION (fecha_inicio,fecha_entrega,id_empleado,id_producto,cantidad) VALUES (" +
              fechaIni + "," + fechaEnt + "," + idEmp.ToString() + "," + idPro.ToString()+ ","+ cant.ToString() +")" ;
             
@@ -83,11 +83,7 @@ namespace Inventarios
             //Obtener lista de materia para el producto con id = idPro
             query = "SELECT id_materia,cantidad" +
                     "FROM MATERIAS_PRIMAS_POR_PRODUCTO WHERE id_producto = "+idPro;
-            
             //execute query -> ListaMat
-
-
         }
-
     }
 }
