@@ -72,8 +72,8 @@ DROP TABLE IF EXISTS `Empleados` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Empleados` (
   `id_empleado` INT(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` INT(11) NOT NULL,
-  `id_tipo_empleado` INT(11) NOT NULL,
+  `id_usuario` INT(11) NULL,
+  `id_tipo_empleado` INT(11) NULL,
   `nombre` VARCHAR(100) NOT NULL,
   `fecha_nacimiento` DATE NOT NULL,
   `direccion` VARCHAR(100) NOT NULL,
