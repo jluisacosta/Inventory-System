@@ -1,7 +1,7 @@
 
 use si_inventarios;
 
-select * from inventarios
+select * from inventarios;
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,fecha_ingreso,tipo_articulo,unidad) 
 values	(null,'Pasteles','Fresa','Hecho de leche',120,5,2,'2013/01/01','Producto','Pieza');
@@ -53,7 +53,8 @@ insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,s
 
 set SQL_SAFE_UPDATES=0;
 
-update Inventarios set fecha_ingreso = '2014/01/01';
-select * from Inventarios
-
+update Inventarios set stock = stock + 15;
+select * from Inventarios;
+select sum(stock)
+from Inventarios
 
