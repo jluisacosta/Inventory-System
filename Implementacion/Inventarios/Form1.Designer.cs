@@ -33,7 +33,7 @@
             // 
             // bntSim
             // 
-            this.bntSim.Location = new System.Drawing.Point(41, 24);
+            this.bntSim.Location = new System.Drawing.Point(49, 24);
             this.bntSim.Name = "bntSim";
             this.bntSim.Size = new System.Drawing.Size(75, 23);
             this.bntSim.TabIndex = 0;
@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(636, 496);
             this.Controls.Add(this.bntSim);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Control de Invetarios";
             this.ResumeLayout(false);
 

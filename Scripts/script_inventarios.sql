@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `Empleados` (
   `fecha_nacimiento` DATE NOT NULL,
   `direccion` VARCHAR(100) NOT NULL,
   `telefono` VARCHAR(15) NOT NULL,
-  `email` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `departamento` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id_empleado`),
   CONSTRAINT `fk_user`
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `Clientes` (
   `cp` VARCHAR(45) NOT NULL,
   `direccion` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_cliente`))
 ENGINE = InnoDB;
 

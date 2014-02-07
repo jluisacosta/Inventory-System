@@ -2,64 +2,99 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Inventarios
 {
     class Simulacion
     {
-        public void Iniciar()
+        private Random aleatorio;
+        private MySqlConnection conexion;
+        private MySqlCommand cmd;
+        private string query;
+        
+        public Simulacion()
         {
-            int numSer = 250; //200-250
-            for (int i = 0; i < numSer; i++)
+            aleatorio = new Random();
+            conexion = new MySqlConnection("server=localhost;user id=root;password=root;database=si_inventarios");
+        }
+
+        private void ejecutaConsulta()
+        {
+            conexion.Open();
+            try
             {
-                crearVenta();
-                //
+                cmd = conexion.CreateCommand();
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
             }
         }
-       
-        public void crearVenta()
-        {
-            int idEmp;
-            int totalDeta;
-            int cantPro;
-            int idPro;
-            int numPro;
-            float precio, subT, totalNeto, IVA;
-            List<List<object>> detalle = new List<List<object>>();
 
+        public void Iniciar()
+        {
+            int numSer = aleatorio.Next(200, 250); //200-250
+            
+            for (int i = 0; i < numSer; i++)
+            {
+                crearVenta(i+1);
+            }
+        }
+
+        public void crearVenta(int idVenta)
+        {
+            List<List<object>> dV;
+            int idEmp,totalDeta,cantPro,idPro,numPro;
+            float precio, subT, totalNeto, IVA;
+
+            dV = new List<List<object>>();
+            
             //Detalle Venta
-            numPro = 10;
-            totalDeta = 5;//1-5
+            numPro = aleatorio.Next(10);
+            totalDeta = aleatorio.Next(5);
             subT = 0;
             totalNeto = 0;
+
             for (int i = 0; i < totalDeta; i++)
             {
-                idPro = 1;//
+                dV.Add(new List<object>());//Se crea un detalle de venta
+
+                idPro = 1;
                 //Sacar precio
-                precio = 2.5f;
-                cantPro = 2;//1-5
-                detalle[i] = new List<object>();
-
-                detalle[i].Add(idPro);
-                detalle[i].Add(precio);
-                detalle[i].Add(cantPro);
-
+                precio = 120.0f;
+                cantPro = aleatorio.Next(5);
+                //Crear registro del producto
+                dV[i].Add(idVenta);
+                dV[i].Add(idPro);
+                dV[i].Add(cantPro);
                 subT += precio * cantPro;
-                detalle[i].Add(subT);
+                dV[i].Add(subT);
                 totalNeto += subT;
             }
 
             IVA = totalNeto * 0.16f;
-            idEmp = 1;//Todos los empleados
+            idEmp = 1;//aleatorio.Next(50);//Todos los empleados
             totalNeto += IVA;
-            //INSERT INTO VENTAS (fecha,id_empleado,iva,total)VALUES (FECHA,idEmp,IVA,totalNeto);
-            //ejecutar consulta
+            query = "INSERT INTO VENTAS (fecha,id_empleado,iva,total)VALUES ('2014/02/06',1," + IVA + "," + totalNeto + ")";
+            ejecutaConsulta();
 
-            foreach (List<object> lo in detalle)
+            foreach (List<object> lo in dV)
             {
-                string sql = "INSERT INTO DETALLE_VENTA (id_venta,id_producto,cantidad,subtotal) VALUES ("+
+                query = "INSERT INTO DETALLE_VENTA (id_venta,id_articulo,cantidad,subtotal) VALUES ("+
                 lo[0].ToString()+","+lo[1].ToString()+","+lo[2].ToString()+","+lo[3].ToString()+")";
-                //ejecutar consulta
+                ejecutaConsulta();
             }
         }
 
@@ -69,7 +104,7 @@ namespace Inventarios
             string fechaIni = "", fechaEnt = "";
             
             string sql = "INSERT INTO ORDENES_PRODUCCION (fecha_inicio,fecha_entrega,id_empleado,id_producto,cantidad) VALUES (" +
-             fechaIni + "," + fechaEnt + "," + idEmp.ToString() + "," + idPro.ToString()+ ","+ cant.ToString() +")" ;
+             fechaIni + "," + fechaEnt + "," + idEmp + "," + idPro+ ","+ cant+")" ;
             
             //execute query
         }
