@@ -56,5 +56,7 @@ set SQL_SAFE_UPDATES=0;
 update Inventarios set stock = stock + 15;
 select * from Inventarios;
 select sum(stock)
-from Inventarios
+from Inventarios;
+
+LOAD DATA INFILE 'C:\\Documents and Settings\\Miguel\\Mis documentos\\GitHub\\SI_Inventarios\\Scripts\\datos_clientes.sql' INTO TABLE clientes FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 

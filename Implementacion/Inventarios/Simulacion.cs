@@ -16,7 +16,7 @@ namespace Inventarios
                 //
             }
         }
-
+       
         public void crearVenta()
         {
             int idEmp;
@@ -61,7 +61,6 @@ namespace Inventarios
                 lo[0].ToString()+","+lo[1].ToString()+","+lo[2].ToString()+","+lo[3].ToString()+")";
                 //ejecutar consulta
             }
-
         }
 
         public void creaOrdenProd(int idPro, int cant)
