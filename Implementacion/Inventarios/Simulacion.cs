@@ -63,7 +63,7 @@ namespace Inventarios
             
             //Detalle Venta
             numPro = aleatorio.Next(10);
-            totalDeta = aleatorio.Next(5);
+            totalDeta = aleatorio.Next(1,10);
             subT = 0;
             totalNeto = 0;
 
@@ -72,9 +72,10 @@ namespace Inventarios
                 dV.Add(new List<object>());//Se crea un detalle de venta
 
                 idPro = 1;
+
                 //Sacar precio
                 precio = 120.0f;
-                cantPro = aleatorio.Next(5);
+                cantPro = aleatorio.Next(1,5);
                 //Crear registro del producto
                 dV[i].Add(idVenta);
                 dV[i].Add(idPro);
@@ -89,7 +90,7 @@ namespace Inventarios
             totalNeto += IVA;
             query = "INSERT INTO VENTAS (fecha,id_empleado,iva,total)VALUES ('2014/02/06',1," + IVA + "," + totalNeto + ")";
             ejecutaConsulta();
-
+            
             foreach (List<object> lo in dV)
             {
                 query = "INSERT INTO DETALLE_VENTA (id_venta,id_articulo,cantidad,subtotal) VALUES ("+

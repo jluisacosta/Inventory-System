@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `Proveedores` (
   `cp` INT NOT NULL,
   `direccion` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_proveedor`))
 ENGINE = InnoDB;
 

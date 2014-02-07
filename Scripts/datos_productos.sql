@@ -1,7 +1,4 @@
 
-use si_inventarios;
-
-select * from inventarios;
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,fecha_ingreso,tipo_articulo,unidad) 
 values	(null,'Pasteles','Fresa','Hecho de leche',120,5,2,'2013/01/01','Producto','Pieza');
@@ -55,8 +52,4 @@ set SQL_SAFE_UPDATES=0;
 
 update Inventarios set stock = stock + 15;
 select * from Inventarios;
-select sum(stock)
-from Inventarios;
-
-LOAD DATA INFILE 'C:\\Documents and Settings\\Miguel\\Mis documentos\\GitHub\\SI_Inventarios\\Scripts\\datos_clientes.sql' INTO TABLE clientes FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
