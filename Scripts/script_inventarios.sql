@@ -150,36 +150,6 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `Categorias`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `Categorias` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `Categorias` (
-  `id_categoria` INT NOT NULL,
-  `categoria` VARCHAR(45) NULL,
-  `descripcion` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_categoria`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `Tipos_Articulos`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `Tipos_Articulos` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `Tipos_Articulos` (
-  `id_tipo_articulo` INT NOT NULL,
-  `tipo_articulo` VARCHAR(45) NULL,
-  `descripcion` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_tipo_articulo`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
 -- Table `Ventas`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `Ventas` ;
