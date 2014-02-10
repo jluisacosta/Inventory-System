@@ -10,15 +10,22 @@ namespace Inventarios
 {
     class Simulacion
     {
-        private Random aleatorio;
+        List<int> idProducts;
         private MySqlConnection conexion;
         private MySqlCommand cmd;
+        private DataTable productos;
+        private Random aleatorio;
+        
         private string query;
         
         public Simulacion()
         {
             aleatorio = new Random();
             conexion = new MySqlConnection("server=localhost;user id=root;password=root;database=si_inventarios");
+            productos = new DataTable();
+            idProducts = new List<int>();
+
+            new MySqlDataAdapter("select id_articulo,precio from inventarios where tipo_articulo='Producto'", conexion).Fill(productos);
         }
 
         private void ejecutaConsulta()
@@ -45,11 +52,13 @@ namespace Inventarios
 
         public void Iniciar()
         {
-            int numSer = aleatorio.Next(200, 250); //200-250
-            
-            for (int i = 0; i < numSer; i++)
+            int totalSer, numVenta = 0;
+
+            for (int d = 0; d < 2400; d++)
             {
-                crearVenta(i+1);
+                totalSer = aleatorio.Next(200, 250);
+                for (int i = 0; i < totalSer; i++)
+                    crearVenta(++numVenta);
             }
         }
 
@@ -61,25 +70,25 @@ namespace Inventarios
 
             dV = new List<List<object>>();
             
-            //Detalle Venta
             numPro = aleatorio.Next(10);
             totalDeta = aleatorio.Next(1,10);
-            subT = 0;
-            totalNeto = 0;
+            subT = totalNeto = idPro = 0;
+            precio = 0;
+            idProducts.Clear();
 
             for (int i = 0; i < totalDeta; i++)
             {
-                dV.Add(new List<object>());//Se crea un detalle de venta
-
-                idPro = 1;
-
-                //Sacar precio
-                precio = 120.0f;
+                //Se crea un detalle de venta
+                dV.Add(new List<object>());
+                //Se recupera un producto y su precio
+                obtenerProducto(ref idPro,ref precio);
                 cantPro = aleatorio.Next(1,5);
+
                 //Crear registro del producto
                 dV[i].Add(idVenta);
                 dV[i].Add(idPro);
                 dV[i].Add(cantPro);
+                
                 subT += precio * cantPro;
                 dV[i].Add(subT);
                 totalNeto += subT;
@@ -99,26 +108,22 @@ namespace Inventarios
             }
         }
 
-        public void creaOrdenProd(int idPro, int cant)
+        private void obtenerProducto(ref int id, ref float precio)
         {
-            int idEmp = 2;//aleatorio entre todos los encargados de produ
-            string fechaIni = "", fechaEnt = "";
+            int idP;
             
-            string sql = "INSERT INTO ORDENES_PRODUCCION (fecha_inicio,fecha_entrega,id_empleado,id_producto,cantidad) VALUES (" +
-             fechaIni + "," + fechaEnt + "," + idEmp + "," + idPro+ ","+ cant+")" ;
-            
-            //execute query
-        }
+            while (true)
+            {
+                idP = aleatorio.Next(productos.Rows.Count);
+                if (!idProducts.Contains(idP))
+                {
+                    idProducts.Add(idP);
+                    break;
+                }
+            }
 
-        public void creaOrdenRequisicion(int idPro)
-        {
-            int idEmp = 2;//aleatorio entre todos los encargados de produ
-            string query , fecha = "";
-
-            //Obtener lista de materia para el producto con id = idPro
-            query = "SELECT id_materia,cantidad" +
-                    "FROM MATERIAS_PRIMAS_POR_PRODUCTO WHERE id_producto = "+idPro;
-            //execute query -> ListaMat
+            id = (int)productos.Rows[idP][0];
+            precio = Convert.ToSingle(productos.Rows[idP][1]);
         }
     }
 }
