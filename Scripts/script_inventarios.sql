@@ -2,10 +2,10 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `SI_Inventarios` ;
-CREATE SCHEMA IF NOT EXISTS `SI_Inventarios` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+DROP SCHEMA IF EXISTS `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 SHOW WARNINGS;
-USE `SI_Inventarios` ;
+USE `mydb` ;
 
 -- -----------------------------------------------------
 -- Table `Proveedores`
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `Inventarios` (
   `id_proveedor` INT(11) NULL,
   `categoria` VARCHAR(45) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
-  `descripcion` TEXT NOT NULL,
+  `descripcion` VARCHAR(200) NOT NULL,
   `precio` DECIMAL NOT NULL,
   `stock` INT NOT NULL,
   `stock_minimo` INT NOT NULL,
@@ -145,6 +145,36 @@ CREATE TABLE IF NOT EXISTS `Inventarios` (
     REFERENCES `Proveedores` (`id_proveedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Categorias`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Categorias` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Categorias` (
+  `id_categoria` INT NOT NULL,
+  `categoria` VARCHAR(45) NULL,
+  `descripcion` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_categoria`))
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Tipos_Articulos`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Tipos_Articulos` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Tipos_Articulos` (
+  `id_tipo_articulo` INT NOT NULL,
+  `tipo_articulo` VARCHAR(45) NULL,
+  `descripcion` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_tipo_articulo`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
@@ -203,20 +233,22 @@ SHOW WARNINGS;
 DROP TABLE IF EXISTS `Facturas` ;
 
 SHOW WARNINGS;
-
-CREATE TABLE `Facturas` (
+CREATE TABLE IF NOT EXISTS `Facturas` (
   `id_factura` INT(11) NOT NULL AUTO_INCREMENT,
-  `id_venta` INT(11) not NULL,
-  `id_cliente` INT(11) not NULL,
-  
- PRIMARY KEY (`id_factura`),
-  
- CONSTRAINT `fk_ven` FOREIGN KEY (`id_venta`) REFERENCES `Ventas` (`id_venta`),
-
- CONSTRAINT `fk_cli` FOREIGN KEY (`id_cliente`) REFERENCES `Clientes` (`id_cliente`)
-)
+  `id_venta` INT(11) NOT NULL,
+  `id_cliente` INT(11) NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  CONSTRAINT `fk_ven`
+    FOREIGN KEY (`id_venta`)
+    REFERENCES `Ventas` (`id_venta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cli`
+    FOREIGN KEY (`id_cliente`)
+    REFERENCES `Clientes` (`id_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 SHOW WARNINGS;
 
@@ -233,9 +265,7 @@ CREATE TABLE IF NOT EXISTS `Ordenes_Compra` (
   `fecha_pedido` DATE NOT NULL,
   `fecha_pago` DATE NOT NULL,
   `costo_total` DECIMAL NOT NULL,
-
   PRIMARY KEY (`id_orden_compra`),
-
   CONSTRAINT `fk_empleado`
     FOREIGN KEY (`id_empleado`)
     REFERENCES `Empleados` (`id_empleado`)
@@ -262,13 +292,11 @@ CREATE TABLE IF NOT EXISTS `Detalle_Compra` (
   `cantidad` INT NOT NULL,
   `subtotal` DECIMAL NOT NULL,
   PRIMARY KEY (`id_orden_compra`, `id_articulo`),
-  
   CONSTRAINT `fk_orden_compra`
     FOREIGN KEY (`id_orden_compra`)
     REFERENCES `Ordenes_Compra` (`id_orden_compra`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  
   CONSTRAINT `fk_articulo`
     FOREIGN KEY (`id_articulo`)
     REFERENCES `Inventarios` (`id_articulo`)
@@ -291,15 +319,12 @@ CREATE TABLE IF NOT EXISTS `Ordenes_Produccion` (
   `fecha_inicio` DATE NOT NULL,
   `fecha_entrega` DATE NULL,
   `cantidad` INT NOT NULL,
-
   PRIMARY KEY (`id_orden_produccion`),
-
   CONSTRAINT `fk_emple`
     FOREIGN KEY (`id_empleado`)
     REFERENCES `Empleados` (`id_empleado`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-
   CONSTRAINT `fk_artic`
     FOREIGN KEY (`id_articulo`)
     REFERENCES `Inventarios` (`id_articulo`)
@@ -360,13 +385,11 @@ CREATE TABLE IF NOT EXISTS `Permisos_X_Usuario` (
   `id_permiso` INT(11) NOT NULL,
   `id_usuario` INT(11) NOT NULL,
   PRIMARY KEY (`id_permiso`, `id_usuario`),
-
   CONSTRAINT `fk_perm_usu`
     FOREIGN KEY (`id_permiso`)
     REFERENCES `Permisos` (`id_permiso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-
   CONSTRAINT `fk_usuarios`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `Usuarios` (`id_usuario`)
@@ -386,7 +409,7 @@ CREATE TABLE IF NOT EXISTS `Movimientos` (
   `id_movimiento` INT(11) NOT NULL AUTO_INCREMENT,
   `id_empleado` INT(11) NOT NULL,
   `fecha` DATE NULL,
-  `tipo_movimiento` DATE NULL,
+  `tipo_movimiento` VARCHAR(20) NULL,
   PRIMARY KEY (`id_movimiento`),
   CONSTRAINT `fk_emp_2`
     FOREIGN KEY (`id_empleado`)
@@ -418,6 +441,19 @@ CREATE TABLE IF NOT EXISTS `Detalle_Movimiento` (
     REFERENCES `Movimientos` (`id_movimiento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `MateriaPorProducto`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `MateriaPorProducto` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `MateriaPorProducto` (
+  `id_materia` INT(11) NULL,
+  `id_producto` INT(11) NULL)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
