@@ -2,10 +2,10 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `mydb` ;
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+DROP SCHEMA IF EXISTS `SI_Inventarios` ;
+CREATE SCHEMA IF NOT EXISTS `SI_Inventarios` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 SHOW WARNINGS;
-USE `mydb` ;
+USE `Si_Inventarios` ;
 
 -- -----------------------------------------------------
 -- Table `Proveedores`
@@ -136,6 +136,7 @@ CREATE TABLE IF NOT EXISTS `Inventarios` (
   `precio` DECIMAL NOT NULL,
   `stock` INT NOT NULL,
   `stock_minimo` INT NOT NULL,
+  `stock_maximo` INT NOT NULL,
   `fecha_ingreso` DATE NOT NULL,
   `tipo_articulo` VARCHAR(20) NOT NULL,
   `unidad` VARCHAR(20) NOT NULL,
