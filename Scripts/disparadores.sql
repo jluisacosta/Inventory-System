@@ -35,7 +35,7 @@ BEGIN
 					0
 			); 
 			CALL crearDetalleCompra(NEW.id_articulo,NEW.precio);
-			CALL crearMovimiento(NEW.id_articulo,"Entrada_M");
+			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');
 		END IF;
 	END IF;
 END $
@@ -59,7 +59,6 @@ BEGIN
 	INSERT INTO detalle_compra(id_orden_compra,id_articulo,cantidad,subtotal)
 	VALUES(idCompra,idArticulo,cant,cant*precio);
 END$$
-DELIMITER ;
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$
@@ -87,4 +86,26 @@ BEGIN
 	INSERT INTO detalle_movimiento(id_movimiento,id_articulo,cantidad)
 	VALUES(idMov,idArticulo,cant);
 END$$
-DELIMITER ;
+
+DELIMITER $
+CREATE TRIGGER actStock_Movimientos AFTER INSERT ON detalle_movimiento 
+FOR EACH ROW 
+BEGIN
+	DECLARE tipoMov VARCHAR(20);
+	
+	#Se obtiene el tipo de movimiento
+	SELECT M.tipo_movimiento INTO tipoMov
+	FROM movimientos M
+	WHERE M.id_moviento = NEW.id_movimiento;
+	
+	#Se checa que tipo de movimiento se realizo
+	IF tipoMov = 'Entrada_M'THEN
+		UPDATE inventarios SET stock = stock + NEW.cantidad
+		WHERE inventarios.id_articulo = NEW.id_articulo;
+	ELSE
+		IF tipoMov = 'Salida_M' THEN
+			UPDATE inventarios SET stock = stock - NEW.cantidad
+			WHERE inventarios.id_articulo = NEW.id_articulo;
+		END IF;
+	END IF;
+END $
