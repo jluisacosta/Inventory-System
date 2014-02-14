@@ -61,3 +61,30 @@ BEGIN
 END$$
 DELIMITER ;
 
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$
+CREATE PROCEDURE `si_inventarios`.`crearMovimiento` (IN idArticulo INT,IN tipoMovimiento VARCHAR(20))
+BEGIN
+	DECLARE idMov INT;
+	DECLARE cant INT;
+
+	SET cant = RAND(1,10);
+
+	#Se inserta un movimiento
+	INSERT INTO movimientos(id_empleado,fecha,tipo_movimiento)
+	VALUES(
+			(SELECT e.id_empleado FROM empleados e WHERE tipo_empleado=3),
+			'2014/01/01',
+			tipoMovimiento
+	);
+
+	#Se recupera el id del ultimo movimiento
+	SELECT id_movimiento INTO idMov
+	FROM movimientos
+	ORDER BY id_movimiento DESC LIMIT 1;
+
+	#Se crea el detalle del Movimiento
+	INSERT INTO detalle_movimiento(id_movimiento,id_articulo,cantidad)
+	VALUES(idMov,idArticulo,cant);
+END$$
+DELIMITER ;
