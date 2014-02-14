@@ -13,6 +13,9 @@ DELIMITER $
 CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON inventarios
 FOR EACH ROW
 BEGIN	
+	DECLARE cantPro INT;
+	
+	SET cantPro = RAND(1,10);
 	IF NEW.stock <= NEW.stock_minimo THEN
 		IF NEW.tipo_articulo = 'Productos' THEN
 			#Se crea una orden de produccion con el producto actual
@@ -22,9 +25,9 @@ BEGIN
 					NEW.id_articulo,
 					"2014,01,01",
 					"2014,01,01",
-					RAND(1,10)
+					cantPro
 			);
-
+			CALL crearOrdenRequisicion(NEW.id_articulo,cantPro);
 		ELSE
 			#se crea una orden de compra para la materia prima actual
 			INSERT INTO ordenes_compra(id_empleado,id_proveedor,fecha_pedido,fecha_pago,costo_total)
@@ -34,7 +37,8 @@ BEGIN
 					"2014,01,01",
 					"2014,01,01",
 					0
-			); 
+			);
+ 
 			CALL crearDetalleCompra(NEW.id_articulo,NEW.precio);
 			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');
 		END IF;
@@ -63,12 +67,9 @@ END$$
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$
-CREATE PROCEDURE `si_inventarios`.`crearMovimiento` (IN idArticulo INT,IN tipoMovimiento VARCHAR(20))
+CREATE PROCEDURE `si_inventarios`.`crearMovimiento` (IN idArticulo INT,IN tipoMovimiento VARCHAR(20),IN cant INT)
 BEGIN
 	DECLARE idMov INT;
-	DECLARE cant INT;
-
-	SET cant = RAND(1,10);
 
 	#Se inserta un movimiento
 	INSERT INTO movimientos(id_empleado,fecha,tipo_movimiento)
@@ -113,20 +114,31 @@ END $
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearOrdenRequisicion`$$
-CREATE PROCEDURE `si_inventarios`.`crearOrdenRequisicion` (IN idOrdenPro INT,IN idArticulo INT,IN cantidad INT)
+CREATE PROCEDURE `si_inventarios`.`crearOrdenRequisicion` (IN idArticulo INT,IN cantidadPro INT)
 BEGIN
+		
+	DECLARE id_ordPro INT;
+	DECLARE id_materia INT;
+	DECLARE cant INT;
+	DECLARE materia cursor for SELECT id_materia, cantidad FROM materiaporproducto WHERE id_producto = idArticulo;	
 	
+	#Se obtiene el id de la orden de produccion
+	SELECT id_orden_produccion INTO id_ordPro FROM ordenes_produccion
+	ORDER BY id_orden_produccion DESC LIMIT 1;
+
 	#Se crear la orden de requisicion del material
 	INSERT INTO requisiciones_material(id_orden_produccio,id_empleado,fecha)
 	VALUES(
-			idOrdenProd,
-			(SELECT id_empleado FROM empleados WHERE id_tipo_empleado = 3 ORDER BY RAND() LIMIT 4),
+			id_ordPro,
+			(SELECT id_empleado FROM empleados WHERE id_tipo_empleado = 3 ORDER BY RAND() LIMIT 1),
 			'2014/01/01'
 	);
-
+	
+	#Se recorre la tabla de las materia prima
+	open materia;	
+	read_loop: loop
+	fetch materia into id_materia,cant;
+		CALL crearMovimiento(NEW.id_articulo,'Salida_M',cant*cantidadPro);
+	end loop;
+	close productos;
 END$$
-
-
-
-
-

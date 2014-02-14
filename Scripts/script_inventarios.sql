@@ -2,10 +2,10 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `SI_Inventarios` ;
-CREATE SCHEMA IF NOT EXISTS `SI_Inventarios` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+DROP SCHEMA IF EXISTS `si_inventarios` ;
+CREATE SCHEMA IF NOT EXISTS `si_inventarios` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 SHOW WARNINGS;
-USE `Si_Inventarios` ;
+USE `si_inventarios` ;
 
 -- -----------------------------------------------------
 -- Table `Proveedores`
@@ -454,7 +454,8 @@ DROP TABLE IF EXISTS `MateriaPorProducto` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `MateriaPorProducto` (
   `id_materia` INT(11) NULL,
-  `id_producto` INT(11) NULL)
+  `id_producto` INT(11) NULL,
+  `cantidad` INT(11) NULL)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
