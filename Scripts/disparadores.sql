@@ -41,4 +41,23 @@ BEGIN
 END $
 
 
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `si_inventarios`.`crearDetalleCompra`$$
+CREATE PROCEDURE `si_inventarios`.`crearDetalleCompra` (IN idArticulo INT,IN precio DECIMAL)
+BEGIN
+	DECLARE idCompra INT;
+	DECLARE cant DECIMAL;
+	
+	SET cant = RAND(1,10);
+	
+	#Se recupera el id de la utlima compra
+	SELECT id_orden_compra INTO idCompra
+	FROM ordenes_compra
+	ORDER BY id_orden_compra DESC LIMIT 1;
+	
+	#Se crea el detalle de la compra
+	INSERT INTO detalle_compra(id_orden_compra,id_articulo,cantidad,subtotal)
+	VALUES(idCompra,idArticulo,cant,cant*precio);
+END$$
+DELIMITER ;
 
