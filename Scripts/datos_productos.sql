@@ -24,9 +24,6 @@ insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,s
 				(null,'Galletas','Glaseadas','Con Nuez',28,12,5,20,'2013/01/01','Producto','Paquete');
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
-				(null,'Galletas','Chocolate','Con chispas',20,10,4,20,'2013/01/01','Producto','Paquete');
-
-insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
 				(null,'Galletas','Vainilla','...',17,8,3,20,'2013/01/01','Producto','Paquete');
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values

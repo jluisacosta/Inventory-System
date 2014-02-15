@@ -134,9 +134,9 @@ CREATE TABLE IF NOT EXISTS `Inventarios` (
   `nombre` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(200) NOT NULL,
   `precio` DECIMAL NOT NULL,
-  `stock` INT NOT NULL,
-  `stock_minimo` INT NOT NULL,
-  `stock_maximo` INT NOT NULL,
+  `stock` DECIMAL NOT NULL,
+  `stock_minimo` DECIMAL NOT NULL,
+  `stock_maximo` DECIMAL NOT NULL,
   `fecha_ingreso` DATE NOT NULL,
   `tipo_articulo` VARCHAR(20) NOT NULL,
   `unidad` VARCHAR(20) NOT NULL,
@@ -146,21 +146,6 @@ CREATE TABLE IF NOT EXISTS `Inventarios` (
     REFERENCES `Proveedores` (`id_proveedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `Categorias`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `Categorias` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `Categorias` (
-  `id_categoria` INT NOT NULL,
-  `categoria` VARCHAR(45) NULL,
-  `descripcion` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_categoria`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
