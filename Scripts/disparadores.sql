@@ -1,34 +1,4 @@
-
-#Procedimiento almacenado para iniciar la simulacion
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `iniSimulacion`()
-BEGIN
-	DECLARE fechaFin DATE;
-	DECLARE totalServicios INT;
-	DECLARE numServicio INT;
-
-	SET fechaFin = '2004/01/05';
-	
-	repeat
-		SET totalServicios = RAND(200,250);
-		SET numServicio = 0;
-		
-		WHILE numServicio < totalServicios DO
-			INSERT INTO Ventas(id_empleado,fecha,iva,total)#Se crea una venta
-			VALUES(
-				(SELECT e.id_empleado FROM Empleados e WHERE tipo_empleado=5 ORDER BY RAND() LIMIT 1),
-				@fechaAct,0.16,0.0);
-		END WHILE;
-
-		set @fechaAct = DATE_ADD(@fechaAct, INTERVAL 1 DAY);
-		set cont = cont + 1;
-		until @fechaAct = fechaFin		
-	end repeat;
-
-	set @fechaAct = '2004/01/01';#Se reinicia la fecha inicial
-END
-
-DELIMITER $
+/*DELIMITER $
 CREATE TRIGGER crearDetalleVenta AFTER INSERT ON Ventas 
 FOR EACH ROW 
 BEGIN
@@ -47,11 +17,53 @@ BEGIN
 	OPEN productos;	
 	read_loop: LOOP
 	FETCH productos INTO idProducto,precio;
-		SET cantidad = RAND(1,5);
+		SET cantidad = ROUND(1 + (RAND() * 5));
 		INSERT INTO Detalle_Venta(NEW.id_venta,idProducto,cantidad,cantidad*precio);
 	end LOOP;
 	CLOSE productos;
+END $*/
+
+DROP TRIGGER `si_inventarios`.`crearDetalleVenta`;
+DELIMITER $
+CREATE TRIGGER crearDetalleVenta AFTER INSERT ON Ventas 
+FOR EACH ROW 
+BEGIN
+	DECLARE idProducto INT;
+	DECLARE precio DECIMAL;
+	DECLARE cantidad INT;
+	DECLARE FIN INTEGER DEFAULT 0;
+	
+	#Se recupera una lista de productos en forma aleatoria
+	DECLARE productos CURSOR FOR
+		SELECT id_articulo,precio
+		FROM Inventarios
+		WHERE tipo_articulo = 'Producto'
+		ORDER BY RAND() LIMIT 5;
+
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET FIN = 1;
+	/*
+	OPEN productos;
+	CICLO:REPEAT
+		IF FIN THEN
+			LEAVE CICLO;
+        END IF;
+		FETCH productos INTO idProducto,precio;
+			SET cantidad = ROUND(1 + (RAND() * 5));
+			INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,5.0);
+	UNTIL FIN END REPEAT CICLO;
+	CLOSE productos;
+*/
+
+#Se recorre la lista de productos
+	OPEN productos;	
+	read_loop: LOOP
+	FETCH productos INTO idProducto,precio;
+		SET cantidad = ROUND(1 + (RAND() * 5));
+		INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,5.0);
+	END LOOP;
+	CLOSE productos;
 END $
+DELIMITER ;
 
 DELIMITER $
 CREATE TRIGGER actualizaStock AFTER INSERT ON detalle_venta 
