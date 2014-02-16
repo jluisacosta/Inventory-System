@@ -1,27 +1,3 @@
-/*DELIMITER $
-CREATE TRIGGER crearDetalleVenta AFTER INSERT ON Ventas 
-FOR EACH ROW 
-BEGIN
-	DECLARE idProducto INT;
-	DECLARE precio DECIMAL;
-	DECLARE cantidad INT;
-
-	#Se recupera una lista de productos en forma aleatoria
-	DECLARE productos cursor for 
-		SELECT id_articulo,precio
-		FROM Inventarios
-		WHERE tipo_articulo = 'Producto'
-		ORDER BY RAND() LIMIT 5;
-	
-	#Se recorre la lista de productos
-	OPEN productos;	
-	read_loop: LOOP
-	FETCH productos INTO idProducto,precio;
-		SET cantidad = ROUND(1 + (RAND() * 5));
-		INSERT INTO Detalle_Venta(NEW.id_venta,idProducto,cantidad,cantidad*precio);
-	end LOOP;
-	CLOSE productos;
-END $*/
 
 DROP TRIGGER `si_inventarios`.`crearDetalleVenta`;
 DELIMITER $
@@ -29,10 +5,10 @@ CREATE TRIGGER crearDetalleVenta AFTER INSERT ON Ventas
 FOR EACH ROW 
 BEGIN
 	DECLARE idProducto INT;
-	DECLARE precio DECIMAL;
+	DECLARE prec DECIMAL;
 	DECLARE cantidad INT;
-	DECLARE FIN INTEGER DEFAULT 0;
-	
+	DECLARE vb_termina BOOL DEFAULT FALSE;
+
 	#Se recupera una lista de productos en forma aleatoria
 	DECLARE productos CURSOR FOR
 		SELECT id_articulo,precio
@@ -40,26 +16,16 @@ BEGIN
 		WHERE tipo_articulo = 'Producto'
 		ORDER BY RAND() LIMIT 5;
 
-	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET FIN = 1;
-	/*
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+	
 	OPEN productos;
-	CICLO:REPEAT
-		IF FIN THEN
-			LEAVE CICLO;
-        END IF;
-		FETCH productos INTO idProducto,precio;
+	Recorre_Cursor: LOOP
+		FETCH productos INTO idProducto,prec;
+			IF vb_termina THEN
+				LEAVE Recorre_Cursor;
+			END IF;
 			SET cantidad = ROUND(1 + (RAND() * 5));
-			INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,5.0);
-	UNTIL FIN END REPEAT CICLO;
-	CLOSE productos;
-*/
-
-#Se recorre la lista de productos
-	OPEN productos;	
-	read_loop: LOOP
-	FETCH productos INTO idProducto,precio;
-		SET cantidad = ROUND(1 + (RAND() * 5));
-		INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,5.0);
+			INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
 	END LOOP;
 	CLOSE productos;
 END $
