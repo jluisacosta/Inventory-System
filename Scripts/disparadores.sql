@@ -1,12 +1,69 @@
 
-DROP TRIGGER IF EXISTS actualizaStock;
+#Procedimiento almacenado para iniciar la simulacion
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `iniSimulacion`()
+BEGIN
+	DECLARE fechaFin DATE;
+	DECLARE totalServicios INT;
+	DECLARE numServicio INT;
+
+	SET fechaFin = '2004/01/05';
+	
+	repeat
+		SET totalServicios = RAND(200,250);
+		SET numServicio = 0;
+		
+		WHILE numServicio < totalServicios DO
+			INSERT INTO Ventas(id_empleado,fecha,iva,total)#Se crea una venta
+			VALUES(
+				(SELECT e.id_empleado FROM Empleados e WHERE tipo_empleado=5 ORDER BY RAND() LIMIT 1),
+				@fechaAct,0.16,0.0);
+		END WHILE;
+
+		set @fechaAct = DATE_ADD(@fechaAct, INTERVAL 1 DAY);
+		set cont = cont + 1;
+		until @fechaAct = fechaFin		
+	end repeat;
+
+	set @fechaAct = '2004/01/01';#Se reinicia la fecha inicial
+END
+
+DELIMITER $
+CREATE TRIGGER crearDetalleVenta AFTER INSERT ON Ventas 
+FOR EACH ROW 
+BEGIN
+	DECLARE idProducto INT;
+	DECLARE precio DECIMAL;
+	DECLARE cantidad INT;
+
+	#Se recupera una lista de productos en forma aleatoria
+	DECLARE productos cursor for 
+		SELECT id_articulo,precio
+		FROM Inventarios
+		WHERE tipo_articulo = 'Producto'
+		ORDER BY RAND() LIMIT 5;
+	
+	#Se recorre la lista de productos
+	OPEN productos;	
+	read_loop: LOOP
+	FETCH productos INTO idProducto,precio;
+		SET cantidad = RAND(1,5);
+		INSERT INTO Detalle_Venta(NEW.id_venta,idProducto,cantidad,cantidad*precio);
+	end LOOP;
+	CLOSE productos;
+END $
 
 DELIMITER $
 CREATE TRIGGER actualizaStock AFTER INSERT ON detalle_venta 
 FOR EACH ROW 
 BEGIN
+	#Se actualiza el stock del articulo(Producto|Materia Prima)
 	UPDATE inventarios SET stock = stock - NEW.cantidad 
 	WHERE inventarios.id_articulo = NEW.id_articulo;
+
+	#Se actualiza el Costo Total de la venta asociada al detalle
+	UPDATE Ventas SET total = total + ((NEW.subtotal*iva) + NEW.subtotal)
+	WHERE id_venta = NEW.id_venta; 
 END $
 
 DELIMITER $
@@ -38,7 +95,6 @@ BEGIN
 					"2014,01,01",
 					0
 			);
- 
 			CALL crearDetalleCompra(NEW.id_articulo,NEW.precio);
 			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');
 		END IF;
@@ -63,6 +119,10 @@ BEGIN
 	#Se crea el detalle de la compra
 	INSERT INTO detalle_compra(id_orden_compra,id_articulo,cantidad,subtotal)
 	VALUES(idCompra,idArticulo,cant,cant*precio);
+
+	#Se actualiza el costo total de la orden de compra
+	UPDATE Ordenes_Compra SET costo_total = cant*precio
+	WHERE id_orden_compra = idCompra;
 END$$
 
 DELIMITER $$
@@ -140,5 +200,5 @@ BEGIN
 	fetch materia into id_materia,cant;
 		CALL crearMovimiento(NEW.id_articulo,'Salida_M',cant*cantidadPro);
 	end loop;
-	close productos;
+	close materia;
 END$$

@@ -19,11 +19,11 @@ insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,s
 				(null,'MP','Mantequilla','Con sal', 93.00,50,30,80,'2013/01/01','MateriaPrima','Kilogramos');
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,tipo_articulo,unidad) values
-				(null,'MP','Levadura','Royal',,5,2,6,'2013/01/01','MateriaPrima','Kilogramos');
+				(null,'MP','Levadura','Royal',5,2,6,'2013/01/01','MateriaPrima','Kilogramos');
 
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,tipo_articulo,unidad) values
-				(null,'MP','Cacao','Royal',,5,2,6,'2013/01/01','MateriaPrima','Kilogramos');
+				(null,'MP','Cacao','Royal',5,2,6,'2013/01/01','MateriaPrima','Kilogramos');
 
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,tipo_articulo,unidad) values
@@ -60,7 +60,4 @@ insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,s
 				(null,'MP','Limon','Concentrado',65.00,3,1,2,'2013/01/01','MateriaPrima','Litros');
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,tipo_articulo,unidad) values
-				(null,'MP','Semilla de amapola','Importada',67.80.00,2,1,1,'2013/01/01','MateriaPrima','Kilogramos');
-
-select * from Inventarios
-where categoria = 'Pasteles';
+				(null,'MP','Semilla de amapola','Importada',67.80,2,1,1,'2013/01/01','MateriaPrima','Kilogramos');
