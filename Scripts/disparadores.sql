@@ -47,27 +47,24 @@ BEGIN
 	WHERE id_articulo = NEW.id_articulo;
 END $
 
-
-
 DELIMITER $
-CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON inventarios
+CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON Inventarios
 FOR EACH ROW
 BEGIN	
-	DECLARE cantPro INT;
+	DECLARE cantPro INT DEFAULT ROUND(1 + (RAND() * 10));
 	
-	SET cantPro = RAND(1,10);
 	IF NEW.stock <= NEW.stock_minimo THEN
 		IF NEW.tipo_articulo = 'Productos' THEN
 			#Se crea una orden de produccion con el producto actual
-			INSERT INTO ordenes_produccion(id_empleado,id_articulo,fecha_inicio,fecha_entrega,cantidad)
+			INSERT INTO Ordenes_Produccion(id_empleado,id_articulo,fecha_inicio,fecha_entrega,cantidad)
 			VALUES(
 					(SELECT e.id_empleado FROM empleados e WHERE tipo_empleado=1 ORDER BY RAND() LIMIT 1),
 					NEW.id_articulo,
-					"2014,01,01",
-					"2014,01,01",
+					@fechaAct,
+					@fechaAct,
 					cantPro
 			);
-			CALL crearOrdenRequisicion(NEW.id_articulo,cantPro);
+		 CALL crearOrdenRequisicion(NEW.id_articulo,cantPro);
 		ELSE
 			#se crea una orden de compra para la materia prima actual
 			INSERT INTO ordenes_compra(id_empleado,id_proveedor,fecha_pedido,fecha_pago,costo_total)
@@ -83,6 +80,7 @@ BEGIN
 		END IF;
 	END IF;
 END $
+
 
 
 DELIMITER $$
