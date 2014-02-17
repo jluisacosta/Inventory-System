@@ -8,6 +8,7 @@ BEGIN
 	DECLARE prec DECIMAL;
 	DECLARE cantidad INT;
 	DECLARE vb_termina BOOL DEFAULT FALSE;
+	DECLARE total_neto DECIMAL;
 
 	#Se recupera una lista de productos en forma aleatoria
 	DECLARE productos CURSOR FOR
@@ -17,6 +18,7 @@ BEGIN
 		ORDER BY RAND() LIMIT 5;
 
 	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+	SET total_neto = 0;
 	
 	OPEN productos;
 	Recorre_Cursor: LOOP
@@ -26,23 +28,26 @@ BEGIN
 			END IF;
 			SET cantidad = ROUND(1 + (RAND() * 5));
 			INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
+			SET total_neto = total_neto + (cantidad*prec);
 	END LOOP;
 	CLOSE productos;
+	
+	SET @totalVenta = total_neto + (total_neto*(16.0/100.0));
+	SET @idVenta = NEW.id_venta;
 END $
 DELIMITER ;
 
+DROP TRIGGER `si_inventarios`.`actualizaStock`;
 DELIMITER $
-CREATE TRIGGER actualizaStock AFTER INSERT ON detalle_venta 
+CREATE TRIGGER actualizaStock AFTER INSERT ON Detalle_Venta 
 FOR EACH ROW 
 BEGIN
 	#Se actualiza el stock del articulo(Producto|Materia Prima)
-	UPDATE inventarios SET stock = stock - NEW.cantidad 
-	WHERE inventarios.id_articulo = NEW.id_articulo;
-
-	#Se actualiza el Costo Total de la venta asociada al detalle
-	UPDATE Ventas SET total = total + ((NEW.subtotal*iva) + NEW.subtotal)
-	WHERE id_venta = NEW.id_venta; 
+	UPDATE Inventarios SET stock = stock - NEW.cantidad 
+	WHERE id_articulo = NEW.id_articulo;
 END $
+
+
 
 DELIMITER $
 CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON inventarios

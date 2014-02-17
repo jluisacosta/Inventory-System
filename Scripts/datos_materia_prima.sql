@@ -1,4 +1,3 @@
-
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,tipo_articulo,unidad) values
 				(null,'MP','Leche','Ultrapasteurizada',12.90,50,10,40,'2013/01/01','MateriaPrima','Litros');
 
