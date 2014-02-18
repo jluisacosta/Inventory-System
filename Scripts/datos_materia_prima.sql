@@ -58,3 +58,18 @@ insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,s
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
 				(null,'MP','Semilla de amapola','Importada',67.80,2,1,1,'2013/01/01','MateriaPrima','Kilogramos');
+
+insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
+				(null,'MP','Sal','La Fina',7,5,2,3,'2013/01/01','MateriaPrima','Kilogramos');
+
+insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
+				(null,'MP','Bicarbonato de sodio','Puro',16.00,2,1,2,'2013/01/01','MateriaPrima','Kilogramos');
+
+insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
+				(null,'MP','Chispas de chocolate','Semiamargo',37.00,4,2,3,'2013/01/01','MateriaPrima','Kilogramos');
+
+insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
+				(null,'MP','Canela','En polvo',60.00,1,1,1,'2013/01/01','MateriaPrima','Kilogramos');
+
+insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
+				(null,'MP','Colorante rojo','Para red velvet',27.50,1,1,1,'2013/01/01','MateriaPrima','Kilogramos');
