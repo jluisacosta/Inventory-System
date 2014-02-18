@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `Inventarios` (
   `categoria` VARCHAR(45) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(200) NOT NULL,
-  `precio` DECIMAL NOT NULL,
+  `precio` DECIMAL(10,2) NOT NULL,
   `stock` DECIMAL NOT NULL,
   `stock_minimo` DECIMAL NOT NULL,
   `stock_maximo` DECIMAL NOT NULL,
@@ -440,7 +440,7 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `MateriaPorProducto` (
   `id_materia` INT(11) NULL,
   `id_producto` INT(11) NULL,
-  `cantidad` INT(11) NULL)
+  `cantidad` DECIMAL(10,5) NULL)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
