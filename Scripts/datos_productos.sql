@@ -1,4 +1,5 @@
 
+
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) 
 values	(null,'Pasteles','Fresa','Hecho de leche',120,5,2,10,'2013/01/01','Producto','Pieza');
 

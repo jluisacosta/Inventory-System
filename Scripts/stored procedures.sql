@@ -1,3 +1,4 @@
+DROP PROCEDURE `si_inventarios`.`iniSimulacion`;
 DELIMITER $$
 CREATE PROCEDURE `iniSimulacion`()
 BEGIN
@@ -11,12 +12,15 @@ BEGIN
 		SET totalServicios = ROUND(1 + (RAND() * 5));
 		SET numServicio = 0;
 		
+		#Se llevan a cabo los servicios de ventas
 		WHILE numServicio < totalServicios DO
 			INSERT INTO Ventas(id_empleado,fecha,iva,total)#Se crea una venta
 			VALUES(
 				(SELECT e.id_empleado FROM Empleados e WHERE id_tipo_empleado = 1 ORDER BY RAND() LIMIT 1),
 				@fechaAct,16.0,0.0);
+			
 			SET numServicio = numServicio + 1;
+			UPDATE Ventas SET total = @totalVenta WHERE id_venta = @idVenta;
 		END WHILE;
 
 		set @fechaAct = DATE_ADD(@fechaAct, INTERVAL 1 DAY);

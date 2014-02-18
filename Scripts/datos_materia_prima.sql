@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,tipo_articulo,unidad) values
+=======
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
+>>>>>>> 3182926d97e999ee0a8a015b2943a5ec6e199596
 				(null,'MP','Leche','Ultrapasteurizada',12.90,50,10,40,'2013/01/01','MateriaPrima','Litros');
 
 insert into Inventarios(id_proveedor,categoria,nombre,descripcion,precio,stock,stock_minimo,stock_maximo,fecha_ingreso,tipo_articulo,unidad) values
