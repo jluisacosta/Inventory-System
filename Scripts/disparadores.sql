@@ -29,6 +29,7 @@ BEGIN
 			SET cantidad = ROUND(1 + (RAND() * 5));
 			INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
 			SET total_neto = total_neto + (cantidad*prec);
+			
 	END LOOP;
 	CLOSE productos;
 	
@@ -46,6 +47,14 @@ BEGIN
 	UPDATE Inventarios SET stock = stock - NEW.cantidad 
 	WHERE id_articulo = NEW.id_articulo;
 END $
+
+
+
+
+
+
+
+
 
 DELIMITER $
 CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON Inventarios
@@ -80,8 +89,6 @@ BEGIN
 		END IF;
 	END IF;
 END $
-
-
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearDetalleCompra`$$

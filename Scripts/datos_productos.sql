@@ -49,12 +49,4 @@ set SQL_SAFE_UPDATES=0;
 
 update Inventarios set stock = stock + 15;
 
-select * from Inventarios
-where categoria = 'Pasteles';
-
-
-
-
-
-
 

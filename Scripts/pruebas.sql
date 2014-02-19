@@ -8,10 +8,15 @@ call iniSimulacion();
 
 
 select @fechaAct;
+select * from Clientes;
 
-select * from Empleados;
 delete from Ventas;
 delete from Detalle_Venta;
+select * from Empleados
+
+update Empleados set id_tipo_empleado = 12 
+where id_empleado between 0 and 10;
+
 
 INSERT INTO Empleados (id_usuario,id_tipo_empleado,nombre,fecha_nacimiento,direccion,telefono,email,departamento) VALUES (1,1,"Aiko Carpenter Buchanan","1994-05-30 23:26:42","P.O. Box 222, 7211 Cras Road","002-049-7769","malesuada@lobortisClassaptent.com","Produccion");
 INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(1426,2,5,15.0);

@@ -6,7 +6,7 @@ BEGIN
 	DECLARE totalServicios INT;
 	DECLARE numServicio INT;
 
-	SET fechaFin = '2004/01/05';
+	SET fechaFin = '2004/01/03';
 
 	repeat
 		SET totalServicios = ROUND(1 + (RAND() * 5));
@@ -21,6 +21,12 @@ BEGIN
 			
 			SET numServicio = numServicio + 1;
 			UPDATE Ventas SET total = @totalVenta WHERE id_venta = @idVenta;
+			
+			IF RAND() < 0.30 THEN
+				INSERT INTO Facturas(id_venta,id_cliente)VALUES(@idVenta,
+				(SELECT id_cliente FROM Clientes ORDER BY RAND() LIMIT 1));
+			END IF;
+
 		END WHILE;
 
 		set @fechaAct = DATE_ADD(@fechaAct, INTERVAL 1 DAY);
