@@ -47,15 +47,9 @@ BEGIN
 	UPDATE Inventarios SET stock = stock - NEW.cantidad 
 	WHERE id_articulo = NEW.id_articulo;
 END $
+DELIMITER ;
 
-
-
-
-
-
-
-
-
+DROP TRIGGER `si_inventarios`.`crearOrdenCompraProduccion`;
 DELIMITER $
 CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON Inventarios
 FOR EACH ROW
@@ -63,130 +57,86 @@ BEGIN
 	DECLARE cantPro INT DEFAULT ROUND(1 + (RAND() * 10));
 	
 	IF NEW.stock <= NEW.stock_minimo THEN
-		IF NEW.tipo_articulo = 'Productos' THEN
+		IF NEW.tipo_articulo = 'Producto' THEN
 			#Se crea una orden de produccion con el producto actual
 			INSERT INTO Ordenes_Produccion(id_empleado,id_articulo,fecha_inicio,fecha_entrega,cantidad)
 			VALUES(
-					(SELECT e.id_empleado FROM empleados e WHERE tipo_empleado=1 ORDER BY RAND() LIMIT 1),
+					(SELECT id_empleado FROM Empleados WHERE id_tipo_empleado = 2 ORDER BY RAND() LIMIT 1),
 					NEW.id_articulo,
 					@fechaAct,
 					@fechaAct,
 					cantPro
 			);
-		 CALL crearOrdenRequisicion(NEW.id_articulo,cantPro);
-		ELSE
+			CALL crearOrdenRequisicion(NEW.id_articulo,cantPro);
+		/*ELSE
 			#se crea una orden de compra para la materia prima actual
-			INSERT INTO ordenes_compra(id_empleado,id_proveedor,fecha_pedido,fecha_pago,costo_total)
+			INSERT INTO Ordenes_Compra(id_empleado,id_proveedor,fecha_pedido,fecha_pago,costo_total)
 			VALUES(
-					(SELECT e.id_empleado FROM empleados e WHERE tipo_empleado=2 ORDER BY RAND() LIMIT 1),
+					(SELECT id_empleado FROM Empleados WHERE id_tipo_empleado= 5 ORDER BY RAND() LIMIT 1),
 					NEW.id_proveedor,
-					"2014,01,01",
-					"2014,01,01",
+					@fechaAct,
+					@fechaAct,
 					0
 			);
 			CALL crearDetalleCompra(NEW.id_articulo,NEW.precio);
-			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');
+			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');*/
 		END IF;
 	END IF;
 END $
 
-DELIMITER $$
-DROP PROCEDURE IF EXISTS `si_inventarios`.`crearDetalleCompra`$$
-CREATE PROCEDURE `si_inventarios`.`crearDetalleCompra` (IN idArticulo INT,IN precio DECIMAL)
-BEGIN
-	DECLARE idCompra INT;
-	DECLARE cant DECIMAL;
-	
-	SET cant = RAND(1,10);
-	
-	#Se recupera el id de la utlima compra
-	SELECT id_orden_compra INTO idCompra
-	FROM ordenes_compra
-	ORDER BY id_orden_compra DESC LIMIT 1;
-	
-	#Se crea el detalle de la compra
-	INSERT INTO detalle_compra(id_orden_compra,id_articulo,cantidad,subtotal)
-	VALUES(idCompra,idArticulo,cant,cant*precio);
-
-	#Se actualiza el costo total de la orden de compra
-	UPDATE Ordenes_Compra SET costo_total = cant*precio
-	WHERE id_orden_compra = idCompra;
-END$$
-
-DELIMITER $$
-DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$
-CREATE PROCEDURE `si_inventarios`.`crearMovimiento` (IN idArticulo INT,IN tipoMovimiento VARCHAR(20),IN cant INT)
-BEGIN
-	DECLARE idMov INT;
-
-	#Se inserta un movimiento
-	INSERT INTO movimientos(id_empleado,fecha,tipo_movimiento)
-	VALUES(
-			(SELECT e.id_empleado FROM empleados e WHERE tipo_empleado=3 ORDER BY RAND() LIMIT 1),
-			'2014/01/01',
-			tipoMovimiento
-	);
-
-	#Se recupera el id del ultimo movimiento
-	SELECT id_movimiento INTO idMov
-	FROM movimientos
-	ORDER BY id_movimiento DESC LIMIT 1;
-
-	#Se crea el detalle del Movimiento
-	INSERT INTO detalle_movimiento(id_movimiento,id_articulo,cantidad)
-	VALUES(idMov,idArticulo,cant);
-END$$
-
+DROP TRIGGER `si_inventarios`.`actStock_Movimientos`
 DELIMITER $
-CREATE TRIGGER actStock_Movimientos AFTER INSERT ON detalle_movimiento 
+CREATE TRIGGER actStock_Movimientos AFTER INSERT ON Detalle_Movimiento 
 FOR EACH ROW 
 BEGIN
 	DECLARE tipoMov VARCHAR(20);
-	
+
 	#Se obtiene el tipo de movimiento
-	SELECT M.tipo_movimiento INTO tipoMov
-	FROM movimientos M
-	WHERE M.id_moviento = NEW.id_movimiento;
+	SELECT tipo_movimiento INTO tipoMov 
+	FROM Movimientos
+	WHERE id_movimiento = NEW.id_movimiento;
 	
 	#Se checa que tipo de movimiento se realizo
 	IF tipoMov = 'Entrada_M'THEN
-		UPDATE inventarios SET stock = stock + NEW.cantidad
-		WHERE inventarios.id_articulo = NEW.id_articulo;
+		UPDATE Inventarios SET stock = stock + NEW.cantidad
+		WHERE id_articulo = NEW.id_articulo;
 	ELSE
 		IF tipoMov = 'Salida_M' THEN
-			UPDATE inventarios SET stock = stock - NEW.cantidad
-			WHERE inventarios.id_articulo = NEW.id_articulo;
+			UPDATE Inventarios SET stock = stock - NEW.cantidad
+			WHERE id_articulo = NEW.id_articulo;
 		END IF;
 	END IF;
 END $
 
-DELIMITER $$
-DROP PROCEDURE IF EXISTS `si_inventarios`.`crearOrdenRequisicion`$$
-CREATE PROCEDURE `si_inventarios`.`crearOrdenRequisicion` (IN idArticulo INT,IN cantidadPro INT)
-BEGIN
-		
-	DECLARE id_ordPro INT;
-	DECLARE id_materia INT;
-	DECLARE cant INT;
-	DECLARE materia cursor for SELECT id_materia, cantidad FROM materiaporproducto WHERE id_producto = idArticulo;	
-	
-	#Se obtiene el id de la orden de produccion
-	SELECT id_orden_produccion INTO id_ordPro FROM ordenes_produccion
-	ORDER BY id_orden_produccion DESC LIMIT 1;
 
-	#Se crear la orden de requisicion del material
-	INSERT INTO requisiciones_material(id_orden_produccio,id_empleado,fecha)
-	VALUES(
-			id_ordPro,
-			(SELECT id_empleado FROM empleados WHERE id_tipo_empleado = 3 ORDER BY RAND() LIMIT 1),
-			'2014/01/01'
-	);
+
+
+DROP PROCEDURE `si_inventarios`.`agregaProveedores`
+DELIMITER $
+CREATE procedure agregaProveedores()
+BEGIN
+	DECLARE idProv INT;
+	DECLARE idart INT;
+	DECLARE vb_termina BOOL;
+
+	#Se recupera una lista de productos en forma aleatoria
+	DECLARE materias CURSOR FOR
+		SELECT id_articulo
+		FROM Inventarios
+		WHERE tipo_articulo = 'MateriaPrima';
+
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
 	
-	#Se recorre la tabla de las materia prima
-	open materia;	
-	read_loop: loop
-	fetch materia into id_materia,cant;
-		CALL crearMovimiento(NEW.id_articulo,'Salida_M',cant*cantidadPro);
-	end loop;
-	close materia;
-END$$
+	OPEN materias;
+	Recorre_Cursor: LOOP
+		FETCH materias INTO idart;
+			IF vb_termina THEN
+				LEAVE Recorre_Cursor;
+			END IF;
+			SET idProv = (SELECT id_proveedor FROM Proveedores ORDER BY RAND() LIMIT 1);
+			UPDATE Inventarios SET id_proveedor = idProveedor WHERE id_articulo = idart;
+			
+	END LOOP;
+	CLOSE materias;
+END $
+DELIMITER ;

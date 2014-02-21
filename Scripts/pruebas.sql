@@ -1,4 +1,5 @@
 
+
 SET SQL_SAFE_UPDATES=0;
 
 SET @idVenta = 0;
@@ -7,6 +8,7 @@ SET @fechaAct = '2004/01/01';
 call iniSimulacion();
 
 
+select * from Empleados
 select @fechaAct;
 select * from Clientes;
 
@@ -14,8 +16,8 @@ delete from Ventas;
 delete from Detalle_Venta;
 select * from Empleados
 
-update Empleados set id_tipo_empleado = 12 
-where id_empleado between 0 and 10;
+update Empleados set id_tipo_empleado = 6, departamento = "Administración"
+where id_empleado between 46 and 50;
 
 
 INSERT INTO Empleados (id_usuario,id_tipo_empleado,nombre,fecha_nacimiento,direccion,telefono,email,departamento) VALUES (1,1,"Aiko Carpenter Buchanan","1994-05-30 23:26:42","P.O. Box 222, 7211 Cras Road","002-049-7769","malesuada@lobortisClassaptent.com","Produccion");
