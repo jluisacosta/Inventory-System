@@ -9,20 +9,20 @@ BEGIN
 	DECLARE cantidad INT;
 	DECLARE vb_termina BOOL DEFAULT FALSE;
 	DECLARE total_neto DECIMAL;
+	DECLARE cantPro INT DEFAULT ROUND(1 + RAND()*10);
 
 	#Se recupera una lista de productos en forma aleatoria
-	DECLARE productos CURSOR FOR
-		SELECT id_articulo,precio
-		FROM Inventarios
-		WHERE tipo_articulo = 'Producto'
-		ORDER BY RAND() LIMIT 5;
-
+	DECLARE listProductos CURSOR FOR
+		SELECT id_producto,precio
+		FROM Productos
+		ORDER BY RAND() LIMIT cantPro;
+	 
 	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
 	SET total_neto = 0;
 	
-	OPEN productos;
+	OPEN listProductos;
 	Recorre_Cursor: LOOP
-		FETCH productos INTO idProducto,prec;
+		FETCH listProductos INTO idProducto,prec;
 			IF vb_termina THEN
 				LEAVE Recorre_Cursor;
 			END IF;
@@ -31,7 +31,7 @@ BEGIN
 			SET total_neto = total_neto + (cantidad*prec);
 			
 	END LOOP;
-	CLOSE productos;
+	CLOSE listProductos;
 	
 	SET @totalVenta = total_neto + (total_neto*(16.0/100.0));
 	SET @idVenta = NEW.id_venta;
@@ -43,7 +43,7 @@ DELIMITER $
 CREATE TRIGGER actualizaStock AFTER INSERT ON Detalle_Venta 
 FOR EACH ROW 
 BEGIN
-	#Se actualiza el stock del articulo(Producto|Materia Prima)
+	#Se actualiza el stock del Producto
 	UPDATE Inventarios SET stock = stock - NEW.cantidad 
 	WHERE id_articulo = NEW.id_articulo;
 END $

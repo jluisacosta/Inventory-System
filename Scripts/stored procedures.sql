@@ -91,7 +91,6 @@ END$$
 
 
 
-
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearDetalleCompra`$$
 DELIMITER $$
 CREATE PROCEDURE `si_inventarios`.`crearDetalleCompra` (IN idArticulo INT,IN precio DECIMAL)
