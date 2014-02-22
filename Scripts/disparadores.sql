@@ -27,7 +27,7 @@ BEGIN
 				LEAVE Recorre_Cursor;
 			END IF;
 			SET cantidad = ROUND(1 + (RAND() * 5));
-			INSERT INTO Detalle_Venta(id_venta,id_articulo,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
+			INSERT INTO Detalle_Venta(id_venta,id_producto,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
 			SET total_neto = total_neto + (cantidad*prec);
 			
 	END LOOP;
@@ -38,16 +38,17 @@ BEGIN
 END $
 DELIMITER ;
 
-DROP TRIGGER `si_inventarios`.`actualizaStock`;
+DROP TRIGGER `si_inventarios`.`act_stock_producto`;
 DELIMITER $
-CREATE TRIGGER actualizaStock AFTER INSERT ON Detalle_Venta 
+CREATE TRIGGER act_stock_producto AFTER INSERT ON Detalle_Venta 
 FOR EACH ROW 
 BEGIN
 	#Se actualiza el stock del Producto
-	UPDATE Inventarios SET stock = stock - NEW.cantidad 
-	WHERE id_articulo = NEW.id_articulo;
+	UPDATE Productos SET stock = stock - NEW.cantidad 
+	WHERE id_producto = NEW.id_producto;
 END $
 DELIMITER ;
+
 
 DROP TRIGGER `si_inventarios`.`crearOrdenCompraProduccion`;
 DELIMITER $
