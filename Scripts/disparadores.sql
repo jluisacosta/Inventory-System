@@ -84,9 +84,6 @@ END$
 DELIMITER ;
 
 
-
-
-
 DROP TRIGGER `si_inventarios`.`actStock_Movimientos`
 DELIMITER $
 CREATE TRIGGER actStock_Movimientos AFTER INSERT ON Detalle_Movimiento 
@@ -110,7 +107,6 @@ BEGIN
 		END IF;
 	END IF;
 END $
-
 
 
 DROP PROCEDURE `si_inventarios`.`agregaProveedores`

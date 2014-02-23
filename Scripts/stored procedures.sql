@@ -42,7 +42,7 @@ BEGIN
 		
 	DECLARE idOrdPro INT;
 	DECLARE idMateria INT;
-	DECLARE cant DECIMAL;
+	DECLARE cant DECIMAL(5,5);
 	DECLARE idEmp INT;
 	DECLARE idMov INT;
 	DECLARE vb_termina BOOL DEFAULT FALSE;	
@@ -74,7 +74,7 @@ BEGIN
 			IF vb_termina THEN
 				LEAVE Recorre_Cursor;
 			END IF;
-			INSERT INTO Detalle_Movimiento(id_movimiento,id_materia_prima,cantidad)VALUES(idMov,idMateria,CAST((cant*cantidadPro) AS DECIMAL));
+			INSERT INTO Detalle_Movimiento(id_movimiento,id_materia_prima,cantidad)VALUES(idMov,idMateria,cant*cantidadPro/*CAST((cant*cantidadPro) AS DECIMAL)*/);
 			#CALL crearMovimiento(idArticulo,'Salida_M',cant*cantidadPro,idEmp);
 	end LOOP;
 	CLOSE materias_primas;
