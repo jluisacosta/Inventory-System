@@ -1,6 +1,6 @@
 
-DROP TRIGGER `si_inventarios`.`crearDetalleVenta`;
 DELIMITER $
+DROP TRIGGER IF EXISTS `si_inventarios`.`crearDetalleVenta`$
 CREATE TRIGGER crearDetalleVenta AFTER INSERT ON Ventas 
 FOR EACH ROW 
 BEGIN
@@ -38,8 +38,8 @@ BEGIN
 END $
 DELIMITER ;
 
-DROP TRIGGER `si_inventarios`.`act_stock_producto`;
 DELIMITER $
+DROP TRIGGER IF EXISTS `si_inventarios`.`act_stock_producto` $
 CREATE TRIGGER act_stock_producto AFTER INSERT ON Detalle_Venta 
 FOR EACH ROW 
 BEGIN
@@ -49,26 +49,24 @@ BEGIN
 END $
 DELIMITER ;
 
-
-DROP TRIGGER `si_inventarios`.`crearOrdenCompraProduccion`;
 DELIMITER $
-CREATE TRIGGER crearOrdenCompraProduccion AFTER UPDATE ON Inventarios
+DROP TRIGGER IF EXISTS`si_inventarios`.`crearOrdenProduccion` $
+CREATE TRIGGER crearOrdenProduccion AFTER UPDATE ON Productos
 FOR EACH ROW
 BEGIN	
 	DECLARE cantPro INT DEFAULT ROUND(1 + (RAND() * 10));
-	
+
 	IF NEW.stock <= NEW.stock_minimo THEN
-		IF NEW.tipo_articulo = 'Producto' THEN
-			#Se crea una orden de produccion con el producto actual
-			INSERT INTO Ordenes_Produccion(id_empleado,id_articulo,fecha_inicio,fecha_entrega,cantidad)
-			VALUES(
-					(SELECT id_empleado FROM Empleados WHERE id_tipo_empleado = 2 ORDER BY RAND() LIMIT 1),
-					NEW.id_articulo,
-					@fechaAct,
-					@fechaAct,
-					cantPro
-			);
-			CALL crearOrdenRequisicion(NEW.id_articulo,cantPro);
+		#Se crea una orden de produccion con el producto actual
+		INSERT INTO Ordenes_Produccion(id_empleado,id_producto,fecha_inicio,fecha_entrega,cantidad)
+		VALUES(
+				(SELECT id_empleado FROM Empleados WHERE id_tipo_empleado = 3 ORDER BY RAND() LIMIT 1),
+				NEW.id_producto,
+				@fechaAct,
+				@fechaAct,
+				cantPro
+		);
+		CALL crearOrdenRequisicion(NEW.id_producto,cantPro);
 		/*ELSE
 			#se crea una orden de compra para la materia prima actual
 			INSERT INTO Ordenes_Compra(id_empleado,id_proveedor,fecha_pedido,fecha_pago,costo_total)
@@ -81,9 +79,10 @@ BEGIN
 			);
 			CALL crearDetalleCompra(NEW.id_articulo,NEW.precio);
 			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');*/
-		END IF;
 	END IF;
-END $
+END$
+DELIMITER ;
+
 
 DROP TRIGGER `si_inventarios`.`actStock_Movimientos`
 DELIMITER $

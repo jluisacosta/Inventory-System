@@ -1,5 +1,5 @@
-DROP PROCEDURE `si_inventarios`.`iniSimulacion`;
 DELIMITER $$
+DROP PROCEDURE IF EXISTS `si_inventarios`.`iniSimulacion` $$
 CREATE PROCEDURE `iniSimulacion`()
 BEGIN
 	DECLARE fechaFin DATE;
@@ -40,25 +40,26 @@ DROP PROCEDURE IF EXISTS `si_inventarios`.`crearOrdenRequisicion`$$
 CREATE PROCEDURE `si_inventarios`.`crearOrdenRequisicion` (IN idArticulo INT,IN cantidadPro INT)
 BEGIN
 		
-	DECLARE id_ordPro INT;
+	DECLARE idordPro INT;
 	DECLARE id_materia INT;
 	DECLARE cant INT;
 	DECLARE idEmp INT;
 	DECLARE vb_termina BOOL;	
-	DECLARE materia cursor for SELECT id_materia, cantidad FROM MateriaPorProducto WHERE id_producto = idArticulo;	
+#	DECLARE materia cursor for SELECT id_materia, cantidad FROM MateriaPorProducto WHERE id_producto = idArticulo;	
 	
-	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+#	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
 	
-	#Se obtiene el id de la orden de produccion
-	SELECT id_orden_produccion INTO id_ordPro FROM Ordenes_Produccion
-	ORDER BY id_orden_produccion DESC LIMIT 1;
+	SELECT DISTINCT LAST_INSERT_ID() INTO idordPro FROM Ordenes_Produccion;
 
-	SET idEmp = (SELECT id_empleado FROM Empleados WHERE id_tipo_empleado = 3 ORDER BY RAND() LIMIT 1);
-	
+	#Se obtiene el Id del Empleado
+	SELECT id_empleado INTO idEmp
+	FROM Empleados 
+	WHERE id_tipo_empleado = 4 ORDER BY RAND() LIMIT 1;
+
 	#Se crear la orden de requisicion del material
-	INSERT INTO Requisiciones_Material(id_orden_produccion,id_empleado,fecha) VALUES(id_ordPro,idEmp,@fechaAct);
+	INSERT INTO Requisiciones_Material(id_orden_produccion,id_empleado,fecha) VALUES(idordPro,idEmp,@fechaAct);
 	
-	#Se recorre la tabla de las materia prima
+/*	#Se recorre la tabla de las materia prima
 	OPEN materia;	
 	Recorre_Cursor: LOOP
 			IF vb_termina THEN
@@ -68,8 +69,10 @@ BEGIN
 		
 		CALL crearMovimiento(idArticulo,'Salida_M',cant*cantidadPro,idEmp);
 	end LOOP;
-	CLOSE materia;
+	CLOSE materia;*/
 END$$
+
+
 
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$
 DELIMITER $$

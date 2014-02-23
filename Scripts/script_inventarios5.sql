@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `Productos` (
   `categoria` VARCHAR(45) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(200) NOT NULL,
-  `precio` DECIMAL(10,8) NOT NULL,
+  `precio` DECIMAL(10,2) NOT NULL,
   `stock` INT NOT NULL,
   `stock_minimo` INT NOT NULL,
   `stock_maximo` INT NOT NULL,
@@ -153,8 +153,8 @@ CREATE TABLE IF NOT EXISTS `Ventas` (
   `id_venta` INT(11) NOT NULL AUTO_INCREMENT,
   `id_empleado` INT(11) NOT NULL,
   `fecha` DATE NOT NULL,
-  `iva` DECIMAL(5,3) NOT NULL,
-  `total` DECIMAL(10,3) NOT NULL,
+  `iva` DECIMAL(5,2) NOT NULL,
+  `total` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_venta`),
   CONSTRAINT `fk_emp`
     FOREIGN KEY (`id_empleado`)
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `Detalle_Venta` (
   `id_venta` INT(11) NOT NULL,
   `id_producto` INT(11) NOT NULL,
   `cantidad` INT NOT NULL,
-  `subtotal` DECIMAL(10,3) NOT NULL,
+  `subtotal` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_venta`, `id_producto`),
   CONSTRAINT `fk_venta`
     FOREIGN KEY (`id_venta`)
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `Ordenes_Compra` (
   `id_proveedor` INT(11) NOT NULL,
   `fecha_pedido` DATE NOT NULL,
   `fecha_pago` DATE NOT NULL,
-  `costo_total` DECIMAL(10,3) NOT NULL,
+  `costo_total` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_orden_compra`),
   CONSTRAINT `fk_empleado`
     FOREIGN KEY (`id_empleado`)
@@ -255,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `Materias_Primas` (
   `id_proveedor` INT NULL,
   `nombre` VARCHAR(45) NULL,
   `descripcion` VARCHAR(45) NULL,
-  `precio` DECIMAL(10,3) NULL,
+  `precio` DECIMAL(10,2) NULL,
   `stock` DECIMAL(10,5) NULL,
   `stock_minimo` DECIMAL NULL,
   `stock_maximo` DECIMAL NULL,
@@ -281,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `Detalle_Compra` (
   `id_orden_compra` INT(11) NOT NULL,
   `id_materia_prima` INT(11) NOT NULL,
   `cantidad` INT NOT NULL,
-  `subtotal` DECIMAL NOT NULL,
+  `subtotal` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_orden_compra`, `id_materia_prima`),
   CONSTRAINT `fk_orden_compra`
     FOREIGN KEY (`id_orden_compra`)
