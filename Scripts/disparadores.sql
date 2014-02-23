@@ -44,8 +44,7 @@ CREATE TRIGGER act_stock_producto AFTER INSERT ON Detalle_Venta
 FOR EACH ROW 
 BEGIN
 	#Se actualiza el stock del Producto
-	UPDATE Productos SET stock = stock - NEW.cantidad 
-	WHERE id_producto = NEW.id_producto;
+	UPDATE Productos SET stock = stock - NEW.cantidad WHERE id_producto = NEW.id_producto;
 END $
 DELIMITER ;
 
@@ -67,46 +66,11 @@ BEGIN
 				cantPro
 		);
 		CALL crearOrdenRequisicion(NEW.id_producto,cantPro);
-		/*ELSE
-			#se crea una orden de compra para la materia prima actual
-			INSERT INTO Ordenes_Compra(id_empleado,id_proveedor,fecha_pedido,fecha_pago,costo_total)
-			VALUES(
-					(SELECT id_empleado FROM Empleados WHERE id_tipo_empleado= 5 ORDER BY RAND() LIMIT 1),
-					NEW.id_proveedor,
-					@fechaAct,
-					@fechaAct,
-					0
-			);
-			CALL crearDetalleCompra(NEW.id_articulo,NEW.precio);
-			CALL crearMovimiento(NEW.id_articulo,'Entrada_M');*/
+		CALL crearOrdenCompra();
 	END IF;
 END$
 DELIMITER ;
 
-
-DROP TRIGGER `si_inventarios`.`actStock_Movimientos`
-DELIMITER $
-CREATE TRIGGER actStock_Movimientos AFTER INSERT ON Detalle_Movimiento 
-FOR EACH ROW 
-BEGIN
-	DECLARE tipoMov VARCHAR(20);
-
-	#Se obtiene el tipo de movimiento
-	SELECT tipo_movimiento INTO tipoMov 
-	FROM Movimientos
-	WHERE id_movimiento = NEW.id_movimiento;
-	
-	#Se checa que tipo de movimiento se realizo
-	IF tipoMov = 'Entrada_M'THEN
-		UPDATE Inventarios SET stock = stock + NEW.cantidad
-		WHERE id_articulo = NEW.id_articulo;
-	ELSE
-		IF tipoMov = 'Salida_M' THEN
-			UPDATE Inventarios SET stock = stock - NEW.cantidad
-			WHERE id_articulo = NEW.id_articulo;
-		END IF;
-	END IF;
-END $
 
 
 DROP PROCEDURE `si_inventarios`.`agregaProveedores`
@@ -125,6 +89,7 @@ BEGIN
 
 	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
 	
+
 	OPEN materias;
 	Recorre_Cursor: LOOP
 		FETCH materias INTO idart;

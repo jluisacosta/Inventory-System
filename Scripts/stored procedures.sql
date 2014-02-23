@@ -75,51 +75,82 @@ BEGIN
 				LEAVE Recorre_Cursor;
 			END IF;
 			INSERT INTO Detalle_Movimiento(id_movimiento,id_materia_prima,cantidad)VALUES(idMov,idMateria,cant*cantidadPro/*CAST((cant*cantidadPro) AS DECIMAL)*/);
-			#CALL crearMovimiento(idArticulo,'Salida_M',cant*cantidadPro,idEmp);
+			CALL act_stock_materia_prima(idMateria,'Salida',cant*cantidadPro);
 	end LOOP;
 	CLOSE materias_primas;
 END$$
 
-
-DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$
+DROP PROCEDURE IF EXISTS `si_inventarios`.`act_stock_materia_prima`$$
 DELIMITER $$
-CREATE PROCEDURE `si_inventarios`.`crearMovimiento` (IN idArticulo INT,IN tipoMovimiento VARCHAR(20),IN cant INT,IN idEmp INT)
+CREATE PROCEDURE `si_inventarios`.`act_stock_materia_prima` (IN idMateria INT,IN tipoMovimiento VARCHAR(20),IN cant INT)
 BEGIN
+	IF tipoMovimiento = 'Salida' THEN
+		UPDATE Materias_Primas SET stock = stock - cant WHERE id_materia = idMateria;
+	ELSE
+		UPDATE Materias_Primas SET stock = stock + cant WHERE id_materia = idMateria;
+	END IF;
+END$$
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `si_inventarios`.`crearOrdenCompra`$$
+CREATE PROCEDURE `si_inventarios`.`crearOrdenCompra` ()
+BEGIN
+	DECLARE idOrdComp INT;
 	DECLARE idMov INT;
+	DECLARE idEmp INT;
+	DECLARE idPro INT;
+	DECLARE idMat INT;
+	DECLARE prec DECIMAL(10,2);
+	DECLARE cant INT;
+	DECLARE stockMin INT;
+	DECLARE stockMax INT;
+	DECLARE costoNeto DECIMAL(8,2) DEFAULT 0.0;
+	DECLARE band BOOL DEFAULT FALSE;
+	DECLARE vb_termina BOOL DEFAULT FALSE;	
+	
 
-	#Se inserta un movimiento
-	INSERT INTO Movimientos(id_empleado,fecha,tipo_movimiento)VALUES(idEmp,@fechaAct,tipoMovimiento);
+	DECLARE materias_primas cursor for SELECT id_materia, id_proveedor, precio, stock_minimo, stock_maximo 
+	FROM Materias_Primas 
+	WHERE stock <= stock_minimo;	
+	
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+	
+	#Se obtiene el ID del empleado
+	SELECT id_empleado INTO idEmp FROM Empleados WHERE id_tipo_empleado = 5 ORDER BY RAND() LIMIT 1;
+	
+	#Se recorre la lista de materia prima
+	OPEN materias_primas;	
+	Recorre_Cursor: LOOP
+		FETCH materias_primas into idMat,idPro,prec,stockMin,stockMax;
+			IF vb_termina THEN
+				LEAVE Recorre_Cursor;
+			END IF;
+			IF band = FALSE THEN
+				#Se crear la orden de Compra
+				INSERT INTO Ordenes_Compra(id_empleado,fecha_pedido,costo_total) VALUES(idEmp,@fechaAct,0.0);
+				#Se recupera el id de la orden de compra
+				SELECT DISTINCT LAST_INSERT_ID() INTO idOrdComp FROM Ordenes_Compra;
+				#Se crear un movimiento de tipo entrada
+				INSERT INTO Movimientos(id_empleado,fecha,tipo_movimiento)VALUES(idEmp,@fechaAct,'Entrada');
+				#Se recupera el id del Movimiento
+				SELECT DISTINCT LAST_INSERT_ID() INTO idMov FROM Movimientos;
+				SET band = TRUE;
+			END IF;
+			
+			SET cant = ROUND(stockMin + ( 1 + RAND() * (stockMax-stockMin)));
 
-	#Se recupera el id del ultimo movimiento
-	SELECT id_movimiento INTO idMov FROM Movimientos ORDER BY id_movimiento DESC LIMIT 1;
-
-	#Se crea el detalle del Movimiento
-	INSERT INTO Detalle_Movimiento(id_movimiento,id_articulo,cantidad) VALUES(idMov,idArticulo,cant);
+			INSERT INTO Detalle_Compra(id_orden_compra,id_materia_prima,cantidad,subtotal)
+			VALUES(idOrdComp,idMat,cant,cant*prec);
+			
+			INSERT INTO Detalle_Movimiento(id_movimiento,id_materia_prima,cantidad)VALUES(idMov,idMat,cant);
+			CALL act_stock_materia_prima(idMat,'Entrada',cant);
+			SET costoNeto = costoNeto + (cant*prec);
+	end LOOP;
+	CLOSE materias_primas;
+	
+	#Se agrega el costo total de la orden de compra
+	UPDATE Ordenes_Compra SET costo_total = costoNeto WHERE id_orden_compra = idOrdComp;
 END$$
 
 
 
-
-
-DROP PROCEDURE IF EXISTS `si_inventarios`.`crearDetalleCompra`$$
-DELIMITER $$
-CREATE PROCEDURE `si_inventarios`.`crearDetalleCompra` (IN idArticulo INT,IN precio DECIMAL)
-BEGIN
-	DECLARE idCompra INT;
-	DECLARE cant DECIMAL;
-	
-	SET cant = (1 + RAND()*10);
-	
-	#Se recupera el id de la utlima compra
-	SELECT id_orden_compra INTO idCompra
-	FROM Ordenes_Compra
-	ORDER BY id_orden_compra DESC LIMIT 1;
-	
-	#Se crea el detalle de la compra
-	INSERT INTO Detalle_Compra(id_orden_compra,id_articulo,cantidad,subtotal)
-	VALUES(idCompra,idArticulo,cant,cant*precio);
-
-	#Se actualiza el costo total de la orden de compra
-	UPDATE Ordenes_Compra SET costo_total = cant*precio
-	WHERE id_orden_compra = idCompra;
-END$$

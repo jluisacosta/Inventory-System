@@ -7,3 +7,5 @@ SET @totalVenta = 0;
 SET @fechaAct = '2004/01/01';
 
 call iniSimulacion();
+
+
