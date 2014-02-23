@@ -6,7 +6,7 @@ BEGIN
 	DECLARE totalServicios INT;
 	DECLARE numServicio INT;
 
-	SET fechaFin = '2004/01/03';
+	SET fechaFin = '2004/01/02';
 
 	repeat
 		SET totalServicios = ROUND(1 + (RAND() * 5));
@@ -37,19 +37,21 @@ END$$
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearOrdenRequisicion`$$
-CREATE PROCEDURE `si_inventarios`.`crearOrdenRequisicion` (IN idArticulo INT,IN cantidadPro INT)
+CREATE PROCEDURE `si_inventarios`.`crearOrdenRequisicion` (IN idProduc INT,IN cantidadPro INT)
 BEGIN
 		
-	DECLARE idordPro INT;
-	DECLARE id_materia INT;
-	DECLARE cant INT;
+	DECLARE idOrdPro INT;
+	DECLARE idMateria INT;
+	DECLARE cant DECIMAL;
 	DECLARE idEmp INT;
-	DECLARE vb_termina BOOL;	
-#	DECLARE materia cursor for SELECT id_materia, cantidad FROM MateriaPorProducto WHERE id_producto = idArticulo;	
+	DECLARE idMov INT;
+	DECLARE vb_termina BOOL DEFAULT FALSE;	
 	
-#	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+	DECLARE materias_primas cursor for SELECT id_materia, cantidad FROM MateriaPorProducto WHERE id_producto = idProduc;	
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
 	
-	SELECT DISTINCT LAST_INSERT_ID() INTO idordPro FROM Ordenes_Produccion;
+	#Se recupera el ID del ultimo registro insertado en las ordenes de produccio
+	SELECT DISTINCT LAST_INSERT_ID() INTO idOrdPro FROM Ordenes_Produccion;
 
 	#Se obtiene el Id del Empleado
 	SELECT id_empleado INTO idEmp
@@ -57,21 +59,26 @@ BEGIN
 	WHERE id_tipo_empleado = 4 ORDER BY RAND() LIMIT 1;
 
 	#Se crear la orden de requisicion del material
-	INSERT INTO Requisiciones_Material(id_orden_produccion,id_empleado,fecha) VALUES(idordPro,idEmp,@fechaAct);
+	INSERT INTO Requisiciones_Material(id_orden_produccion,id_empleado,fecha) VALUES(idOrdPro,idEmp,@fechaAct);
 	
-/*	#Se recorre la tabla de las materia prima
-	OPEN materia;	
+	#Se crea un movimiento para simular la salida de la materia prima necesaria para el producto a produccir
+	INSERT INTO Movimientos(id_empleado,fecha,tipo_movimiento) VALUES(idEmp,@fechaAct,"Salida");
+	
+	#Se recupera el ID del movimiento insertado
+	SELECT DISTINCT LAST_INSERT_ID() INTO idMov FROM Movimientos;
+
+	#Se recorre la lista de materia prima necesaria para el producto
+	OPEN materias_primas;	
 	Recorre_Cursor: LOOP
+		FETCH materias_primas into idMateria,cant;
 			IF vb_termina THEN
 				LEAVE Recorre_Cursor;
 			END IF;
-	FETCH materia into id_materia,cant;
-		
-		CALL crearMovimiento(idArticulo,'Salida_M',cant*cantidadPro,idEmp);
+			INSERT INTO Detalle_Movimiento(id_movimiento,id_materia_prima,cantidad)VALUES(idMov,idMateria,CAST((cant*cantidadPro) AS DECIMAL));
+			#CALL crearMovimiento(idArticulo,'Salida_M',cant*cantidadPro,idEmp);
 	end LOOP;
-	CLOSE materia;*/
+	CLOSE materias_primas;
 END$$
-
 
 
 DROP PROCEDURE IF EXISTS `si_inventarios`.`crearMovimiento`$$

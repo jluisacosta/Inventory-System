@@ -251,7 +251,7 @@ DROP TABLE IF EXISTS `Materias_Primas` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Materias_Primas` (
-  `id_materia` INT NOT NULL,
+  `id_materia` INT NOT NULL AUTO_INCREMENT,
   `id_proveedor` INT NULL,
   `nombre` VARCHAR(45) NULL,
   `descripcion` VARCHAR(45) NULL,
