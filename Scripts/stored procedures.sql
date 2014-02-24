@@ -151,6 +151,3 @@ BEGIN
 	#Se agrega el costo total de la orden de compra
 	UPDATE Ordenes_Compra SET costo_total = costoNeto WHERE id_orden_compra = idOrdComp;
 END$$
-
-
-

@@ -29,7 +29,6 @@ BEGIN
 			SET cantidad = ROUND(1 + (RAND() * 5));
 			INSERT INTO Detalle_Venta(id_venta,id_producto,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
 			SET total_neto = total_neto + (cantidad*prec);
-			
 	END LOOP;
 	CLOSE listProductos;
 	
@@ -45,6 +44,11 @@ FOR EACH ROW
 BEGIN
 	#Se actualiza el stock del Producto
 	UPDATE Productos SET stock = stock - NEW.cantidad WHERE id_producto = NEW.id_producto;
+	IF @actStockProducto = TRUE THEN
+		UPDATE Productos SET stock = stock + @cantPro 
+		WHERE id_producto = NEW.id_producto;
+		SET @actStockProducto = FALSE;
+	END IF;
 END $
 DELIMITER ;
 
@@ -53,9 +57,9 @@ DROP TRIGGER IF EXISTS`si_inventarios`.`crearOrdenProduccion` $
 CREATE TRIGGER crearOrdenProduccion AFTER UPDATE ON Productos
 FOR EACH ROW
 BEGIN	
-	DECLARE cantPro INT DEFAULT ROUND(1 + (RAND() * 10));
 
 	IF NEW.stock <= NEW.stock_minimo THEN
+		SET @cantPro = ROUND( NEW.stock_minimo + ( RAND() * (NEW.stock_maximo-NEW.stock_minimo)) );
 		#Se crea una orden de produccion con el producto actual
 		INSERT INTO Ordenes_Produccion(id_empleado,id_producto,fecha_inicio,fecha_entrega,cantidad)
 		VALUES(
@@ -63,10 +67,11 @@ BEGIN
 				NEW.id_producto,
 				@fechaAct,
 				@fechaAct,
-				cantPro
+				@cantPro
 		);
-		CALL crearOrdenRequisicion(NEW.id_producto,cantPro);
+		CALL crearOrdenRequisicion(NEW.id_producto,@cantPro);
 		CALL crearOrdenCompra();
+		SET @actStockProducto = TRUE;
 	END IF;
 END$
 DELIMITER ;
