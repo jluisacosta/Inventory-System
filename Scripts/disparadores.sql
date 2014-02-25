@@ -9,7 +9,7 @@ BEGIN
 	DECLARE cantidad INT;
 	DECLARE vb_termina BOOL DEFAULT FALSE;
 	DECLARE total_neto DECIMAL;
-	DECLARE cantPro INT DEFAULT ROUND(1 + RAND()*10);
+	DECLARE cantPro INT DEFAULT ROUND(1 + RAND()*5);
 
 	#Se recupera una lista de productos en forma aleatoria
 	DECLARE listProductos CURSOR FOR
@@ -26,7 +26,7 @@ BEGIN
 			IF vb_termina THEN
 				LEAVE Recorre_Cursor;
 			END IF;
-			SET cantidad = ROUND(1 + (RAND() * 5));
+			SET cantidad = ROUND(1 + (RAND() * 3));
 			INSERT INTO Detalle_Venta(id_venta,id_producto,cantidad,subtotal) VALUES(NEW.id_venta,idProducto,cantidad,cantidad*prec);
 			SET total_neto = total_neto + (cantidad*prec);
 	END LOOP;
@@ -76,10 +76,9 @@ BEGIN
 END$
 DELIMITER ;
 
-
-
-DROP PROCEDURE `si_inventarios`.`agregaProveedores`
+/*
 DELIMITER $
+DROP PROCEDURE IF EXISTS `si_inventarios`.`agregaProveedores` $
 CREATE procedure agregaProveedores()
 BEGIN
 	DECLARE idProv INT;
@@ -108,3 +107,4 @@ BEGIN
 	CLOSE materias;
 END $
 DELIMITER ;
+*/

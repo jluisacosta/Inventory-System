@@ -6,10 +6,10 @@ BEGIN
 	DECLARE totalServicios INT;
 	DECLARE numServicio INT;
 
-	SET fechaFin = '2004/01/02';
+	SET fechaFin = '2004/02/01';
 
 	repeat
-		SET totalServicios = ROUND(1 + (RAND() * 5));
+		SET totalServicios = ROUND(100 + (RAND() * 150));
 		SET numServicio = 0;
 		
 		#Se llevan a cabo los servicios de ventas
@@ -28,11 +28,11 @@ BEGIN
 			END IF;
 
 		END WHILE;
-
+		
 		set @fechaAct = DATE_ADD(@fechaAct, INTERVAL 1 DAY);
 		until @fechaAct = fechaFin		
 	end repeat;
-	set @fechaAct = '2004/01/01';#Se reinicia la fecha inicial
+	#set @fechaAct = '2004/01/01';#Se reinicia la fecha inicial
 END$$
 
 DELIMITER $$

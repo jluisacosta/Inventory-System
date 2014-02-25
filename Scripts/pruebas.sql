@@ -7,8 +7,8 @@ SET @actStockProducto = FALSE;
 SET @idVenta = 0;
 SET @totalVenta = 0;
 
-SET @fechaAct = '2004/01/01';
-
+#SET @fechaAct = '2004/01/01';
 call iniSimulacion();
 
+select @fechaAct;
 

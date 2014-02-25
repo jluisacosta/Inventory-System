@@ -122,45 +122,23 @@ CREATE UNIQUE INDEX `email_UNIQUE` ON `Clientes` (`email` ASC);
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `Inventarios`
+-- Table `Productos`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Inventarios` ;
+DROP TABLE IF EXISTS `Productos` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `Inventarios` (
-  `id_articulo` INT(11) NOT NULL AUTO_INCREMENT,
-  `id_proveedor` INT(11) NULL,
+CREATE TABLE IF NOT EXISTS `Productos` (
+  `id_producto` INT(11) NOT NULL AUTO_INCREMENT,
   `categoria` VARCHAR(45) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(200) NOT NULL,
   `precio` DECIMAL(10,2) NOT NULL,
-  `stock` DECIMAL NOT NULL,
-  `stock_minimo` DECIMAL NOT NULL,
-  `stock_maximo` DECIMAL NOT NULL,
+  `stock` INT NOT NULL,
+  `stock_minimo` INT NOT NULL,
+  `stock_maximo` INT NOT NULL,
   `fecha_ingreso` DATE NOT NULL,
-  `tipo_articulo` VARCHAR(20) NOT NULL,
   `unidad` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`id_articulo`),
-  CONSTRAINT `fk_prov`
-    FOREIGN KEY (`id_proveedor`)
-    REFERENCES `Proveedores` (`id_proveedor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `Tipos_Articulos`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `Tipos_Articulos` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `Tipos_Articulos` (
-  `id_tipo_articulo` INT NOT NULL,
-  `tipo_articulo` VARCHAR(45) NULL,
-  `descripcion` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_tipo_articulo`))
+  PRIMARY KEY (`id_producto`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
@@ -175,8 +153,8 @@ CREATE TABLE IF NOT EXISTS `Ventas` (
   `id_venta` INT(11) NOT NULL AUTO_INCREMENT,
   `id_empleado` INT(11) NOT NULL,
   `fecha` DATE NOT NULL,
-  `iva` DECIMAL NOT NULL,
-  `total` DECIMAL NOT NULL,
+  `iva` DECIMAL(5,2) NOT NULL,
+  `total` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_venta`),
   CONSTRAINT `fk_emp`
     FOREIGN KEY (`id_empleado`)
@@ -195,18 +173,18 @@ DROP TABLE IF EXISTS `Detalle_Venta` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Detalle_Venta` (
   `id_venta` INT(11) NOT NULL,
-  `id_articulo` INT(11) NOT NULL,
+  `id_producto` INT(11) NOT NULL,
   `cantidad` INT NOT NULL,
-  `subtotal` DECIMAL NOT NULL,
-  PRIMARY KEY (`id_venta`, `id_articulo`),
+  `subtotal` DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (`id_venta`, `id_producto`),
   CONSTRAINT `fk_venta`
     FOREIGN KEY (`id_venta`)
     REFERENCES `Ventas` (`id_venta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_art`
-    FOREIGN KEY (`id_articulo`)
-    REFERENCES `Inventarios` (`id_articulo`)
+    FOREIGN KEY (`id_producto`)
+    REFERENCES `Productos` (`id_producto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -247,17 +225,44 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Ordenes_Compra` (
   `id_orden_compra` INT(11) NOT NULL AUTO_INCREMENT,
   `id_empleado` INT(11) NOT NULL,
-  `id_proveedor` INT(11) NOT NULL,
+  #`id_proveedor` INT(11) NOT NULL,
   `fecha_pedido` DATE NOT NULL,
-  `fecha_pago` DATE NOT NULL,
-  `costo_total` DECIMAL NOT NULL,
+  #`fecha_pago` DATE NOT NULL,
+  `costo_total` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_orden_compra`),
   CONSTRAINT `fk_empleado`
     FOREIGN KEY (`id_empleado`)
     REFERENCES `Empleados` (`id_empleado`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE NO ACTION/*,
   CONSTRAINT `fk_provedor`
+    FOREIGN KEY (`id_proveedor`)
+    REFERENCES `Proveedores` (`id_proveedor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION*/)
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Materias_Primas`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Materias_Primas` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Materias_Primas` (
+  `id_materia` INT NOT NULL AUTO_INCREMENT,
+  `id_proveedor` INT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `descripcion` VARCHAR(45) NULL,
+  `precio` DECIMAL(10,2) NULL,
+  `stock` DECIMAL(10,5) NULL,
+  `stock_minimo` DECIMAL NULL,
+  `stock_maximo` DECIMAL NULL,
+  `fecha_ingreso` DATE NULL,
+  `unidad` VARCHAR(20) NULL,
+  PRIMARY KEY (`id_materia`),
+  CONSTRAINT `fk_p`
     FOREIGN KEY (`id_proveedor`)
     REFERENCES `Proveedores` (`id_proveedor`)
     ON DELETE NO ACTION
@@ -274,18 +279,18 @@ DROP TABLE IF EXISTS `Detalle_Compra` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Detalle_Compra` (
   `id_orden_compra` INT(11) NOT NULL,
-  `id_articulo` INT(11) NOT NULL,
+  `id_materia_prima` INT(11) NOT NULL,
   `cantidad` INT NOT NULL,
-  `subtotal` DECIMAL NOT NULL,
-  PRIMARY KEY (`id_orden_compra`, `id_articulo`),
+  `subtotal` DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (`id_orden_compra`, `id_materia_prima`),
   CONSTRAINT `fk_orden_compra`
     FOREIGN KEY (`id_orden_compra`)
     REFERENCES `Ordenes_Compra` (`id_orden_compra`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_articulo`
-    FOREIGN KEY (`id_articulo`)
-    REFERENCES `Inventarios` (`id_articulo`)
+  CONSTRAINT `fk_mat_pri`
+    FOREIGN KEY (`id_materia_prima`)
+    REFERENCES `Materias_Primas` (`id_materia`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -301,7 +306,7 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Ordenes_Produccion` (
   `id_orden_produccion` INT(11) NOT NULL AUTO_INCREMENT,
   `id_empleado` INT(11) NOT NULL,
-  `id_articulo` INT(11) NOT NULL,
+  `id_producto` INT(11) NOT NULL,
   `fecha_inicio` DATE NOT NULL,
   `fecha_entrega` DATE NULL,
   `cantidad` INT NOT NULL,
@@ -312,8 +317,8 @@ CREATE TABLE IF NOT EXISTS `Ordenes_Produccion` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_artic`
-    FOREIGN KEY (`id_articulo`)
-    REFERENCES `Inventarios` (`id_articulo`)
+    FOREIGN KEY (`id_producto`)
+    REFERENCES `Productos` (`id_producto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -414,17 +419,17 @@ DROP TABLE IF EXISTS `Detalle_Movimiento` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Detalle_Movimiento` (
   `id_movimiento` INT(11) NOT NULL,
-  `id_articulo` INT(11) NOT NULL,
-  `cantidad` INT NOT NULL,
-  PRIMARY KEY (`id_movimiento`, `id_articulo`),
-  CONSTRAINT `fk_art_2`
-    FOREIGN KEY (`id_articulo`)
-    REFERENCES `Inventarios` (`id_articulo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  `id_materia_prima` INT(11) NOT NULL,
+  `cantidad` DECIMAL(10,5) NOT NULL,
+  PRIMARY KEY (`id_movimiento`, `id_materia_prima`),
   CONSTRAINT `fk_mov_2`
     FOREIGN KEY (`id_movimiento`)
     REFERENCES `Movimientos` (`id_movimiento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_mp`
+    FOREIGN KEY (`id_materia_prima`)
+    REFERENCES `Materias_Primas` (`id_materia`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -440,7 +445,17 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `MateriaPorProducto` (
   `id_materia` INT(11) NULL,
   `id_producto` INT(11) NULL,
-  `cantidad` DECIMAL(10,5) NULL)
+  `cantidad` DECIMAL(10,5) NULL,
+  CONSTRAINT `fk_mat_p`
+    FOREIGN KEY (`id_materia`)
+    REFERENCES `Materias_Primas` (`id_materia`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_prod`
+    FOREIGN KEY (`id_producto`)
+    REFERENCES `Productos` (`id_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
