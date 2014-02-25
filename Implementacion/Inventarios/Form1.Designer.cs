@@ -28,25 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bntSim = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.SuspendLayout();
             // 
-            // bntSim
+            // styleManager1
             // 
-            this.bntSim.Location = new System.Drawing.Point(49, 24);
-            this.bntSim.Name = "bntSim";
-            this.bntSim.Size = new System.Drawing.Size(75, 23);
-            this.bntSim.TabIndex = 0;
-            this.bntSim.Text = "Simulacion";
-            this.bntSim.UseVisualStyleBackColor = true;
-            this.bntSim.Click += new System.EventHandler(this.bntSim_Click);
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Metro;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 496);
-            this.Controls.Add(this.bntSim);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Control de Invetarios";
@@ -56,7 +51,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button bntSim;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+
     }
 }
 
