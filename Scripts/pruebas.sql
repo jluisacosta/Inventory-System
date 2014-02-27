@@ -7,8 +7,10 @@ SET @actStockProducto = FALSE;
 SET @idVenta = 0;
 SET @totalVenta = 0;
 
-#SET @fechaAct = '2004/01/01';
-call iniSimulacion();
+SET @fechaAct = '2004/01/01';
+SET @bandAux = TRUE;
 
-select @fechaAct;
+call iniSimulacion();
+#select YEAR(NOW())-@fechaAux;
+#SELECT MOD(YEAR(@fechaAct), 2);
 

@@ -5,13 +5,24 @@ BEGIN
 	DECLARE fechaFin DATE;
 	DECLARE totalServicios INT;
 	DECLARE numServicio INT;
-
-	SET fechaFin = '2004/02/01';
+	DECLARE count INT DEFAULT 1;
+	SET fechaFin = '2004/01/03';
 
 	repeat
 		SET totalServicios = ROUND(100 + (RAND() * 150));
 		SET numServicio = 0;
-		
+
+		#Se asignas los proveedores de la materia prima
+		IF MOD(YEAR(@fechaAct),2) = 1 THEN
+			IF @bandAux = 0 THEN 
+				CALL agregaProveedores(count);
+				SET @bandAux = TRUE;
+				SET count = count + 1;
+			END IF;
+		ELSE 
+			SET @bandAux = FALSE;
+		END IF;
+
 		#Se llevan a cabo los servicios de ventas
 		WHILE numServicio < totalServicios DO
 			INSERT INTO Ventas(id_empleado,fecha,iva,total)#Se crea una venta
@@ -32,7 +43,7 @@ BEGIN
 		set @fechaAct = DATE_ADD(@fechaAct, INTERVAL 1 DAY);
 		until @fechaAct = fechaFin		
 	end repeat;
-	#set @fechaAct = '2004/01/01';#Se reinicia la fecha inicial
+	#set @fechaAct = '2004/01/01';#Se reinicia la fecha
 END$$
 
 DELIMITER $$
@@ -105,7 +116,7 @@ BEGIN
 	DECLARE stockMin INT;
 	DECLARE stockMax INT;
 	DECLARE costoNeto DECIMAL(8,2) DEFAULT 0.0;
-	DECLARE band BOOL DEFAULT FALSE;
+	#DECLARE band BOOL DEFAULT FALSE;
 	DECLARE vb_termina BOOL DEFAULT FALSE;	
 	
 
@@ -125,18 +136,17 @@ BEGIN
 			IF vb_termina THEN
 				LEAVE Recorre_Cursor;
 			END IF;
-			IF band = FALSE THEN
+			#IF band = FALSE THEN
 				#Se crear la orden de Compra
-				INSERT INTO Ordenes_Compra(id_empleado,fecha_pedido,costo_total) VALUES(idEmp,@fechaAct,0.0);
-				#Se recupera el id de la orden de compra
-				SELECT DISTINCT LAST_INSERT_ID() INTO idOrdComp FROM Ordenes_Compra;
-				#Se crear un movimiento de tipo entrada
-				INSERT INTO Movimientos(id_empleado,fecha,tipo_movimiento)VALUES(idEmp,@fechaAct,'Entrada');
-				#Se recupera el id del Movimiento
-				SELECT DISTINCT LAST_INSERT_ID() INTO idMov FROM Movimientos;
-				SET band = TRUE;
-			END IF;
-			
+			INSERT INTO Ordenes_Compra(id_empleado,fecha_pedido,costo_total) VALUES(idEmp,@fechaAct,0.0);
+			#Se recupera el id de la orden de compra
+			SELECT DISTINCT LAST_INSERT_ID() INTO idOrdComp FROM Ordenes_Compra;
+			#Se crear un movimiento de tipo entrada
+			INSERT INTO Movimientos(id_empleado,fecha,tipo_movimiento)VALUES(idEmp,@fechaAct,'Entrada');
+			#Se recupera el id del Movimiento
+			SELECT DISTINCT LAST_INSERT_ID() INTO idMov FROM Movimientos;
+			#	SET band = TRUE;
+			#END IF;
 			SET cant = ROUND(stockMin + ( 1 + RAND() * (stockMax-stockMin)));
 
 			INSERT INTO Detalle_Compra(id_orden_compra,id_materia_prima,cantidad,subtotal)
@@ -145,9 +155,39 @@ BEGIN
 			INSERT INTO Detalle_Movimiento(id_movimiento,id_materia_prima,cantidad)VALUES(idMov,idMat,cant);
 			CALL act_stock_materia_prima(idMat,'Entrada',cant);
 			SET costoNeto = costoNeto + (cant*prec);
+			#Se agrega el costo total de la orden de compra
+			UPDATE Ordenes_Compra SET costo_total = costoNeto WHERE id_orden_compra = idOrdComp;
 	end LOOP;
 	CLOSE materias_primas;
-	
-	#Se agrega el costo total de la orden de compra
-	UPDATE Ordenes_Compra SET costo_total = costoNeto WHERE id_orden_compra = idOrdComp;
 END$$
+
+DELIMITER $
+DROP PROCEDURE IF EXISTS `si_inventarios`.`agregaProveedores` $
+CREATE procedure agregaProveedores(IN numRot INT)
+BEGIN
+	DECLARE idProv INT;
+	DECLARE idMat INT;
+	DECLARE vb_termina BOOL;
+
+	#Se recupera una lista de productos en forma aleatoria
+	DECLARE materias CURSOR FOR SELECT id_materia FROM Materias_Primas;
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+	
+	OPEN materias;
+	Recorre_Cursor: LOOP
+		FETCH materias INTO idMat;
+			IF vb_termina THEN
+				LEAVE Recorre_Cursor;
+			END IF;
+
+			#Se obtiene el id del proveedor
+			SELECT id_proveedor INTO idProv
+			FROM Proveedores 
+			WHERE id_proveedor BETWEEN ((numRot*10)-10)+1 AND (numRot* 10)
+			ORDER BY RAND() LIMIT 1;
+
+			UPDATE Materias_Primas SET id_proveedor = idPro WHERE id_materia = idMat;
+	END LOOP;
+	CLOSE materias;
+END $
+DELIMITER ;

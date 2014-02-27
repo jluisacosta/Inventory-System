@@ -75,36 +75,3 @@ BEGIN
 	END IF;
 END$
 DELIMITER ;
-
-/*
-DELIMITER $
-DROP PROCEDURE IF EXISTS `si_inventarios`.`agregaProveedores` $
-CREATE procedure agregaProveedores()
-BEGIN
-	DECLARE idProv INT;
-	DECLARE idart INT;
-	DECLARE vb_termina BOOL;
-
-	#Se recupera una lista de productos en forma aleatoria
-	DECLARE materias CURSOR FOR
-		SELECT id_articulo
-		FROM Inventarios
-		WHERE tipo_articulo = 'MateriaPrima';
-
-	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
-	
-
-	OPEN materias;
-	Recorre_Cursor: LOOP
-		FETCH materias INTO idart;
-			IF vb_termina THEN
-				LEAVE Recorre_Cursor;
-			END IF;
-			SET idProv = (SELECT id_proveedor FROM Proveedores ORDER BY RAND() LIMIT 1);
-			UPDATE Inventarios SET id_proveedor = idProveedor WHERE id_articulo = idart;
-			
-	END LOOP;
-	CLOSE materias;
-END $
-DELIMITER ;
-*/
