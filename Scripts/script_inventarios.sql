@@ -225,7 +225,7 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `Ordenes_Compra` (
   `id_orden_compra` INT(11) NOT NULL AUTO_INCREMENT,
   `id_empleado` INT(11) NOT NULL,
-  #`id_proveedor` INT(11) NOT NULL,
+  `id_proveedor` INT(11) NOT NULL,
   `fecha_pedido` DATE NOT NULL,
   #`fecha_pago` DATE NOT NULL,
   `costo_total` DECIMAL(10,2) NOT NULL,
@@ -234,12 +234,12 @@ CREATE TABLE IF NOT EXISTS `Ordenes_Compra` (
     FOREIGN KEY (`id_empleado`)
     REFERENCES `Empleados` (`id_empleado`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION/*,
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_provedor`
     FOREIGN KEY (`id_proveedor`)
     REFERENCES `Proveedores` (`id_proveedor`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION*/)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;

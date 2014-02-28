@@ -6,10 +6,10 @@ BEGIN
 	DECLARE totalServicios INT;
 	DECLARE numServicio INT;
 	DECLARE count INT DEFAULT 1;
-	SET fechaFin = '2004/01/03';
+	SET fechaFin = '2014/01/02';
 
 	repeat
-		SET totalServicios = ROUND(100 + (RAND() * 150));
+		SET totalServicios = ROUND(200 + (RAND() * 250));
 		SET numServicio = 0;
 
 		#Se asignas los proveedores de la materia prima
@@ -138,7 +138,7 @@ BEGIN
 			END IF;
 			#IF band = FALSE THEN
 				#Se crear la orden de Compra
-			INSERT INTO Ordenes_Compra(id_empleado,fecha_pedido,costo_total) VALUES(idEmp,@fechaAct,0.0);
+			INSERT INTO Ordenes_Compra(id_empleado,id_proveedor,fecha_pedido,costo_total) VALUES(idEmp,idPro,@fechaAct,0.0);
 			#Se recupera el id de la orden de compra
 			SELECT DISTINCT LAST_INSERT_ID() INTO idOrdComp FROM Ordenes_Compra;
 			#Se crear un movimiento de tipo entrada
@@ -186,7 +186,7 @@ BEGIN
 			WHERE id_proveedor BETWEEN ((numRot*10)-10)+1 AND (numRot* 10)
 			ORDER BY RAND() LIMIT 1;
 
-			UPDATE Materias_Primas SET id_proveedor = idPro WHERE id_materia = idMat;
+			UPDATE Materias_Primas SET id_proveedor = idProv WHERE id_materia = idMat;
 	END LOOP;
 	CLOSE materias;
 END $
