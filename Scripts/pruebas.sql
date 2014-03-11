@@ -11,6 +11,5 @@ SET @fechaAct = '2004/01/01';
 SET @bandAux = TRUE;
 
 call iniSimulacion();
-#select YEAR(NOW())-@fechaAux;
 #SELECT MOD(YEAR(@fechaAct), 2);
 
