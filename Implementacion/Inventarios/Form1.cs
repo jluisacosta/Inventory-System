@@ -14,6 +14,7 @@ namespace Inventarios
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void bntSim_Click(object sender, EventArgs e)
