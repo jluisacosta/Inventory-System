@@ -43,6 +43,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tb_dir = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_razon = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_idprov = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.b_buscar = new DevComponents.DotNetBar.ButtonX();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,20 +62,11 @@
             this.reflectionLabel6 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.reflectionLabel7 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-<<<<<<< HEAD
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnImprimir = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-=======
             this.b_eliminar = new DevComponents.DotNetBar.ButtonX();
             this.b_agregar = new DevComponents.DotNetBar.ButtonX();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.b_imprimir = new DevComponents.DotNetBar.ButtonX();
             this.b_cancelar = new DevComponents.DotNetBar.ButtonX();
-            this.tb_razon = new DevComponents.DotNetBar.Controls.TextBoxX();
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             this.tlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -392,18 +384,6 @@
             // 
             // 
             // 
-<<<<<<< HEAD
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(3, 33);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.Size = new System.Drawing.Size(634, 20);
-            this.textBoxX6.TabIndex = 10;
-            this.textBoxX6.WatermarkText = "Dirección";
-=======
             this.tb_dir.Border.Class = "TextBoxBorder";
             this.tb_dir.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_dir.Dock = System.Windows.Forms.DockStyle.Top;
@@ -414,7 +394,6 @@
             this.tb_dir.Size = new System.Drawing.Size(634, 20);
             this.tb_dir.TabIndex = 10;
             this.tb_dir.WatermarkText = "Dirección";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // tableLayoutPanel2
             // 
@@ -435,19 +414,25 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(640, 30);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // tb_razon
+            // 
+            this.tb_razon.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_razon.Border.Class = "TextBoxBorder";
+            this.tb_razon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_razon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_razon.ForeColor = System.Drawing.Color.Black;
+            this.tb_razon.Location = new System.Drawing.Point(131, 3);
+            this.tb_razon.Name = "tb_razon";
+            this.tb_razon.PreventEnterBeep = true;
+            this.tb_razon.Size = new System.Drawing.Size(314, 20);
+            this.tb_razon.TabIndex = 12;
+            this.tb_razon.WatermarkText = "Razón Social";
+            // 
             // tb_idprov
             // 
-<<<<<<< HEAD
-            this.textBoxX5.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX5.Location = new System.Drawing.Point(131, 3);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(100, 14);
-            this.textBoxX5.TabIndex = 0;
-=======
             this.tb_idprov.BackColor = System.Drawing.Color.White;
             // 
             // 
@@ -462,38 +447,9 @@
             this.tb_idprov.Size = new System.Drawing.Size(122, 20);
             this.tb_idprov.TabIndex = 9;
             this.tb_idprov.WatermarkText = "ID";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // b_buscar
             // 
-<<<<<<< HEAD
-            this.textBoxX4.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX4.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX4.Location = new System.Drawing.Point(3, 3);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(122, 20);
-            this.textBoxX4.TabIndex = 9;
-            this.textBoxX4.WatermarkText = "ID";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonX1.Location = new System.Drawing.Point(451, 3);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(186, 23);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 11;
-            this.buttonX1.Text = "Buscar";
-=======
             this.b_buscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.b_buscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.b_buscar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -503,7 +459,6 @@
             this.b_buscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_buscar.TabIndex = 11;
             this.b_buscar.Text = "Buscar";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // tableLayoutPanel3
             // 
@@ -512,13 +467,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-<<<<<<< HEAD
-            this.tableLayoutPanel3.Controls.Add(this.textBoxX8, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxX7, 0, 0);
-=======
             this.tableLayoutPanel3.Controls.Add(this.tb_rfc, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tb_tel, 0, 0);
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 60);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -531,24 +481,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(640, 30);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-<<<<<<< HEAD
-            // textBoxX8
-            // 
-            this.textBoxX8.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX8.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX8.Location = new System.Drawing.Point(323, 3);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.PreventEnterBeep = true;
-            this.textBoxX8.Size = new System.Drawing.Size(314, 20);
-            this.textBoxX8.TabIndex = 11;
-            this.textBoxX8.WatermarkText = "RFC";
-=======
             // tb_rfc
             // 
             this.tb_rfc.BackColor = System.Drawing.Color.White;
@@ -565,7 +497,6 @@
             this.tb_rfc.Size = new System.Drawing.Size(314, 20);
             this.tb_rfc.TabIndex = 11;
             this.tb_rfc.WatermarkText = "RFC";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // tb_tel
             // 
@@ -573,18 +504,6 @@
             // 
             // 
             // 
-<<<<<<< HEAD
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX7.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX7.Location = new System.Drawing.Point(3, 3);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.PreventEnterBeep = true;
-            this.textBoxX7.Size = new System.Drawing.Size(314, 20);
-            this.textBoxX7.TabIndex = 10;
-            this.textBoxX7.WatermarkText = "Teléfono";
-=======
             this.tb_tel.Border.Class = "TextBoxBorder";
             this.tb_tel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_tel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -595,7 +514,6 @@
             this.tb_tel.Size = new System.Drawing.Size(314, 20);
             this.tb_tel.TabIndex = 10;
             this.tb_tel.WatermarkText = "Teléfono";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // groupPanel3
             // 
@@ -847,19 +765,6 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(88, 100);
             this.tableLayoutPanel6.TabIndex = 12;
             // 
-<<<<<<< HEAD
-            // buttonX3
-            // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX3.Location = new System.Drawing.Point(3, 53);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(82, 44);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 1;
-            this.buttonX3.Text = "Eliminar";
-=======
             // b_eliminar
             // 
             this.b_eliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -883,32 +788,14 @@
             this.b_agregar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_agregar.TabIndex = 0;
             this.b_agregar.Text = "Agregar";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX2.Location = new System.Drawing.Point(3, 3);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(82, 44);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 0;
-            this.buttonX2.Text = "Agregar";
             // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-<<<<<<< HEAD
-            this.tableLayoutPanel7.Controls.Add(this.btnImprimir, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.buttonX4, 0, 0);
-=======
             this.tableLayoutPanel7.Controls.Add(this.b_imprimir, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.b_cancelar, 0, 0);
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(577, 311);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -918,32 +805,6 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(400, 49);
             this.tableLayoutPanel7.TabIndex = 3;
             // 
-<<<<<<< HEAD
-            // btnImprimir
-            // 
-            this.btnImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImprimir.Location = new System.Drawing.Point(203, 3);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(194, 43);
-            this.btnImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnImprimir.TabIndex = 2;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // buttonX4
-            // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX4.Location = new System.Drawing.Point(3, 3);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(194, 43);
-            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX4.TabIndex = 1;
-            this.buttonX4.Text = "Cancelar";
-=======
             // b_imprimir
             // 
             this.b_imprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -967,24 +828,6 @@
             this.b_cancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_cancelar.TabIndex = 1;
             this.b_cancelar.Text = "Cancelar";
-            // 
-            // tb_razon
-            // 
-            this.tb_razon.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_razon.Border.Class = "TextBoxBorder";
-            this.tb_razon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_razon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_razon.ForeColor = System.Drawing.Color.Black;
-            this.tb_razon.Location = new System.Drawing.Point(131, 3);
-            this.tb_razon.Name = "tb_razon";
-            this.tb_razon.PreventEnterBeep = true;
-            this.tb_razon.Size = new System.Drawing.Size(314, 20);
-            this.tb_razon.TabIndex = 12;
-            this.tb_razon.WatermarkText = "Razón Social";
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // FOrdenCompra
             // 
@@ -1055,13 +898,8 @@
         private DevComponents.DotNetBar.ButtonX b_eliminar;
         private DevComponents.DotNetBar.ButtonX b_agregar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-<<<<<<< HEAD
-        private DevComponents.DotNetBar.ButtonX btnImprimir;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-=======
         private DevComponents.DotNetBar.ButtonX b_imprimir;
         private DevComponents.DotNetBar.ButtonX b_cancelar;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_razon;
->>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
     }
 }
