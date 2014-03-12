@@ -62,11 +62,11 @@
             this.reflectionLabel6 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.reflectionLabel7 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnImprimir = new DevComponents.DotNetBar.ButtonX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
             this.tlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -388,17 +388,10 @@
             this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX6.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
-            this.textBoxX6.Location = new System.Drawing.Point(3, 35);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.Size = new System.Drawing.Size(664, 20);
-=======
             this.textBoxX6.Location = new System.Drawing.Point(3, 33);
             this.textBoxX6.Name = "textBoxX6";
             this.textBoxX6.PreventEnterBeep = true;
             this.textBoxX6.Size = new System.Drawing.Size(634, 20);
->>>>>>> de4d963f94ac27e6137d38f59036398604259a19
             this.textBoxX6.TabIndex = 10;
             this.textBoxX6.WatermarkText = "Dirección";
             // 
@@ -418,31 +411,20 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-<<<<<<< HEAD
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(670, 32);
-=======
             this.tableLayoutPanel2.Size = new System.Drawing.Size(640, 30);
->>>>>>> de4d963f94ac27e6137d38f59036398604259a19
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // textBoxX5
             // 
             this.textBoxX5.BackColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-=======
             // 
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
             this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX5.ForeColor = System.Drawing.Color.Black;
             this.textBoxX5.Location = new System.Drawing.Point(131, 3);
             this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.PreventEnterBeep = true;
-            this.textBoxX5.Size = new System.Drawing.Size(314, 20);
-            this.textBoxX5.TabIndex = 10;
-            this.textBoxX5.WatermarkText = "Razón Social";
+            this.textBoxX5.Size = new System.Drawing.Size(100, 14);
+            this.textBoxX5.TabIndex = 0;
             // 
             // textBoxX4
             // 
@@ -462,7 +444,6 @@
             this.textBoxX4.WatermarkText = "ID";
             // 
             // buttonX1
->>>>>>> de4d963f94ac27e6137d38f59036398604259a19
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
@@ -479,6 +460,8 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.textBoxX8, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBoxX7, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -488,22 +471,17 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(640, 30);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-<<<<<<< HEAD
-            // textBoxX4
-=======
             // textBoxX8
             // 
             this.textBoxX8.BackColor = System.Drawing.Color.White;
->>>>>>> de4d963f94ac27e6137d38f59036398604259a19
-            // 
-            this.textBoxX4.BackColor = System.Drawing.Color.White;
             // 
             // 
-<<<<<<< HEAD
-=======
+            // 
             this.textBoxX8.Border.Class = "TextBoxBorder";
             this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -512,65 +490,6 @@
             this.textBoxX8.Name = "textBoxX8";
             this.textBoxX8.PreventEnterBeep = true;
             this.textBoxX8.Size = new System.Drawing.Size(314, 20);
-            this.textBoxX8.TabIndex = 11;
-            this.textBoxX8.WatermarkText = "RFC";
->>>>>>> de4d963f94ac27e6137d38f59036398604259a19
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX4.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX4.Location = new System.Drawing.Point(3, 3);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(128, 20);
-            this.textBoxX4.TabIndex = 9;
-            this.textBoxX4.WatermarkText = "ID";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonX1.Location = new System.Drawing.Point(472, 3);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(195, 23);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 11;
-            this.buttonX1.Text = "Buscar";
-            // 
-            // tableLayoutPanel3
-            // 
-<<<<<<< HEAD
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.textBoxX8, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxX7, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 64);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(670, 32);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // textBoxX8
-            // 
-            this.textBoxX8.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX8.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX8.Location = new System.Drawing.Point(338, 3);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.PreventEnterBeep = true;
-            this.textBoxX8.Size = new System.Drawing.Size(329, 20);
             this.textBoxX8.TabIndex = 11;
             this.textBoxX8.WatermarkText = "RFC";
             // 
@@ -587,23 +506,10 @@
             this.textBoxX7.Location = new System.Drawing.Point(3, 3);
             this.textBoxX7.Name = "textBoxX7";
             this.textBoxX7.PreventEnterBeep = true;
-            this.textBoxX7.Size = new System.Drawing.Size(329, 20);
-            this.textBoxX7.TabIndex = 10;
-            this.textBoxX7.WatermarkText = "Teléfono";
-            // 
-=======
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX7.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX7.Location = new System.Drawing.Point(3, 3);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.PreventEnterBeep = true;
             this.textBoxX7.Size = new System.Drawing.Size(314, 20);
             this.textBoxX7.TabIndex = 10;
             this.textBoxX7.WatermarkText = "Teléfono";
             // 
->>>>>>> de4d963f94ac27e6137d38f59036398604259a19
             // groupPanel3
             // 
             this.groupPanel3.BackColor = System.Drawing.Color.White;
@@ -854,18 +760,6 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(88, 100);
             this.tableLayoutPanel6.TabIndex = 12;
             // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX2.Location = new System.Drawing.Point(3, 3);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(82, 44);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 0;
-            this.buttonX2.Text = "Agregar";
-            // 
             // buttonX3
             // 
             this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -878,12 +772,24 @@
             this.buttonX3.TabIndex = 1;
             this.buttonX3.Text = "Eliminar";
             // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonX2.Location = new System.Drawing.Point(3, 3);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(82, 44);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 0;
+            this.buttonX2.Text = "Agregar";
+            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.buttonX5, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btnImprimir, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.buttonX4, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(577, 311);
@@ -893,6 +799,19 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(400, 49);
             this.tableLayoutPanel7.TabIndex = 3;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnImprimir.Location = new System.Drawing.Point(203, 3);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(194, 43);
+            this.btnImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // buttonX4
             // 
@@ -905,18 +824,6 @@
             this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX4.TabIndex = 1;
             this.buttonX4.Text = "Cancelar";
-            // 
-            // buttonX5
-            // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX5.Location = new System.Drawing.Point(203, 3);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(194, 43);
-            this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX5.TabIndex = 2;
-            this.buttonX5.Text = "Imprimir";
             // 
             // FOrdenCompra
             // 
@@ -988,7 +895,7 @@
         private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
+        private DevComponents.DotNetBar.ButtonX btnImprimir;
         private DevComponents.DotNetBar.ButtonX buttonX4;
     }
 }
