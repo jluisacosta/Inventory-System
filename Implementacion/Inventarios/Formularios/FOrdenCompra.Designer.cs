@@ -32,48 +32,56 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.reflectionLabel4 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_idemp = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.reflectionLabel3 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_nombre = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dti_fecha = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.tb_numord = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_dir = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.tb_idprov = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.b_buscar = new DevComponents.DotNetBar.ButtonX();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_rfc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_tel = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.sgc_mp = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.superGridControl2 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.sgc_detalle = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tb_subtotal = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_iva = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_total = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.reflectionLabel5 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.reflectionLabel6 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.reflectionLabel7 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+<<<<<<< HEAD
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.btnImprimir = new DevComponents.DotNetBar.ButtonX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
+=======
+            this.b_eliminar = new DevComponents.DotNetBar.ButtonX();
+            this.b_agregar = new DevComponents.DotNetBar.ButtonX();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.b_imprimir = new DevComponents.DotNetBar.ButtonX();
+            this.b_cancelar = new DevComponents.DotNetBar.ButtonX();
+            this.tb_razon = new DevComponents.DotNetBar.Controls.TextBoxX();
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             this.tlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dti_fecha)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -128,13 +136,13 @@
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.reflectionLabel4);
-            this.groupPanel2.Controls.Add(this.textBoxX3);
+            this.groupPanel2.Controls.Add(this.tb_idemp);
             this.groupPanel2.Controls.Add(this.reflectionLabel3);
-            this.groupPanel2.Controls.Add(this.textBoxX2);
+            this.groupPanel2.Controls.Add(this.tb_nombre);
             this.groupPanel2.Controls.Add(this.reflectionLabel2);
             this.groupPanel2.Controls.Add(this.reflectionLabel1);
-            this.groupPanel2.Controls.Add(this.dateTimeInput1);
-            this.groupPanel2.Controls.Add(this.textBoxX1);
+            this.groupPanel2.Controls.Add(this.dti_fecha);
+            this.groupPanel2.Controls.Add(this.tb_numord);
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel2.DrawTitleBox = false;
             this.groupPanel2.Location = new System.Drawing.Point(0, 0);
@@ -183,20 +191,20 @@
             this.reflectionLabel4.TabIndex = 8;
             this.reflectionLabel4.Text = "ID Empleado :";
             // 
-            // textBoxX3
+            // tb_idemp
             // 
-            this.textBoxX3.BackColor = System.Drawing.Color.White;
+            this.tb_idemp.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX3.Location = new System.Drawing.Point(140, 18);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(140, 20);
-            this.textBoxX3.TabIndex = 7;
+            this.tb_idemp.Border.Class = "TextBoxBorder";
+            this.tb_idemp.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_idemp.ForeColor = System.Drawing.Color.Black;
+            this.tb_idemp.Location = new System.Drawing.Point(140, 18);
+            this.tb_idemp.Name = "tb_idemp";
+            this.tb_idemp.PreventEnterBeep = true;
+            this.tb_idemp.Size = new System.Drawing.Size(140, 20);
+            this.tb_idemp.TabIndex = 7;
             // 
             // reflectionLabel3
             // 
@@ -212,20 +220,20 @@
             this.reflectionLabel3.TabIndex = 6;
             this.reflectionLabel3.Text = "Nombre :";
             // 
-            // textBoxX2
+            // tb_nombre
             // 
-            this.textBoxX2.BackColor = System.Drawing.Color.White;
+            this.tb_nombre.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX2.Location = new System.Drawing.Point(140, 48);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(140, 20);
-            this.textBoxX2.TabIndex = 5;
+            this.tb_nombre.Border.Class = "TextBoxBorder";
+            this.tb_nombre.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nombre.ForeColor = System.Drawing.Color.Black;
+            this.tb_nombre.Location = new System.Drawing.Point(140, 48);
+            this.tb_nombre.Name = "tb_nombre";
+            this.tb_nombre.PreventEnterBeep = true;
+            this.tb_nombre.Size = new System.Drawing.Size(140, 20);
+            this.tb_nombre.TabIndex = 5;
             // 
             // reflectionLabel2
             // 
@@ -255,68 +263,68 @@
             this.reflectionLabel1.TabIndex = 3;
             this.reflectionLabel1.Text = "Número de orden :";
             // 
-            // dateTimeInput1
+            // dti_fecha
             // 
             // 
             // 
             // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(140, 108);
+            this.dti_fecha.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dti_fecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dti_fecha.ButtonDropDown.Visible = true;
+            this.dti_fecha.IsPopupCalendarOpen = false;
+            this.dti_fecha.Location = new System.Drawing.Point(140, 108);
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dti_fecha.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            this.dti_fecha.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dti_fecha.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2014, 3, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.MonthCalendar.DisplayMonth = new System.DateTime(2014, 3, 1, 0, 0, 0, 0);
+            this.dti_fecha.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dti_fecha.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(140, 20);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 1;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.MonthCalendar.TodayButtonVisible = true;
+            this.dti_fecha.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dti_fecha.Name = "dti_fecha";
+            this.dti_fecha.Size = new System.Drawing.Size(140, 20);
+            this.dti_fecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dti_fecha.TabIndex = 1;
             // 
-            // textBoxX1
+            // tb_numord
             // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            this.tb_numord.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(140, 78);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(140, 20);
-            this.textBoxX1.TabIndex = 0;
+            this.tb_numord.Border.Class = "TextBoxBorder";
+            this.tb_numord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_numord.ForeColor = System.Drawing.Color.Black;
+            this.tb_numord.Location = new System.Drawing.Point(140, 78);
+            this.tb_numord.Name = "tb_numord";
+            this.tb_numord.PreventEnterBeep = true;
+            this.tb_numord.Size = new System.Drawing.Size(140, 20);
+            this.tb_numord.TabIndex = 0;
             // 
             // groupPanel1
             // 
@@ -365,7 +373,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.textBoxX6, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tb_dir, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -378,12 +386,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 90);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBoxX6
+            // tb_dir
             // 
-            this.textBoxX6.BackColor = System.Drawing.Color.White;
+            this.tb_dir.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
+<<<<<<< HEAD
             this.textBoxX6.Border.Class = "TextBoxBorder";
             this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -394,6 +403,18 @@
             this.textBoxX6.Size = new System.Drawing.Size(634, 20);
             this.textBoxX6.TabIndex = 10;
             this.textBoxX6.WatermarkText = "Dirección";
+=======
+            this.tb_dir.Border.Class = "TextBoxBorder";
+            this.tb_dir.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_dir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_dir.ForeColor = System.Drawing.Color.Black;
+            this.tb_dir.Location = new System.Drawing.Point(3, 33);
+            this.tb_dir.Name = "tb_dir";
+            this.tb_dir.PreventEnterBeep = true;
+            this.tb_dir.Size = new System.Drawing.Size(634, 20);
+            this.tb_dir.TabIndex = 10;
+            this.tb_dir.WatermarkText = "Dirección";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // tableLayoutPanel2
             // 
@@ -401,9 +422,9 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.Controls.Add(this.textBoxX5, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBoxX4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.buttonX1, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tb_razon, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tb_idprov, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.b_buscar, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -414,8 +435,9 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(640, 30);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // textBoxX5
+            // tb_idprov
             // 
+<<<<<<< HEAD
             this.textBoxX5.BackColor = System.Drawing.Color.White;
             // 
             // 
@@ -425,9 +447,26 @@
             this.textBoxX5.Name = "textBoxX5";
             this.textBoxX5.Size = new System.Drawing.Size(100, 14);
             this.textBoxX5.TabIndex = 0;
+=======
+            this.tb_idprov.BackColor = System.Drawing.Color.White;
             // 
-            // textBoxX4
             // 
+            // 
+            this.tb_idprov.Border.Class = "TextBoxBorder";
+            this.tb_idprov.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_idprov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_idprov.ForeColor = System.Drawing.Color.Black;
+            this.tb_idprov.Location = new System.Drawing.Point(3, 3);
+            this.tb_idprov.Name = "tb_idprov";
+            this.tb_idprov.PreventEnterBeep = true;
+            this.tb_idprov.Size = new System.Drawing.Size(122, 20);
+            this.tb_idprov.TabIndex = 9;
+            this.tb_idprov.WatermarkText = "ID";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
+            // 
+            // b_buscar
+            // 
+<<<<<<< HEAD
             this.textBoxX4.BackColor = System.Drawing.Color.White;
             // 
             // 
@@ -454,6 +493,17 @@
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 11;
             this.buttonX1.Text = "Buscar";
+=======
+            this.b_buscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_buscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_buscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_buscar.Location = new System.Drawing.Point(451, 3);
+            this.b_buscar.Name = "b_buscar";
+            this.b_buscar.Size = new System.Drawing.Size(186, 23);
+            this.b_buscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_buscar.TabIndex = 11;
+            this.b_buscar.Text = "Buscar";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // tableLayoutPanel3
             // 
@@ -462,8 +512,13 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+<<<<<<< HEAD
             this.tableLayoutPanel3.Controls.Add(this.textBoxX8, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBoxX7, 0, 0);
+=======
+            this.tableLayoutPanel3.Controls.Add(this.tb_rfc, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tb_tel, 0, 0);
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 60);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -476,6 +531,7 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(640, 30);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+<<<<<<< HEAD
             // textBoxX8
             // 
             this.textBoxX8.BackColor = System.Drawing.Color.White;
@@ -492,13 +548,32 @@
             this.textBoxX8.Size = new System.Drawing.Size(314, 20);
             this.textBoxX8.TabIndex = 11;
             this.textBoxX8.WatermarkText = "RFC";
+=======
+            // tb_rfc
             // 
-            // textBoxX7
-            // 
-            this.textBoxX7.BackColor = System.Drawing.Color.White;
+            this.tb_rfc.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
+            this.tb_rfc.Border.Class = "TextBoxBorder";
+            this.tb_rfc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_rfc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_rfc.ForeColor = System.Drawing.Color.Black;
+            this.tb_rfc.Location = new System.Drawing.Point(323, 3);
+            this.tb_rfc.Name = "tb_rfc";
+            this.tb_rfc.PreventEnterBeep = true;
+            this.tb_rfc.Size = new System.Drawing.Size(314, 20);
+            this.tb_rfc.TabIndex = 11;
+            this.tb_rfc.WatermarkText = "RFC";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
+            // 
+            // tb_tel
+            // 
+            this.tb_tel.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+<<<<<<< HEAD
             this.textBoxX7.Border.Class = "TextBoxBorder";
             this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -509,13 +584,25 @@
             this.textBoxX7.Size = new System.Drawing.Size(314, 20);
             this.textBoxX7.TabIndex = 10;
             this.textBoxX7.WatermarkText = "Teléfono";
+=======
+            this.tb_tel.Border.Class = "TextBoxBorder";
+            this.tb_tel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_tel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_tel.ForeColor = System.Drawing.Color.Black;
+            this.tb_tel.Location = new System.Drawing.Point(3, 3);
+            this.tb_tel.Name = "tb_tel";
+            this.tb_tel.PreventEnterBeep = true;
+            this.tb_tel.Size = new System.Drawing.Size(314, 20);
+            this.tb_tel.TabIndex = 10;
+            this.tb_tel.WatermarkText = "Teléfono";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // groupPanel3
             // 
             this.groupPanel3.BackColor = System.Drawing.Color.White;
             this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel3.Controls.Add(this.superGridControl1);
+            this.groupPanel3.Controls.Add(this.sgc_mp);
             this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel3.Location = new System.Drawing.Point(3, 150);
             this.groupPanel3.Name = "groupPanel3";
@@ -551,17 +638,17 @@
             this.groupPanel3.TabIndex = 1;
             this.groupPanel3.Text = "Materia prima";
             // 
-            // superGridControl1
+            // sgc_mp
             // 
-            this.superGridControl1.BackColor = System.Drawing.Color.White;
-            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl1.Location = new System.Drawing.Point(15, 15);
-            this.superGridControl1.Name = "superGridControl1";
-            this.superGridControl1.Size = new System.Drawing.Size(944, 163);
-            this.superGridControl1.TabIndex = 0;
-            this.superGridControl1.Text = "superGridControl1";
+            this.sgc_mp.BackColor = System.Drawing.Color.White;
+            this.sgc_mp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sgc_mp.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.sgc_mp.ForeColor = System.Drawing.Color.Black;
+            this.sgc_mp.Location = new System.Drawing.Point(15, 15);
+            this.sgc_mp.Name = "sgc_mp";
+            this.sgc_mp.Size = new System.Drawing.Size(944, 163);
+            this.sgc_mp.TabIndex = 0;
+            this.sgc_mp.Text = "superGridControl1";
             // 
             // tableLayoutPanel4
             // 
@@ -626,10 +713,10 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel5.Controls.Add(this.superGridControl2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxX9, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxX10, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxX11, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.sgc_detalle, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tb_subtotal, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tb_iva, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.tb_total, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.reflectionLabel5, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.reflectionLabel6, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.reflectionLabel7, 1, 3);
@@ -645,59 +732,59 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(938, 251);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // superGridControl2
+            // sgc_detalle
             // 
-            this.superGridControl2.BackColor = System.Drawing.Color.White;
-            this.superGridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superGridControl2.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl2.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl2.Location = new System.Drawing.Point(3, 3);
-            this.superGridControl2.Name = "superGridControl2";
-            this.superGridControl2.Size = new System.Drawing.Size(838, 169);
-            this.superGridControl2.TabIndex = 1;
-            this.superGridControl2.Text = "superGridControl2";
+            this.sgc_detalle.BackColor = System.Drawing.Color.White;
+            this.sgc_detalle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sgc_detalle.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.sgc_detalle.ForeColor = System.Drawing.Color.Black;
+            this.sgc_detalle.Location = new System.Drawing.Point(3, 3);
+            this.sgc_detalle.Name = "sgc_detalle";
+            this.sgc_detalle.Size = new System.Drawing.Size(838, 169);
+            this.sgc_detalle.TabIndex = 1;
+            this.sgc_detalle.Text = "superGridControl2";
             // 
-            // textBoxX9
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBoxX9.Location = new System.Drawing.Point(741, 178);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.PreventEnterBeep = true;
-            this.textBoxX9.Size = new System.Drawing.Size(100, 20);
-            this.textBoxX9.TabIndex = 2;
-            // 
-            // textBoxX10
+            // tb_subtotal
             // 
             // 
             // 
             // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBoxX10.Location = new System.Drawing.Point(741, 203);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.PreventEnterBeep = true;
-            this.textBoxX10.Size = new System.Drawing.Size(100, 20);
-            this.textBoxX10.TabIndex = 3;
+            this.tb_subtotal.Border.Class = "TextBoxBorder";
+            this.tb_subtotal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_subtotal.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tb_subtotal.Location = new System.Drawing.Point(741, 178);
+            this.tb_subtotal.Name = "tb_subtotal";
+            this.tb_subtotal.PreventEnterBeep = true;
+            this.tb_subtotal.Size = new System.Drawing.Size(100, 20);
+            this.tb_subtotal.TabIndex = 2;
             // 
-            // textBoxX11
-            // 
-            // 
+            // tb_iva
             // 
             // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBoxX11.Location = new System.Drawing.Point(741, 228);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.PreventEnterBeep = true;
-            this.textBoxX11.Size = new System.Drawing.Size(100, 20);
-            this.textBoxX11.TabIndex = 4;
+            // 
+            // 
+            this.tb_iva.Border.Class = "TextBoxBorder";
+            this.tb_iva.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_iva.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tb_iva.Location = new System.Drawing.Point(741, 203);
+            this.tb_iva.Name = "tb_iva";
+            this.tb_iva.PreventEnterBeep = true;
+            this.tb_iva.Size = new System.Drawing.Size(100, 20);
+            this.tb_iva.TabIndex = 3;
+            // 
+            // tb_total
+            // 
+            // 
+            // 
+            // 
+            this.tb_total.Border.Class = "TextBoxBorder";
+            this.tb_total.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_total.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tb_total.Location = new System.Drawing.Point(741, 228);
+            this.tb_total.Name = "tb_total";
+            this.tb_total.PreventEnterBeep = true;
+            this.tb_total.Size = new System.Drawing.Size(100, 20);
+            this.tb_total.TabIndex = 4;
             // 
             // reflectionLabel5
             // 
@@ -749,8 +836,8 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Controls.Add(this.buttonX3, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.buttonX2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.b_eliminar, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.b_agregar, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(847, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -760,6 +847,7 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(88, 100);
             this.tableLayoutPanel6.TabIndex = 12;
             // 
+<<<<<<< HEAD
             // buttonX3
             // 
             this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -771,6 +859,31 @@
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX3.TabIndex = 1;
             this.buttonX3.Text = "Eliminar";
+=======
+            // b_eliminar
+            // 
+            this.b_eliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_eliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_eliminar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_eliminar.Location = new System.Drawing.Point(3, 53);
+            this.b_eliminar.Name = "b_eliminar";
+            this.b_eliminar.Size = new System.Drawing.Size(82, 44);
+            this.b_eliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_eliminar.TabIndex = 1;
+            this.b_eliminar.Text = "Eliminar";
+            // 
+            // b_agregar
+            // 
+            this.b_agregar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_agregar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_agregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_agregar.Location = new System.Drawing.Point(3, 3);
+            this.b_agregar.Name = "b_agregar";
+            this.b_agregar.Size = new System.Drawing.Size(82, 44);
+            this.b_agregar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_agregar.TabIndex = 0;
+            this.b_agregar.Text = "Agregar";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // buttonX2
             // 
@@ -789,8 +902,13 @@
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+<<<<<<< HEAD
             this.tableLayoutPanel7.Controls.Add(this.btnImprimir, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.buttonX4, 0, 0);
+=======
+            this.tableLayoutPanel7.Controls.Add(this.b_imprimir, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.b_cancelar, 0, 0);
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(577, 311);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -800,6 +918,7 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(400, 49);
             this.tableLayoutPanel7.TabIndex = 3;
             // 
+<<<<<<< HEAD
             // btnImprimir
             // 
             this.btnImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -824,6 +943,48 @@
             this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX4.TabIndex = 1;
             this.buttonX4.Text = "Cancelar";
+=======
+            // b_imprimir
+            // 
+            this.b_imprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_imprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_imprimir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_imprimir.Location = new System.Drawing.Point(203, 3);
+            this.b_imprimir.Name = "b_imprimir";
+            this.b_imprimir.Size = new System.Drawing.Size(194, 43);
+            this.b_imprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_imprimir.TabIndex = 2;
+            this.b_imprimir.Text = "Imprimir";
+            // 
+            // b_cancelar
+            // 
+            this.b_cancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_cancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_cancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_cancelar.Location = new System.Drawing.Point(3, 3);
+            this.b_cancelar.Name = "b_cancelar";
+            this.b_cancelar.Size = new System.Drawing.Size(194, 43);
+            this.b_cancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_cancelar.TabIndex = 1;
+            this.b_cancelar.Text = "Cancelar";
+            // 
+            // tb_razon
+            // 
+            this.tb_razon.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_razon.Border.Class = "TextBoxBorder";
+            this.tb_razon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_razon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_razon.ForeColor = System.Drawing.Color.Black;
+            this.tb_razon.Location = new System.Drawing.Point(131, 3);
+            this.tb_razon.Name = "tb_razon";
+            this.tb_razon.PreventEnterBeep = true;
+            this.tb_razon.Size = new System.Drawing.Size(314, 20);
+            this.tb_razon.TabIndex = 12;
+            this.tb_razon.WatermarkText = "Razón Social";
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
             // 
             // FOrdenCompra
             // 
@@ -841,7 +1002,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dti_fecha)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -862,40 +1023,45 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_idemp;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_nombre;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel2;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dti_fecha;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_numord;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_dir;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_idprov;
+        private DevComponents.DotNetBar.ButtonX b_buscar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_rfc;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_tel;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl sgc_mp;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl sgc_detalle;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_subtotal;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_iva;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_total;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel5;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel6;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX b_eliminar;
+        private DevComponents.DotNetBar.ButtonX b_agregar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+<<<<<<< HEAD
         private DevComponents.DotNetBar.ButtonX btnImprimir;
         private DevComponents.DotNetBar.ButtonX buttonX4;
+=======
+        private DevComponents.DotNetBar.ButtonX b_imprimir;
+        private DevComponents.DotNetBar.ButtonX b_cancelar;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_razon;
+>>>>>>> f5aeccee0f3fa275f25052367a9af05cfde2384b
     }
 }
