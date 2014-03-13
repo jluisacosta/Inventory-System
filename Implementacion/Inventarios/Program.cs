@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Inventarios.Formularios;
+using Inventarios.Reportes.Movimientos;
 
 namespace Inventarios
 {
@@ -16,7 +17,7 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FOrdenCompra());
+            Application.Run(new FMovimientos());
         }
     }
 }
