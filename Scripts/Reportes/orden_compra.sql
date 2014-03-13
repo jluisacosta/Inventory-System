@@ -6,3 +6,7 @@ AND E.id_empleado = OC.id_empleado
 AND OC.id_orden_compra = DC.id_orden_compra
 AND DC.id_materia_prima = MP.id_materia
 AND OC.id_orden_compra = 8
+
+
+
+
