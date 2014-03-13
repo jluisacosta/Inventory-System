@@ -93,11 +93,17 @@
       <DependentUpon>Movimientos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Orden_Compra.cs">
+    <Compile Include="Reportes\Ordenes_Compra\crOrdenesCompra.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Orden_Compra.rpt</DependentUpon>
+      <DependentUpon>crOrdenesCompra.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ordenes_Compra\FOrdenes_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ordenes_Compra\FOrdenes_Compra.Designer.cs">
+      <DependentUpon>FOrdenes_Compra.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -122,9 +128,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Movimientos.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Orden_Compra.rpt">
+    <EmbeddedResource Include="Reportes\Ordenes_Compra\crOrdenesCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Orden_Compra.cs</LastGenOutput>
+      <LastGenOutput>crOrdenesCompra.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ordenes_Compra\FOrdenes_Compra.resx">
+      <DependentUpon>FOrdenes_Compra.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="dataSet_inventarios.xsc">

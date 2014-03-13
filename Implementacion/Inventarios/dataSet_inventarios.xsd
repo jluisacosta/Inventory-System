@@ -9,10 +9,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Orden_CompraTableAdapter" GeneratorDataComponentClassName="Orden_CompraTableAdapter" Name="Orden_Compra" UserDataComponentName="Orden_CompraTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="localhost(si_inventarios)2" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="CrearOrdenCompra" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="CrearOrdenCompra" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="CrearOrdenCompra">
+              <DbSource ConnectionRef="localhost(si_inventarios)2" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="CrearOrdenCompra" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="CrearOrdenCompra" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="CrearOrdenCompra">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT     OC.id_orden_compra, OC.fecha_pedido, E.id_empleado, E.nombre, P.razon_social, P.rfc, P.direccion, P.telefono, MP.nombre AS Expr1, MP.unidad, 
+                    <CommandText>SELECT     OC.id_orden_compra, OC.fecha_pedido, E.id_empleado, E.nombre, P.razon_social, P.rfc, P.direccion, P.telefono, MP.nombre AS Producto, MP.unidad, 
                       DC.cantidad, MP.precio, OC.iva, DC.subtotal
 FROM         ordenes_compra OC INNER JOIN
                       proveedores P ON OC.id_proveedor = P.id_proveedor INNER JOIN
@@ -36,12 +36,12 @@ WHERE     (OC.id_orden_compra = @id_orden_compra)</CommandText>
               <Mapping SourceColumn="rfc" DataSetColumn="rfc" />
               <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
               <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
               <Mapping SourceColumn="unidad" DataSetColumn="unidad" />
               <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
               <Mapping SourceColumn="precio" DataSetColumn="precio" />
               <Mapping SourceColumn="iva" DataSetColumn="iva" />
               <Mapping SourceColumn="subtotal" DataSetColumn="subtotal" />
+              <Mapping SourceColumn="Producto" DataSetColumn="Producto" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -121,13 +121,6 @@ WHERE     (m.fecha = @fecha)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="unidad" msprop:Generator_ColumnVarNameInTable="columnunidad" msprop:Generator_ColumnPropNameInRow="unidad" msprop:Generator_ColumnPropNameInTable="unidadColumn" msprop:Generator_UserColumnName="unidad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -139,6 +132,13 @@ WHERE     (m.fecha = @fecha)</CommandText>
               <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="iva" msprop:Generator_ColumnVarNameInTable="columniva" msprop:Generator_ColumnPropNameInRow="iva" msprop:Generator_ColumnPropNameInTable="ivaColumn" msprop:Generator_UserColumnName="iva" type="xs:decimal" minOccurs="0" />
               <xs:element name="subtotal" msprop:Generator_ColumnVarNameInTable="columnsubtotal" msprop:Generator_ColumnPropNameInRow="subtotal" msprop:Generator_ColumnPropNameInTable="subtotalColumn" msprop:Generator_UserColumnName="subtotal" type="xs:decimal" />
+              <xs:element name="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_UserColumnName="Producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

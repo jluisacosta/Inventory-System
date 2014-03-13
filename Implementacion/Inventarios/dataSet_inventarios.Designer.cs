@@ -330,8 +330,6 @@ namespace Inventarios {
             
             private global::System.Data.DataColumn columntelefono;
             
-            private global::System.Data.DataColumn columnExpr1;
-            
             private global::System.Data.DataColumn columnunidad;
             
             private global::System.Data.DataColumn columncantidad;
@@ -341,6 +339,8 @@ namespace Inventarios {
             private global::System.Data.DataColumn columniva;
             
             private global::System.Data.DataColumn columnsubtotal;
+            
+            private global::System.Data.DataColumn columnProducto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -441,14 +441,6 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn unidadColumn {
                 get {
                     return this.columnunidad;
@@ -489,6 +481,14 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductoColumn {
+                get {
+                    return this.columnProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -524,7 +524,7 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_CompraRow AddOrden_CompraRow(System.DateTime fecha_pedido, string nombre, string razon_social, string rfc, string direccion, string telefono, string Expr1, string unidad, int cantidad, decimal precio, decimal iva, decimal subtotal) {
+            public Orden_CompraRow AddOrden_CompraRow(System.DateTime fecha_pedido, string nombre, string razon_social, string rfc, string direccion, string telefono, string unidad, int cantidad, decimal precio, decimal iva, decimal subtotal, string Producto) {
                 Orden_CompraRow rowOrden_CompraRow = ((Orden_CompraRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -535,12 +535,12 @@ namespace Inventarios {
                         rfc,
                         direccion,
                         telefono,
-                        Expr1,
                         unidad,
                         cantidad,
                         precio,
                         iva,
-                        subtotal};
+                        subtotal,
+                        Producto};
                 rowOrden_CompraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrden_CompraRow);
                 return rowOrden_CompraRow;
@@ -578,12 +578,12 @@ namespace Inventarios {
                 this.columnrfc = base.Columns["rfc"];
                 this.columndireccion = base.Columns["direccion"];
                 this.columntelefono = base.Columns["telefono"];
-                this.columnExpr1 = base.Columns["Expr1"];
                 this.columnunidad = base.Columns["unidad"];
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnprecio = base.Columns["precio"];
                 this.columniva = base.Columns["iva"];
                 this.columnsubtotal = base.Columns["subtotal"];
+                this.columnProducto = base.Columns["Producto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -605,8 +605,6 @@ namespace Inventarios {
                 base.Columns.Add(this.columndireccion);
                 this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntelefono);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
                 this.columnunidad = new global::System.Data.DataColumn("unidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidad);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
@@ -617,6 +615,8 @@ namespace Inventarios {
                 base.Columns.Add(this.columniva);
                 this.columnsubtotal = new global::System.Data.DataColumn("subtotal", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubtotal);
+                this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProducto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_orden_compra}, true));
                 this.columnid_orden_compra.AutoIncrement = true;
@@ -639,10 +639,10 @@ namespace Inventarios {
                 this.columndireccion.MaxLength = 45;
                 this.columntelefono.AllowDBNull = false;
                 this.columntelefono.MaxLength = 45;
-                this.columnExpr1.MaxLength = 45;
                 this.columnunidad.MaxLength = 20;
                 this.columncantidad.AllowDBNull = false;
                 this.columnsubtotal.AllowDBNull = false;
+                this.columnProducto.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1184,22 +1184,6 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableOrden_Compra.Expr1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr1\' de la tabla \'Orden_Compra\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrden_Compra.Expr1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string unidad {
                 get {
                     try {
@@ -1270,14 +1254,18 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tableOrden_Compra.Expr1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tableOrden_Compra.Expr1Column] = global::System.Convert.DBNull;
+            public string Producto {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrden_Compra.ProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Producto\' de la tabla \'Orden_Compra\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrden_Compra.ProductoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1314,6 +1302,18 @@ namespace Inventarios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetivaNull() {
                 this[this.tableOrden_Compra.ivaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProductoNull() {
+                return this.IsNull(this.tableOrden_Compra.ProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProductoNull() {
+                this[this.tableOrden_Compra.ProductoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1639,12 +1639,12 @@ namespace Inventarios.dataSet_inventariosTableAdapters {
             tableMapping.ColumnMappings.Add("rfc", "rfc");
             tableMapping.ColumnMappings.Add("direccion", "direccion");
             tableMapping.ColumnMappings.Add("telefono", "telefono");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("unidad", "unidad");
             tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             tableMapping.ColumnMappings.Add("precio", "precio");
             tableMapping.ColumnMappings.Add("iva", "iva");
             tableMapping.ColumnMappings.Add("subtotal", "subtotal");
+            tableMapping.ColumnMappings.Add("Producto", "Producto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1661,7 +1661,7 @@ namespace Inventarios.dataSet_inventariosTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT     OC.id_orden_compra, OC.fecha_pedido, E.id_empleado, E.nombre, P.razon_social, P.rfc, P.direccion, P.telefono, MP.nombre AS Expr1, MP.unidad, 
+            this._commandCollection[0].CommandText = @"SELECT     OC.id_orden_compra, OC.fecha_pedido, E.id_empleado, E.nombre, P.razon_social, P.rfc, P.direccion, P.telefono, MP.nombre AS Producto, MP.unidad, 
                       DC.cantidad, MP.precio, OC.iva, DC.subtotal
 FROM         ordenes_compra OC INNER JOIN
                       proveedores P ON OC.id_proveedor = P.id_proveedor INNER JOIN

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Inventarios.Formularios;
 using Inventarios.Reportes.Movimientos;
+using Inventarios.Reportes.Ordenes_Compra;
 
 namespace Inventarios
 {
@@ -17,7 +18,7 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMovimientos());
+            Application.Run(new FOrdenes_Compra());
         }
     }
 }
