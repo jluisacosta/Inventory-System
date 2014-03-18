@@ -57,14 +57,13 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(12, 61);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(877, 633);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(963, 633);
             this.crystalReportViewer1.TabIndex = 17;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // bt_generaReporte
             // 
-            this.bt_generaReporte.Location = new System.Drawing.Point(761, 11);
+            this.bt_generaReporte.Location = new System.Drawing.Point(847, 11);
             this.bt_generaReporte.Name = "bt_generaReporte";
             this.bt_generaReporte.Size = new System.Drawing.Size(128, 27);
             this.bt_generaReporte.TabIndex = 16;
@@ -94,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 702);
+            this.ClientSize = new System.Drawing.Size(987, 702);
             this.Controls.Add(this.fecha_Fin);
             this.Controls.Add(this.fecha_Ini);
             this.Controls.Add(this.crystalReportViewer1);
@@ -102,6 +101,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FMovimientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMovimientos";
             this.ResumeLayout(false);
             this.PerformLayout();
