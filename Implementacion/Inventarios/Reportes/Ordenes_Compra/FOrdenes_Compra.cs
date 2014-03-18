@@ -35,7 +35,7 @@ namespace Inventarios.Reportes.Ordenes_Compra
         public void cargarReporte()
         {
             ordenes_compra.Connection = con;
-            ordenes_compra.CrearOrdenCompra(ds.Orden_Compra,1);
+            ordenes_compra.CrearOrdenCompra(ds.Orden_Compra,16);
             reporte.SetDataSource(ds);
             crv.ReportSource = reporte;
         }

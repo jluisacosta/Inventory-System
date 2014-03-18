@@ -39,16 +39,18 @@
             this.crv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crv.Location = new System.Drawing.Point(0, 0);
             this.crv.Name = "crv";
-            this.crv.Size = new System.Drawing.Size(753, 535);
+            this.crv.Size = new System.Drawing.Size(977, 793);
             this.crv.TabIndex = 0;
+            this.crv.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FOrdenes_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 535);
+            this.ClientSize = new System.Drawing.Size(977, 793);
             this.Controls.Add(this.crv);
             this.Name = "FOrdenes_Compra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FOrdenes_Compra";
             this.ResumeLayout(false);
 
