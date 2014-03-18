@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using Inventarios.Formularios;
 using Inventarios.Reportes.Movimientos;
 using Inventarios.Reportes.Ordenes_Compra;
+using Inventarios.Reportes.Facturas_Clientes;
+using Inventarios.Reportes.Proveedores_Activos;
 
 namespace Inventarios
 {
@@ -18,7 +20,7 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FOrdenes_Compra());
+            Application.Run(new FProveedores_Act());
         }
     }
 }
