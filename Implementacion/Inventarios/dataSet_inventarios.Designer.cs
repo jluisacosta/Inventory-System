@@ -856,6 +856,8 @@ namespace Inventarios {
             
             private global::System.Data.DataColumn columnproducto;
             
+            private global::System.Data.DataColumn columncantidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MovimientosDataTable() {
@@ -931,6 +933,14 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -966,14 +976,15 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MovimientosRow AddMovimientosRow(string nombre, string tipo_movimiento, System.DateTime fecha, string producto) {
+            public MovimientosRow AddMovimientosRow(string nombre, string tipo_movimiento, System.DateTime fecha, string producto, decimal cantidad) {
                 MovimientosRow rowMovimientosRow = ((MovimientosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         nombre,
                         tipo_movimiento,
                         fecha,
-                        producto};
+                        producto,
+                        cantidad};
                 rowMovimientosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMovimientosRow);
                 return rowMovimientosRow;
@@ -1001,6 +1012,7 @@ namespace Inventarios {
                 this.columntipo_movimiento = base.Columns["tipo_movimiento"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnproducto = base.Columns["producto"];
+                this.columncantidad = base.Columns["cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1016,6 +1028,8 @@ namespace Inventarios {
                 base.Columns.Add(this.columnfecha);
                 this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproducto);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
                 this.columnid_empleado.AutoIncrement = true;
                 this.columnid_empleado.AutoIncrementSeed = -1;
                 this.columnid_empleado.AutoIncrementStep = -1;
@@ -1024,6 +1038,7 @@ namespace Inventarios {
                 this.columnnombre.MaxLength = 100;
                 this.columntipo_movimiento.MaxLength = 20;
                 this.columnproducto.MaxLength = 45;
+                this.columncantidad.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2110,6 +2125,17 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal cantidad {
+                get {
+                    return ((decimal)(this[this.tableMovimientos.cantidadColumn]));
+                }
+                set {
+                    this[this.tableMovimientos.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Istipo_movimientoNull() {
                 return this.IsNull(this.tableMovimientos.tipo_movimientoColumn);
             }
@@ -2747,6 +2773,7 @@ WHERE     (OC.id_orden_compra = @id_orden_compra)";
             tableMapping.ColumnMappings.Add("tipo_movimiento", "tipo_movimiento");
             tableMapping.ColumnMappings.Add("fecha", "fecha");
             tableMapping.ColumnMappings.Add("producto", "producto");
+            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2763,15 +2790,22 @@ WHERE     (OC.id_orden_compra = @id_orden_compra)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT     e.id_empleado, e.nombre, m.tipo_movimiento, mp.nombre AS producto, m.fecha
+            this._commandCollection[0].CommandText = @"SELECT     e.id_empleado, e.nombre, m.tipo_movimiento, mp.nombre AS producto, dm.cantidad, m.fecha
 FROM         empleados e INNER JOIN
                       movimientos m ON e.id_empleado = m.id_empleado INNER JOIN
                       detalle_movimiento dm ON m.id_movimiento = dm.id_movimiento INNER JOIN
                       materias_primas mp ON dm.id_materia_prima = mp.id_materia
-WHERE     (m.fecha = @fecha)";
+WHERE     (m.fecha >= @fecha_ini) AND (m.fecha <= @fecha_fin)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
+            param.ParameterName = "@fecha_ini";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "fecha";
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@fecha_fin";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -2783,13 +2817,19 @@ WHERE     (m.fecha = @fecha)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dataSet_inventarios.MovimientosDataTable dataTable, global::System.Nullable<global::System.DateTime> fecha) {
+        public virtual int Fill(dataSet_inventarios.MovimientosDataTable dataTable, global::System.Nullable<global::System.DateTime> fecha_ini, global::System.Nullable<global::System.DateTime> fecha_fin) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((fecha.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha.Value));
+            if ((fecha_ini.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_ini.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fecha_fin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_fin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2802,13 +2842,19 @@ WHERE     (m.fecha = @fecha)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dataSet_inventarios.MovimientosDataTable GetData(global::System.Nullable<global::System.DateTime> fecha) {
+        public virtual dataSet_inventarios.MovimientosDataTable GetData(global::System.Nullable<global::System.DateTime> fecha_ini, global::System.Nullable<global::System.DateTime> fecha_fin) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((fecha.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha.Value));
+            if ((fecha_ini.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_ini.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fecha_fin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_fin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             dataSet_inventarios.MovimientosDataTable dataTable = new dataSet_inventarios.MovimientosDataTable();
             this.Adapter.Fill(dataTable);

@@ -16,14 +16,14 @@ namespace Inventarios.Reportes.Movimientos {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Movimientos : ReportClass {
+    public class cr_Movimientos : ReportClass {
         
-        public Movimientos() {
+        public cr_Movimientos() {
         }
         
         public override string ResourceName {
             get {
-                return "Movimientos.rpt";
+                return "cr_Movimientos.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Inventarios.Reportes.Movimientos {
         
         public override string FullResourceName {
             get {
-                return "Inventarios.Reportes.Movimientos.Movimientos.rpt";
+                return "Inventarios.Reportes.Movimientos.cr_Movimientos.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace Inventarios.Reportes.Movimientos {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedMovimientos : Component, ICachedReport {
+    public class Cachedcr_Movimientos : Component, ICachedReport {
         
-        public CachedMovimientos() {
+        public Cachedcr_Movimientos() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace Inventarios.Reportes.Movimientos {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Movimientos rpt = new Movimientos();
+            cr_Movimientos rpt = new cr_Movimientos();
             rpt.Site = this.Site;
             return rpt;
         }

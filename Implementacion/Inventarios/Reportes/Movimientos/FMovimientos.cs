@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using Inventarios.dataSet_inventariosTableAdapters;
@@ -16,25 +17,27 @@ namespace Inventarios.Reportes.Movimientos
     {
         MySqlConnection con;
         dataSet_inventarios ds;
-        MovimientosTableAdapter movs;
-        Movimientos reporte_mv;
+        MovimientosTableAdapter mov;
+        cr_Movimientos reporte;
 
         public FMovimientos()
         {
             InitializeComponent();
             con = new MySqlConnection("server=localhost;user id=root;password=root;database=si_inventarios");
             ds = new dataSet_inventarios();
-            movs = new MovimientosTableAdapter();
-            reporte_mv = new Movimientos();
-            cargarReporte();
+            mov = new MovimientosTableAdapter();
+            reporte = new cr_Movimientos();
         }
 
-        public void cargarReporte()
+        private void bt_generaReporte_Click(object sender, EventArgs e)
         {
-            movs.Connection = con;
-            movs.Fill(ds.Movimientos, new DateTime(2013, 1, 1));
-            reporte_mv.SetDataSource(ds);
-            crv.ReportSource = reporte_mv;
+            DateTime FI = fecha_Ini.Value;
+            DateTime FF = fecha_Fin.Value;
+
+            mov.Connection = con;
+            mov.Fill(ds.Movimientos, FI, FF);
+            reporte.SetDataSource(ds);
+            crystalReportViewer1.ReportSource = reporte;
         }
     }
 }

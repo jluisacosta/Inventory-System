@@ -94,17 +94,17 @@
     <Compile Include="Reportes\Facturas_Clientes\Facturas_Clientes.Designer.cs">
       <DependentUpon>Facturas_Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Movimientos\cr_Movimientos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cr_Movimientos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Movimientos\FMovimientos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Movimientos\FMovimientos.Designer.cs">
       <DependentUpon>FMovimientos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Movimientos\Movimientos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Movimientos.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\Ordenes_Compra\crOrdenesCompra.cs">
       <AutoGen>True</AutoGen>
@@ -153,12 +153,12 @@
     <EmbeddedResource Include="Reportes\Facturas_Clientes\Facturas_Clientes.resx">
       <DependentUpon>Facturas_Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\cr_Movimientos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cr_Movimientos.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Movimientos\FMovimientos.resx">
       <DependentUpon>FMovimientos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Movimientos\Movimientos.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Movimientos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ordenes_Compra\crOrdenesCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

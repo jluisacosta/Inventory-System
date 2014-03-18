@@ -7,8 +7,8 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="-10" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Orden_Compra" ZOrder="4" X="337" Y="70" Height="275" Width="270" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="228" />
-    <Shape ID="DesignTable:Movimientos" ZOrder="3" X="26" Y="69" Height="156" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="22" OldDataTableHeight="0" SplitterPosition="109" />
-    <Shape ID="DesignTable:Facturas_Cliente" ZOrder="2" X="51" Y="277" Height="156" Width="221" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="109" />
+    <Shape ID="DesignTable:Movimientos" ZOrder="3" X="26" Y="69" Height="173" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="22" OldDataTableHeight="0" SplitterPosition="126" />
+    <Shape ID="DesignTable:Facturas_Cliente" ZOrder="2" X="33" Y="327" Height="156" Width="221" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="109" />
     <Shape ID="DesignTable:Proveedores_Activos" ZOrder="1" X="696" Y="133" Height="156" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="109" />
   </Shapes>
   <Connectors />
