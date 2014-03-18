@@ -81,11 +81,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\Movimientos\FMasV.cs">
+    <Compile Include="Reportes\Corte\crCorte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCorte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Corte\FCorte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Movimientos\FMasV.Designer.cs">
-      <DependentUpon>FMasV.cs</DependentUpon>
+    <Compile Include="Reportes\Corte\FCorte.Designer.cs">
+      <DependentUpon>FCorte.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Movimientos\FMovimientos.cs">
       <SubType>Form</SubType>
@@ -93,22 +99,46 @@
     <Compile Include="Reportes\Movimientos\FMovimientos.Designer.cs">
       <DependentUpon>FMovimientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Movimientos\MasVendidos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MasVendidos.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reportes\Movimientos\Movimientos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Movimientos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Orden_Compra.cs">
+    <Compile Include="Reportes\OCxProveedor\crOCproveedor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Orden_Compra.rpt</DependentUpon>
+      <DependentUpon>crOCproveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\OCxProveedor\FOCproveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\OCxProveedor\FOCproveedor.Designer.cs">
+      <DependentUpon>FOCproveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ordenes_Compra\crOrdenesCompra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crOrdenesCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ordenes_Compra\FOrdenes_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ordenes_Compra\FOrdenes_Compra.Designer.cs">
+      <DependentUpon>FOrdenes_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VentasProductos\FMasV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentasProductos\FMasV.designer.cs">
+      <DependentUpon>FMasV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VentasProductos\MasVendidos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MasVendidos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -127,23 +157,40 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\Movimientos\FMasV.resx">
-      <DependentUpon>FMasV.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\Corte\crCorte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCorte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Corte\FCorte.resx">
+      <DependentUpon>FCorte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Movimientos\FMovimientos.resx">
       <DependentUpon>FMovimientos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Movimientos\MasVendidos.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MasVendidos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Movimientos\Movimientos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Movimientos.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Orden_Compra.rpt">
+    <EmbeddedResource Include="Reportes\OCxProveedor\crOCproveedor.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Orden_Compra.cs</LastGenOutput>
+      <LastGenOutput>crOCproveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\OCxProveedor\FOCproveedor.resx">
+      <DependentUpon>FOCproveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ordenes_Compra\crOrdenesCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crOrdenesCompra.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ordenes_Compra\FOrdenes_Compra.resx">
+      <DependentUpon>FOrdenes_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VentasProductos\FMasV.resx">
+      <DependentUpon>FMasV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VentasProductos\MasVendidos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MasVendidos.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="dataSet_inventarios.xsc">

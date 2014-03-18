@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inventarios.Reportes {
+namespace Inventarios.Reportes.OCxProveedor {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Inventarios.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Orden_Compra : ReportClass {
+    public class crOCproveedor : ReportClass {
         
-        public Orden_Compra() {
+        public crOCproveedor() {
         }
         
         public override string ResourceName {
             get {
-                return "Orden_Compra.rpt";
+                return "crOCproveedor.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Inventarios.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Inventarios.Reportes.Orden_Compra.rpt";
+                return "Inventarios.Reportes.OCxProveedor.crOCproveedor.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Inventarios.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedOrden_Compra : Component, ICachedReport {
+    public class CachedcrOCproveedor : Component, ICachedReport {
         
-        public CachedOrden_Compra() {
+        public CachedcrOCproveedor() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Inventarios.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Orden_Compra rpt = new Orden_Compra();
+            crOCproveedor rpt = new crOCproveedor();
             rpt.Site = this.Site;
             return rpt;
         }
