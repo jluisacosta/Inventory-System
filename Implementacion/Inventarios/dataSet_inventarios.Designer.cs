@@ -1180,7 +1180,7 @@ namespace Inventarios {
             
             private global::System.Data.DataColumn columnemail;
             
-            private global::System.Data.DataColumn columnTotal_Facturas;
+            private global::System.Data.DataColumn columnTotaldefacturas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1249,9 +1249,9 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Total_FacturasColumn {
+            public global::System.Data.DataColumn TotaldefacturasColumn {
                 get {
-                    return this.columnTotal_Facturas;
+                    return this.columnTotaldefacturas;
                 }
             }
             
@@ -1292,14 +1292,14 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Facturas_ClienteRow AddFacturas_ClienteRow(string razon_social, string telefono, string email, long Total_Facturas) {
+            public Facturas_ClienteRow AddFacturas_ClienteRow(string razon_social, string telefono, string email, long Totaldefacturas) {
                 Facturas_ClienteRow rowFacturas_ClienteRow = ((Facturas_ClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         razon_social,
                         telefono,
                         email,
-                        Total_Facturas};
+                        Totaldefacturas};
                 rowFacturas_ClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturas_ClienteRow);
                 return rowFacturas_ClienteRow;
@@ -1333,7 +1333,7 @@ namespace Inventarios {
                 this.columnrazon_social = base.Columns["razon_social"];
                 this.columntelefono = base.Columns["telefono"];
                 this.columnemail = base.Columns["email"];
-                this.columnTotal_Facturas = base.Columns["Total_Facturas"];
+                this.columnTotaldefacturas = base.Columns["Totaldefacturas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1347,8 +1347,8 @@ namespace Inventarios {
                 base.Columns.Add(this.columntelefono);
                 this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemail);
-                this.columnTotal_Facturas = new global::System.Data.DataColumn("Total_Facturas", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Facturas);
+                this.columnTotaldefacturas = new global::System.Data.DataColumn("Totaldefacturas", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotaldefacturas);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_cliente}, true));
                 this.columnid_cliente.AutoIncrement = true;
@@ -1362,7 +1362,7 @@ namespace Inventarios {
                 this.columntelefono.MaxLength = 45;
                 this.columnemail.AllowDBNull = false;
                 this.columnemail.MaxLength = 100;
-                this.columnTotal_Facturas.AllowDBNull = false;
+                this.columnTotaldefacturas.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2231,12 +2231,12 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long Total_Facturas {
+            public long Totaldefacturas {
                 get {
-                    return ((long)(this[this.tableFacturas_Cliente.Total_FacturasColumn]));
+                    return ((long)(this[this.tableFacturas_Cliente.TotaldefacturasColumn]));
                 }
                 set {
-                    this[this.tableFacturas_Cliente.Total_FacturasColumn] = value;
+                    this[this.tableFacturas_Cliente.TotaldefacturasColumn] = value;
                 }
             }
         }
@@ -2987,7 +2987,7 @@ WHERE     (m.fecha >= @fecha_ini) AND (m.fecha <= @fecha_fin)";
             tableMapping.ColumnMappings.Add("razon_social", "razon_social");
             tableMapping.ColumnMappings.Add("telefono", "telefono");
             tableMapping.ColumnMappings.Add("email", "email");
-            tableMapping.ColumnMappings.Add("Total_Facturas", "Total_Facturas");
+            tableMapping.ColumnMappings.Add("Totaldefacturas", "Totaldefacturas");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3004,22 +3004,21 @@ WHERE     (m.fecha >= @fecha_ini) AND (m.fecha <= @fecha_fin)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT     c.id_cliente, c.razon_social, c.telefono, c.email, COUNT(c.id_cliente) AS Total_Facturas
+            this._commandCollection[0].CommandText = @"SELECT     c.id_cliente, c.razon_social, c.telefono, c.email, COUNT(c.id_cliente) AS Totaldefacturas
 FROM         facturas f INNER JOIN
-                      ventas v ON f.id_venta = v.id_venta INNER JOIN
                       clientes c ON f.id_cliente = c.id_cliente
-WHERE     (v.fecha >= @fecha_Ini) AND (v.fecha <= @fecha_Fin)
+WHERE     (f.fecha >= @fecha_ini) AND (f.fecha <= @fecha_fin)
 GROUP BY c.id_cliente";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha_Ini";
+            param.ParameterName = "@fecha_ini";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fecha";
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha_Fin";
+            param.ParameterName = "@fecha_fin";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -3031,10 +3030,20 @@ GROUP BY c.id_cliente";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dataSet_inventarios.Facturas_ClienteDataTable dataTable, System.DateTime fecha_Ini, System.DateTime fecha_Fin) {
+        public virtual int Fill(dataSet_inventarios.Facturas_ClienteDataTable dataTable, global::System.Nullable<global::System.DateTime> fecha_ini, global::System.Nullable<global::System.DateTime> fecha_fin) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_Ini));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_Fin));
+            if ((fecha_ini.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_ini.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fecha_fin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_fin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -3046,10 +3055,20 @@ GROUP BY c.id_cliente";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dataSet_inventarios.Facturas_ClienteDataTable GetData(System.DateTime fecha_Ini, System.DateTime fecha_Fin) {
+        public virtual dataSet_inventarios.Facturas_ClienteDataTable GetData(global::System.Nullable<global::System.DateTime> fecha_ini, global::System.Nullable<global::System.DateTime> fecha_fin) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_Ini));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_Fin));
+            if ((fecha_ini.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_ini.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fecha_fin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_fin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             dataSet_inventarios.Facturas_ClienteDataTable dataTable = new dataSet_inventarios.Facturas_ClienteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

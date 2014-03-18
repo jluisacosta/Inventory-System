@@ -21,9 +21,8 @@ namespace Inventarios.Reportes.Facturas_Clientes
         cr_Facturas_Clientes reporte_fact;
 
         public Facturas_Clientes()
-        {
-            InitializeComponent();
-            con = new MySqlConnection("server=localhost;user id=root;password=root;database=si_inventarios");
+        {   InitializeComponent();
+            con = new MySqlConnection("server=localhost;user id=root;password=root;database=si_inventarios; default command timeout=10000000");
             ds = new dataSet_inventarios();
             facturas = new Facturas_ClienteTableAdapter();
             reporte_fact = new cr_Facturas_Clientes();

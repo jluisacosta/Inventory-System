@@ -218,4 +218,3 @@ BEGIN
 	CLOSE facturas;
 END $
 DELIMITER ;
-
