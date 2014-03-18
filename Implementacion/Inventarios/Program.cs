@@ -5,8 +5,13 @@ using System.Windows.Forms;
 using Inventarios.Formularios;
 using Inventarios.Reportes.Movimientos;
 using Inventarios.Reportes.Ordenes_Compra;
+<<<<<<< HEAD
 using Inventarios.Reportes.Facturas_Clientes;
 using Inventarios.Reportes.Proveedores_Activos;
+=======
+using Inventarios.Reportes.Corte;
+using Inventarios.Reportes.OCxProveedor;
+>>>>>>> 9e3d15e071b2bc272fc096781ad9f324353ca502
 
 namespace Inventarios
 {
