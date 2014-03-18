@@ -6,3 +6,17 @@ and c.id_cliente = f.id_cliente
 and v.fecha >= '2004/01/01' and v.fecha <= '2004/01/01'
 group by c.id_cliente;
 
+select c.id_cliente,c.razon_social,c.telefono,c.email,count(c.id_cliente) as "Total de facturas"
+from Facturas f,Clientes c
+where c.id_cliente = f.id_cliente
+group by c.id_cliente;
+
+/*Copia fechas de la tabla ventas a la tabla facturas*/
+update Facturas Set Fecha = F.Fecha
+	where id_facturas in (
+		select F.id_factura,V.fecha
+		from Ventas v inner join Facturas F on (v.id_venta = F.id_venta)
+		);
+
+
+
