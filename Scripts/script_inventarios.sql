@@ -201,6 +201,7 @@ CREATE TABLE IF NOT EXISTS `Facturas` (
   `id_factura` INT(11) NOT NULL AUTO_INCREMENT,
   `id_venta` INT(11) NOT NULL,
   `id_cliente` INT(11) NOT NULL,
+  `fecha` DATE NULL,
   PRIMARY KEY (`id_factura`),
   CONSTRAINT `fk_ven`
     FOREIGN KEY (`id_venta`)

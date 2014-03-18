@@ -191,3 +191,31 @@ BEGIN
 	CLOSE materias;
 END $
 DELIMITER ;
+
+DELIMITER $
+DROP PROCEDURE IF EXISTS `si_inventarios`.`agregarFechasFacturas` $
+CREATE procedure agregarFechasFacturas()
+BEGIN
+	DECLARE idFact INT;
+	DECLARE fechaVenta DATE;
+	DECLARE vb_termina BOOL;
+
+	#Se recupera una lista de productos en forma aleatoria
+	DECLARE facturas CURSOR FOR 
+		select F.id_factura,V.fecha
+		from Ventas v inner join Facturas F on (v.id_venta = F.id_venta);
+	
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET vb_termina = TRUE;
+	
+	OPEN facturas;
+	Recorre_Cursor: LOOP
+		FETCH facturas INTO idFact,fechaVenta;
+			IF vb_termina THEN
+				LEAVE Recorre_Cursor;
+			END IF;
+			UPDATE Facturas SET fecha = fechaVenta WHERE id_factura = idFact;
+	END LOOP;
+	CLOSE facturas;
+END $
+DELIMITER ;
+

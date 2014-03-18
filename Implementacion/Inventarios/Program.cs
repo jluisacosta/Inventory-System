@@ -20,7 +20,7 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Facturas_Clientes());
+            Application.Run(new FMovimientos());
         }
     }
 }

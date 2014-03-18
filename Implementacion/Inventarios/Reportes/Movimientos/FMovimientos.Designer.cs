@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 702);
+            this.ClientSize = new System.Drawing.Size(987, 701);
             this.Controls.Add(this.fecha_Fin);
             this.Controls.Add(this.fecha_Ini);
             this.Controls.Add(this.crystalReportViewer1);
