@@ -10,6 +10,8 @@ using Inventarios.Reportes.Facturas_Clientes;
 using Inventarios.Reportes.Movimientos;
 using Inventarios.Reportes.Ordenes_Compra;
 using Inventarios.Reportes.Proveedores_Activos;
+using Inventarios.Reportes.Corte;
+using Inventarios.Reportes.OCxProveedor;
 
 namespace Inventarios.Formularios
 {
@@ -22,7 +24,9 @@ namespace Inventarios.Formularios
 
         private void button7_Click(object sender, EventArgs e)
         {
+            FCorte cor = new FCorte();
 
+            cor.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -43,7 +47,9 @@ namespace Inventarios.Formularios
 
         private void button5_Click(object sender, EventArgs e)
         {
+            FOCproveedor orp = new FOCproveedor();
 
+            orp.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,6 +72,9 @@ namespace Inventarios.Formularios
 
         private void button6_Click(object sender, EventArgs e)
         {
+            FMasV masv = new FMasV();
+
+            masv.Show();
 
         }
     }

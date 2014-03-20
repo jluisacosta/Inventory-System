@@ -109,6 +109,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.crv);
             this.Name = "FMasV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos más vendidos";
             this.ResumeLayout(false);
             this.PerformLayout();

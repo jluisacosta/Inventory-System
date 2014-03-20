@@ -109,6 +109,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.crv);
             this.Name = "FOCproveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordenes de compra por proveedor";
             this.ResumeLayout(false);
             this.PerformLayout();

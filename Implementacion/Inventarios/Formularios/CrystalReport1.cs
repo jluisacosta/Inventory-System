@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inventarios.Reportes.Movimientos {
+namespace Inventarios.Formularios {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Inventarios.Reportes.Movimientos {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class MasVendidos : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public MasVendidos() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "MasVendidos.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Inventarios.Reportes.Movimientos {
         
         public override string FullResourceName {
             get {
-                return "Inventarios.Reportes.Movimientos.MasVendidos.rpt";
+                return "Inventarios.Formularios.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Inventarios.Reportes.Movimientos {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedMasVendidos : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedMasVendidos() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Inventarios.Reportes.Movimientos {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            MasVendidos rpt = new MasVendidos();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

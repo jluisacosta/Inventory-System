@@ -86,6 +86,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.crv);
             this.Name = "FCorte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Corte del día";
             this.ResumeLayout(false);
             this.PerformLayout();

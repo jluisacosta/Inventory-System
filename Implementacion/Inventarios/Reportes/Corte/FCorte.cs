@@ -15,6 +15,7 @@ namespace Inventarios.Reportes.Corte
     {
         MySqlConnection con;
         dataSet_inventarios ds;
+
         CorteTableAdapter corte;
         crCorte reporte;
 
