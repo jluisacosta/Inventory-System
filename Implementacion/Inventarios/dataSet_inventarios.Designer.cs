@@ -3018,7 +3018,7 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Mas_Menos_VendidosRow AddMas_Menos_VendidosRow(string id_producto, string Producto, string Cantidad, string T) {
+            public Mas_Menos_VendidosRow AddMas_Menos_VendidosRow(string id_producto, string Producto, int Cantidad, float T) {
                 Mas_Menos_VendidosRow rowMas_Menos_VendidosRow = ((Mas_Menos_VendidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_producto,
@@ -3060,9 +3060,9 @@ namespace Inventarios {
                 base.Columns.Add(this.columnid_producto);
                 this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProducto);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
-                this.columnT = new global::System.Data.DataColumn("T", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnT = new global::System.Data.DataColumn("T", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnT);
             }
             
@@ -4081,10 +4081,10 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Cantidad {
+            public int Cantidad {
                 get {
                     try {
-                        return ((string)(this[this.tableMas_Menos_Vendidos.CantidadColumn]));
+                        return ((int)(this[this.tableMas_Menos_Vendidos.CantidadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Mas_Menos_Vendidos\' es DBNull.", e);
@@ -4097,10 +4097,10 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string T {
+            public float T {
                 get {
                     try {
-                        return ((string)(this[this.tableMas_Menos_Vendidos.TColumn]));
+                        return ((float)(this[this.tableMas_Menos_Vendidos.TColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'T\' de la tabla \'Mas_Menos_Vendidos\' es DBNull.", e);

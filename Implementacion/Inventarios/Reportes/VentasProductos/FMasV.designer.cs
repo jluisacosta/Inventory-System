@@ -34,6 +34,9 @@
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dtp = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.cb_mmv = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_n = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // crv
@@ -49,7 +52,7 @@
             // 
             // dtp2
             // 
-            this.dtp2.Location = new System.Drawing.Point(453, 25);
+            this.dtp2.Location = new System.Drawing.Point(370, 25);
             this.dtp2.MaxDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             this.dtp2.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.dtp2.Name = "dtp2";
@@ -60,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(350, 30);
+            this.label2.Location = new System.Drawing.Point(300, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 11;
@@ -80,7 +83,7 @@
             // 
             // dtp
             // 
-            this.dtp.Location = new System.Drawing.Point(115, 25);
+            this.dtp.Location = new System.Drawing.Point(90, 25);
             this.dtp.MaxDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             this.dtp.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.dtp.Name = "dtp";
@@ -97,11 +100,43 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Fecha inicial :";
             // 
+            // cb_mmv
+            // 
+            this.cb_mmv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_mmv.FormattingEnabled = true;
+            this.cb_mmv.Items.AddRange(new object[] {
+            "Top",
+            "Less"});
+            this.cb_mmv.Location = new System.Drawing.Point(590, 25);
+            this.cb_mmv.Name = "cb_mmv";
+            this.cb_mmv.Size = new System.Drawing.Size(121, 21);
+            this.cb_mmv.TabIndex = 13;
+            this.cb_mmv.SelectedIndexChanged += new System.EventHandler(this.cb_mmv_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(730, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "N  :";
+            // 
+            // tb_n
+            // 
+            this.tb_n.Location = new System.Drawing.Point(760, 25);
+            this.tb_n.Name = "tb_n";
+            this.tb_n.Size = new System.Drawing.Size(54, 20);
+            this.tb_n.TabIndex = 16;
+            // 
             // FMasV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 701);
+            this.Controls.Add(this.tb_n);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cb_mmv);
             this.Controls.Add(this.dtp2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonX1);
@@ -124,5 +159,8 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private System.Windows.Forms.DateTimePicker dtp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb_mmv;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tb_n;
     }
 }

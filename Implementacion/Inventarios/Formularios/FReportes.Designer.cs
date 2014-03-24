@@ -95,7 +95,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(175, 62);
             this.button6.TabIndex = 5;
-            this.button6.Text = "PRODUCTOS MAS VENDIDOS";
+            this.button6.Text = "PRODUCTOS";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -127,7 +127,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 25);
             this.label1.TabIndex = 8;
-            this.label1.Text = "REPORTES BASICOS";
+            this.label1.Text = "REPORTES BÁSICOS";
             // 
             // FReportes
             // 
