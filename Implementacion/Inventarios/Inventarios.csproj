@@ -74,11 +74,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="Formularios\FOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FOrdenCompra.Designer.cs">
+      <DependentUpon>FOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FProductos.Designer.cs">
+      <DependentUpon>FProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FReportes.cs">
       <SubType>Form</SubType>
@@ -175,9 +181,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    <EmbeddedResource Include="Formularios\FOrdenCompra.resx">
+      <DependentUpon>FOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FProductos.resx">
+      <DependentUpon>FProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FReportes.resx">
       <DependentUpon>FReportes.cs</DependentUpon>

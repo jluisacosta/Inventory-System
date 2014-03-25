@@ -82,6 +82,7 @@
             this.fecha_Ini.Name = "fecha_Ini";
             this.fecha_Ini.Size = new System.Drawing.Size(200, 20);
             this.fecha_Ini.TabIndex = 6;
+            this.fecha_Ini.Value = new System.DateTime(2013, 3, 24, 16, 59, 0, 0);
             // 
             // fecha_Fin
             // 
