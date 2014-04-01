@@ -79,14 +79,18 @@
             // fecha_Ini
             // 
             this.fecha_Ini.Location = new System.Drawing.Point(91, 38);
+            this.fecha_Ini.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
+            this.fecha_Ini.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.fecha_Ini.Name = "fecha_Ini";
             this.fecha_Ini.Size = new System.Drawing.Size(200, 20);
             this.fecha_Ini.TabIndex = 6;
-            this.fecha_Ini.Value = new System.DateTime(2013, 3, 24, 16, 59, 0, 0);
+            this.fecha_Ini.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             // 
             // fecha_Fin
             // 
             this.fecha_Fin.Location = new System.Drawing.Point(389, 38);
+            this.fecha_Fin.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
+            this.fecha_Fin.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.fecha_Fin.Name = "fecha_Fin";
             this.fecha_Fin.Size = new System.Drawing.Size(200, 20);
             this.fecha_Fin.TabIndex = 7;
@@ -104,7 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Facturas_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Facturas_Clientes";
+            this.Text = "Facturas por cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

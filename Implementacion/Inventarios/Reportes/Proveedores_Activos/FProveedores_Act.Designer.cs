@@ -39,6 +39,8 @@
             // fecha_Fin
             // 
             this.fecha_Fin.Location = new System.Drawing.Point(428, 22);
+            this.fecha_Fin.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
+            this.fecha_Fin.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.fecha_Fin.Name = "fecha_Fin";
             this.fecha_Fin.Size = new System.Drawing.Size(200, 20);
             this.fecha_Fin.TabIndex = 13;
@@ -46,9 +48,12 @@
             // fecha_Ini
             // 
             this.fecha_Ini.Location = new System.Drawing.Point(101, 22);
+            this.fecha_Ini.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
+            this.fecha_Ini.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.fecha_Ini.Name = "fecha_Ini";
             this.fecha_Ini.Size = new System.Drawing.Size(200, 20);
             this.fecha_Ini.TabIndex = 12;
+            this.fecha_Ini.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             // 
             // crystalReportViewer1
             // 
@@ -103,7 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FProveedores_Act";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FProveedores_Act";
+            this.Text = "Proveedores activos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

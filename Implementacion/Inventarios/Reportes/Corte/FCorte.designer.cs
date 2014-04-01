@@ -57,7 +57,7 @@
             // dtp
             // 
             this.dtp.Location = new System.Drawing.Point(135, 25);
-            this.dtp.MaxDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            this.dtp.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
             this.dtp.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.dtp.Name = "dtp";
             this.dtp.Size = new System.Drawing.Size(200, 20);

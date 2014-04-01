@@ -79,9 +79,11 @@ WHERE     (m.fecha &gt;= @fecha_ini) AND (m.fecha &lt;= @fecha_fin)</CommandText
               <DbSource ConnectionRef="localhost(si_inventarios)2" DbObjectName="si_inventarios.clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT     c.id_cliente, c.razon_social, c.telefono, c.email, COUNT(c.id_cliente) AS Totaldefacturas
+                    <CommandText>SELECT     c.id_cliente, c.razon_social, c.telefono, c.email, COUNT(c.id_cliente) AS T1, SUM(v.total) AS Subtotal, v.iva / 100 AS Expr1, SUM(v.total) 
+                      * v.iva / 100 AS IVA_APLICADO, SUM(v.total) + SUM(v.total) * v.iva / 100 AS Total
 FROM         facturas f INNER JOIN
-                      clientes c ON f.id_cliente = c.id_cliente
+                      clientes c ON f.id_cliente = c.id_cliente INNER JOIN
+                      ventas v ON f.id_venta = v.id_venta
 WHERE     (f.fecha &gt;= @fecha_ini) AND (f.fecha &lt;= @fecha_fin)
 GROUP BY c.id_cliente</CommandText>
                     <Parameters>
@@ -97,7 +99,11 @@ GROUP BY c.id_cliente</CommandText>
               <Mapping SourceColumn="razon_social" DataSetColumn="razon_social" />
               <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
               <Mapping SourceColumn="email" DataSetColumn="email" />
-              <Mapping SourceColumn="Totaldefacturas" DataSetColumn="Totaldefacturas" />
+              <Mapping SourceColumn="T1" DataSetColumn="T1" />
+              <Mapping SourceColumn="Subtotal" DataSetColumn="Subtotal" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="IVA_APLICADO" DataSetColumn="IVA_APLICADO" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -338,7 +344,11 @@ ORDER BY T DESC LIMIT 20</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Totaldefacturas" msprop:Generator_ColumnVarNameInTable="columnTotaldefacturas" msprop:Generator_ColumnPropNameInRow="Totaldefacturas" msprop:Generator_ColumnPropNameInTable="TotaldefacturasColumn" msprop:Generator_UserColumnName="Totaldefacturas" type="xs:long" />
+              <xs:element name="T1" msprop:Generator_ColumnVarNameInTable="columnT1" msprop:Generator_ColumnPropNameInRow="T1" msprop:Generator_ColumnPropNameInTable="T1Column" msprop:Generator_UserColumnName="T1" type="xs:long" />
+              <xs:element name="Subtotal" msprop:Generator_ColumnVarNameInTable="columnSubtotal" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_UserColumnName="Subtotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IVA_APLICADO" msprop:Generator_ColumnVarNameInTable="columnIVA_APLICADO" msprop:Generator_ColumnPropNameInRow="IVA_APLICADO" msprop:Generator_ColumnPropNameInTable="IVA_APLICADOColumn" msprop:Generator_UserColumnName="IVA_APLICADO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

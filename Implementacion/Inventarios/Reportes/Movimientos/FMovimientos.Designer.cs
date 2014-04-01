@@ -39,6 +39,8 @@
             // fecha_Fin
             // 
             this.fecha_Fin.Location = new System.Drawing.Point(415, 14);
+            this.fecha_Fin.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
+            this.fecha_Fin.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.fecha_Fin.Name = "fecha_Fin";
             this.fecha_Fin.Size = new System.Drawing.Size(200, 20);
             this.fecha_Fin.TabIndex = 19;
@@ -46,9 +48,12 @@
             // fecha_Ini
             // 
             this.fecha_Ini.Location = new System.Drawing.Point(88, 14);
+            this.fecha_Ini.MaxDate = new System.DateTime(2014, 12, 31, 0, 0, 0, 0);
+            this.fecha_Ini.MinDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             this.fecha_Ini.Name = "fecha_Ini";
             this.fecha_Ini.Size = new System.Drawing.Size(200, 20);
             this.fecha_Ini.TabIndex = 18;
+            this.fecha_Ini.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             // 
             // crystalReportViewer1
             // 
@@ -102,7 +107,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FMovimientos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FMovimientos";
+            this.Text = "Movimientos por cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

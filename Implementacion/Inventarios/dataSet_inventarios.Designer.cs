@@ -1320,7 +1320,15 @@ namespace Inventarios {
             
             private global::System.Data.DataColumn columnemail;
             
-            private global::System.Data.DataColumn columnTotaldefacturas;
+            private global::System.Data.DataColumn columnT1;
+            
+            private global::System.Data.DataColumn columnSubtotal;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnIVA_APLICADO;
+            
+            private global::System.Data.DataColumn columnTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1389,9 +1397,41 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TotaldefacturasColumn {
+            public global::System.Data.DataColumn T1Column {
                 get {
-                    return this.columnTotaldefacturas;
+                    return this.columnT1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SubtotalColumn {
+                get {
+                    return this.columnSubtotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IVA_APLICADOColumn {
+                get {
+                    return this.columnIVA_APLICADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
                 }
             }
             
@@ -1432,14 +1472,18 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Facturas_ClienteRow AddFacturas_ClienteRow(string razon_social, string telefono, string email, long Totaldefacturas) {
+            public Facturas_ClienteRow AddFacturas_ClienteRow(string razon_social, string telefono, string email, long T1, decimal Subtotal, decimal Expr1, decimal IVA_APLICADO, decimal Total) {
                 Facturas_ClienteRow rowFacturas_ClienteRow = ((Facturas_ClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         razon_social,
                         telefono,
                         email,
-                        Totaldefacturas};
+                        T1,
+                        Subtotal,
+                        Expr1,
+                        IVA_APLICADO,
+                        Total};
                 rowFacturas_ClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturas_ClienteRow);
                 return rowFacturas_ClienteRow;
@@ -1473,7 +1517,11 @@ namespace Inventarios {
                 this.columnrazon_social = base.Columns["razon_social"];
                 this.columntelefono = base.Columns["telefono"];
                 this.columnemail = base.Columns["email"];
-                this.columnTotaldefacturas = base.Columns["Totaldefacturas"];
+                this.columnT1 = base.Columns["T1"];
+                this.columnSubtotal = base.Columns["Subtotal"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnIVA_APLICADO = base.Columns["IVA_APLICADO"];
+                this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1487,8 +1535,16 @@ namespace Inventarios {
                 base.Columns.Add(this.columntelefono);
                 this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemail);
-                this.columnTotaldefacturas = new global::System.Data.DataColumn("Totaldefacturas", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotaldefacturas);
+                this.columnT1 = new global::System.Data.DataColumn("T1", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT1);
+                this.columnSubtotal = new global::System.Data.DataColumn("Subtotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubtotal);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnIVA_APLICADO = new global::System.Data.DataColumn("IVA_APLICADO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIVA_APLICADO);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_cliente}, true));
                 this.columnid_cliente.AutoIncrement = true;
@@ -1502,7 +1558,7 @@ namespace Inventarios {
                 this.columntelefono.MaxLength = 45;
                 this.columnemail.AllowDBNull = false;
                 this.columnemail.MaxLength = 100;
-                this.columnTotaldefacturas.AllowDBNull = false;
+                this.columnT1.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3619,13 +3675,125 @@ namespace Inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long Totaldefacturas {
+            public long T1 {
                 get {
-                    return ((long)(this[this.tableFacturas_Cliente.TotaldefacturasColumn]));
+                    return ((long)(this[this.tableFacturas_Cliente.T1Column]));
                 }
                 set {
-                    this[this.tableFacturas_Cliente.TotaldefacturasColumn] = value;
+                    this[this.tableFacturas_Cliente.T1Column] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Subtotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFacturas_Cliente.SubtotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Subtotal\' de la tabla \'Facturas_Cliente\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturas_Cliente.SubtotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Expr1 {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFacturas_Cliente.Expr1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr1\' de la tabla \'Facturas_Cliente\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturas_Cliente.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal IVA_APLICADO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFacturas_Cliente.IVA_APLICADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IVA_APLICADO\' de la tabla \'Facturas_Cliente\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturas_Cliente.IVA_APLICADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFacturas_Cliente.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total\' de la tabla \'Facturas_Cliente\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturas_Cliente.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSubtotalNull() {
+                return this.IsNull(this.tableFacturas_Cliente.SubtotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSubtotalNull() {
+                this[this.tableFacturas_Cliente.SubtotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExpr1Null() {
+                return this.IsNull(this.tableFacturas_Cliente.Expr1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExpr1Null() {
+                this[this.tableFacturas_Cliente.Expr1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIVA_APLICADONull() {
+                return this.IsNull(this.tableFacturas_Cliente.IVA_APLICADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIVA_APLICADONull() {
+                this[this.tableFacturas_Cliente.IVA_APLICADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableFacturas_Cliente.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableFacturas_Cliente.TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4972,7 +5140,11 @@ WHERE     (m.fecha >= @fecha_ini) AND (m.fecha <= @fecha_fin)";
             tableMapping.ColumnMappings.Add("razon_social", "razon_social");
             tableMapping.ColumnMappings.Add("telefono", "telefono");
             tableMapping.ColumnMappings.Add("email", "email");
-            tableMapping.ColumnMappings.Add("Totaldefacturas", "Totaldefacturas");
+            tableMapping.ColumnMappings.Add("T1", "T1");
+            tableMapping.ColumnMappings.Add("Subtotal", "Subtotal");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("IVA_APLICADO", "IVA_APLICADO");
+            tableMapping.ColumnMappings.Add("Total", "Total");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4989,9 +5161,11 @@ WHERE     (m.fecha >= @fecha_ini) AND (m.fecha <= @fecha_fin)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT     c.id_cliente, c.razon_social, c.telefono, c.email, COUNT(c.id_cliente) AS Totaldefacturas
+            this._commandCollection[0].CommandText = @"SELECT     c.id_cliente, c.razon_social, c.telefono, c.email, COUNT(c.id_cliente) AS T1, SUM(v.total) AS Subtotal, v.iva / 100 AS Expr1, SUM(v.total) 
+                      * v.iva / 100 AS IVA_APLICADO, SUM(v.total) + SUM(v.total) * v.iva / 100 AS Total
 FROM         facturas f INNER JOIN
-                      clientes c ON f.id_cliente = c.id_cliente
+                      clientes c ON f.id_cliente = c.id_cliente INNER JOIN
+                      ventas v ON f.id_venta = v.id_venta
 WHERE     (f.fecha >= @fecha_ini) AND (f.fecha <= @fecha_fin)
 GROUP BY c.id_cliente";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
