@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.tb_razon = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.b_agregar = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.stcp_prod = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
+            this.b_agrega = new DevComponents.DotNetBar.ButtonX();
+            this.b_ver = new DevComponents.DotNetBar.ButtonX();
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.comboBoxEx2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cb_unidad = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.tb_sact = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_precio = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_desc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_razon = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cb_cat = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_smax = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_smin = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.b_modif = new DevComponents.DotNetBar.ButtonX();
+            this.b_baja = new DevComponents.DotNetBar.ButtonX();
+            this.b_alta = new DevComponents.DotNetBar.ButtonX();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.pb_carga = new System.Windows.Forms.PictureBox();
+            this.b_cargaimg = new DevComponents.DotNetBar.ButtonX();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_carga)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -89,261 +89,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(986, 736);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // groupPanel1
-            // 
-            this.groupPanel1.BackColor = System.Drawing.Color.White;
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.groupPanel1.Controls.Add(this.tableLayoutPanel2);
-            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupPanel1.Location = new System.Drawing.Point(3, 3);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Padding = new System.Windows.Forms.Padding(15);
-            this.groupPanel1.Size = new System.Drawing.Size(980, 214);
-            // 
-            // 
-            // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 1;
-            this.groupPanel1.Text = "Datos del Producto";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 15);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(944, 163);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxX2, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxX1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tb_razon, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxEx1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 2);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(15, 15);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(15);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(442, 133);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // comboBoxEx1
-            // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 14;
-            this.comboBoxEx1.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(215, 20);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 0;
-            this.comboBoxEx1.WatermarkText = "Categoria";
-            // 
-            // tb_razon
-            // 
-            this.tb_razon.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_razon.Border.Class = "TextBoxBorder";
-            this.tb_razon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_razon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_razon.ForeColor = System.Drawing.Color.Black;
-            this.tb_razon.Location = new System.Drawing.Point(224, 3);
-            this.tb_razon.Name = "tb_razon";
-            this.tb_razon.PreventEnterBeep = true;
-            this.tb_razon.Size = new System.Drawing.Size(215, 20);
-            this.tb_razon.TabIndex = 13;
-            this.tb_razon.WatermarkText = "Nombre";
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(3, 47);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(215, 20);
-            this.textBoxX1.TabIndex = 14;
-            this.textBoxX1.WatermarkText = "Descripción";
-            // 
-            // textBoxX2
-            // 
-            this.textBoxX2.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX2.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX2.Location = new System.Drawing.Point(224, 47);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(215, 20);
-            this.textBoxX2.TabIndex = 15;
-            this.textBoxX2.WatermarkText = "$ Precio";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.textBoxX4, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxX3, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 88);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(221, 45);
-            this.tableLayoutPanel4.TabIndex = 16;
-            // 
-            // textBoxX3
-            // 
-            this.textBoxX3.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX3.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX3.Location = new System.Drawing.Point(3, 3);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(104, 20);
-            this.textBoxX3.TabIndex = 15;
-            this.textBoxX3.WatermarkText = "Stock mínimo";
-            // 
-            // textBoxX4
-            // 
-            this.textBoxX4.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX4.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX4.Location = new System.Drawing.Point(113, 3);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(105, 20);
-            this.textBoxX4.TabIndex = 16;
-            this.textBoxX4.WatermarkText = "Stock máximo";
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.buttonX1, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.buttonX2, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.b_agregar, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(711, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(230, 157);
-            this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // b_agregar
-            // 
-            this.b_agregar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.b_agregar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.b_agregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.b_agregar.Location = new System.Drawing.Point(10, 10);
-            this.b_agregar.Margin = new System.Windows.Forms.Padding(10);
-            this.b_agregar.Name = "b_agregar";
-            this.b_agregar.Size = new System.Drawing.Size(210, 32);
-            this.b_agregar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.b_agregar.TabIndex = 1;
-            this.b_agregar.Text = "Alta";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX1.Location = new System.Drawing.Point(10, 114);
-            this.buttonX1.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(210, 33);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 2;
-            this.buttonX1.Text = "Modificación";
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX2.Location = new System.Drawing.Point(10, 62);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(210, 32);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 2;
-            this.buttonX2.Text = "Baja";
             // 
             // groupPanel3
             // 
@@ -420,7 +165,7 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+            this.superTabControl1.Controls.Add(this.stcp_prod);
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -436,21 +181,21 @@
             this.superTabItem1});
             this.superTabControl1.Text = "superTabControl1";
             // 
+            // stcp_prod
+            // 
+            this.stcp_prod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stcp_prod.Location = new System.Drawing.Point(0, 25);
+            this.stcp_prod.Name = "stcp_prod";
+            this.stcp_prod.Size = new System.Drawing.Size(944, 372);
+            this.stcp_prod.TabIndex = 1;
+            this.stcp_prod.TabItem = this.superTabItem1;
+            // 
             // superTabItem1
             // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.AttachedControl = this.stcp_prod;
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "superTabItem1";
-            // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 25);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(944, 372);
-            this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
             // tableLayoutPanel7
             // 
@@ -472,8 +217,8 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.buttonX4, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.buttonX3, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.b_agrega, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.b_ver, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(458, 0);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
@@ -484,78 +229,121 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(480, 59);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
-            // buttonX3
+            // b_agrega
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX3.Location = new System.Drawing.Point(10, 10);
-            this.buttonX3.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(220, 39);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 2;
-            this.buttonX3.Text = "Ver receta";
+            this.b_agrega.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_agrega.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_agrega.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_agrega.Location = new System.Drawing.Point(250, 10);
+            this.b_agrega.Margin = new System.Windows.Forms.Padding(10);
+            this.b_agrega.Name = "b_agrega";
+            this.b_agrega.Size = new System.Drawing.Size(220, 39);
+            this.b_agrega.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_agrega.TabIndex = 3;
+            this.b_agrega.Text = "Agregar materia prima";
             // 
-            // buttonX4
+            // b_ver
             // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX4.Location = new System.Drawing.Point(250, 10);
-            this.buttonX4.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(220, 39);
-            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX4.TabIndex = 3;
-            this.buttonX4.Text = "Agregar materia prima";
+            this.b_ver.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_ver.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_ver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_ver.Location = new System.Drawing.Point(10, 10);
+            this.b_ver.Margin = new System.Windows.Forms.Padding(10);
+            this.b_ver.Name = "b_ver";
+            this.b_ver.Size = new System.Drawing.Size(220, 39);
+            this.b_ver.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_ver.TabIndex = 2;
+            this.b_ver.Text = "Ver receta";
             // 
-            // tableLayoutPanel9
+            // groupPanel1
             // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel9.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.buttonX5, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(487, 15);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(15);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(206, 133);
-            this.tableLayoutPanel9.TabIndex = 3;
+            this.groupPanel1.BackColor = System.Drawing.Color.White;
+            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.groupPanel1.Controls.Add(this.tableLayoutPanel2);
+            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupPanel1.Location = new System.Drawing.Point(3, 3);
+            this.groupPanel1.Name = "groupPanel1";
+            this.groupPanel1.Padding = new System.Windows.Forms.Padding(15);
+            this.groupPanel1.Size = new System.Drawing.Size(980, 214);
             // 
-            // pictureBox1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 97);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
-            // buttonX5
+            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColorGradientAngle = 90;
+            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderBottomWidth = 1;
+            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderLeftWidth = 1;
+            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderRightWidth = 1;
+            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderTopWidth = 1;
+            this.groupPanel1.Style.CornerDiameter = 4;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonX5.Location = new System.Drawing.Point(3, 106);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(200, 24);
-            this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX5.TabIndex = 1;
-            this.buttonX5.Text = "Cargar imagen";
+            // 
+            // 
+            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel1.TabIndex = 1;
+            this.groupPanel1.Text = "Datos del Producto";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 15);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(944, 163);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.tb_precio, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tb_desc, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tb_razon, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cb_cat, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(15, 15);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(15);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(442, 133);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.comboBoxEx2, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.textBoxX6, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.cb_unidad, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tb_sact, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(221, 88);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
@@ -566,36 +354,248 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(221, 45);
             this.tableLayoutPanel10.TabIndex = 17;
             // 
-            // textBoxX6
+            // cb_unidad
             // 
-            this.textBoxX6.BackColor = System.Drawing.Color.White;
+            this.cb_unidad.DisplayMember = "Text";
+            this.cb_unidad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_unidad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_unidad.FormattingEnabled = true;
+            this.cb_unidad.ItemHeight = 14;
+            this.cb_unidad.Location = new System.Drawing.Point(113, 3);
+            this.cb_unidad.Name = "cb_unidad";
+            this.cb_unidad.Size = new System.Drawing.Size(105, 20);
+            this.cb_unidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_unidad.TabIndex = 16;
+            this.cb_unidad.WatermarkText = "Unidad";
+            // 
+            // tb_sact
+            // 
+            this.tb_sact.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(3, 3);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.Size = new System.Drawing.Size(104, 20);
-            this.textBoxX6.TabIndex = 15;
-            this.textBoxX6.WatermarkText = "Stock actual";
+            this.tb_sact.Border.Class = "TextBoxBorder";
+            this.tb_sact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_sact.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_sact.ForeColor = System.Drawing.Color.Black;
+            this.tb_sact.Location = new System.Drawing.Point(3, 3);
+            this.tb_sact.Name = "tb_sact";
+            this.tb_sact.PreventEnterBeep = true;
+            this.tb_sact.Size = new System.Drawing.Size(104, 20);
+            this.tb_sact.TabIndex = 15;
+            this.tb_sact.WatermarkText = "Stock actual";
             // 
-            // comboBoxEx2
+            // tb_precio
             // 
-            this.comboBoxEx2.DisplayMember = "Text";
-            this.comboBoxEx2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxEx2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx2.FormattingEnabled = true;
-            this.comboBoxEx2.ItemHeight = 14;
-            this.comboBoxEx2.Location = new System.Drawing.Point(113, 3);
-            this.comboBoxEx2.Name = "comboBoxEx2";
-            this.comboBoxEx2.Size = new System.Drawing.Size(105, 20);
-            this.comboBoxEx2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx2.TabIndex = 16;
-            this.comboBoxEx2.WatermarkText = "Unidad";
+            this.tb_precio.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_precio.Border.Class = "TextBoxBorder";
+            this.tb_precio.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_precio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_precio.ForeColor = System.Drawing.Color.Black;
+            this.tb_precio.Location = new System.Drawing.Point(224, 47);
+            this.tb_precio.Name = "tb_precio";
+            this.tb_precio.PreventEnterBeep = true;
+            this.tb_precio.Size = new System.Drawing.Size(215, 20);
+            this.tb_precio.TabIndex = 15;
+            this.tb_precio.WatermarkText = "$ Precio";
+            // 
+            // tb_desc
+            // 
+            this.tb_desc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_desc.Border.Class = "TextBoxBorder";
+            this.tb_desc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_desc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_desc.ForeColor = System.Drawing.Color.Black;
+            this.tb_desc.Location = new System.Drawing.Point(3, 47);
+            this.tb_desc.Name = "tb_desc";
+            this.tb_desc.PreventEnterBeep = true;
+            this.tb_desc.Size = new System.Drawing.Size(215, 20);
+            this.tb_desc.TabIndex = 14;
+            this.tb_desc.WatermarkText = "Descripción";
+            // 
+            // tb_razon
+            // 
+            this.tb_razon.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_razon.Border.Class = "TextBoxBorder";
+            this.tb_razon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_razon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_razon.ForeColor = System.Drawing.Color.Black;
+            this.tb_razon.Location = new System.Drawing.Point(224, 3);
+            this.tb_razon.Name = "tb_razon";
+            this.tb_razon.PreventEnterBeep = true;
+            this.tb_razon.Size = new System.Drawing.Size(215, 20);
+            this.tb_razon.TabIndex = 13;
+            this.tb_razon.WatermarkText = "Nombre";
+            // 
+            // cb_cat
+            // 
+            this.cb_cat.DisplayMember = "Text";
+            this.cb_cat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_cat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_cat.FormattingEnabled = true;
+            this.cb_cat.ItemHeight = 14;
+            this.cb_cat.Location = new System.Drawing.Point(3, 3);
+            this.cb_cat.Name = "cb_cat";
+            this.cb_cat.Size = new System.Drawing.Size(215, 20);
+            this.cb_cat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_cat.TabIndex = 0;
+            this.cb_cat.WatermarkText = "Categoria";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tb_smax, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tb_smin, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 88);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(221, 45);
+            this.tableLayoutPanel4.TabIndex = 16;
+            // 
+            // tb_smax
+            // 
+            this.tb_smax.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_smax.Border.Class = "TextBoxBorder";
+            this.tb_smax.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_smax.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_smax.ForeColor = System.Drawing.Color.Black;
+            this.tb_smax.Location = new System.Drawing.Point(113, 3);
+            this.tb_smax.Name = "tb_smax";
+            this.tb_smax.PreventEnterBeep = true;
+            this.tb_smax.Size = new System.Drawing.Size(105, 20);
+            this.tb_smax.TabIndex = 16;
+            this.tb_smax.WatermarkText = "Stock máximo";
+            // 
+            // tb_smin
+            // 
+            this.tb_smin.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_smin.Border.Class = "TextBoxBorder";
+            this.tb_smin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_smin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_smin.ForeColor = System.Drawing.Color.Black;
+            this.tb_smin.Location = new System.Drawing.Point(3, 3);
+            this.tb_smin.Name = "tb_smin";
+            this.tb_smin.PreventEnterBeep = true;
+            this.tb_smin.Size = new System.Drawing.Size(104, 20);
+            this.tb_smin.TabIndex = 15;
+            this.tb_smin.WatermarkText = "Stock mínimo";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.b_modif, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.b_baja, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.b_alta, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(711, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(230, 157);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // b_modif
+            // 
+            this.b_modif.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_modif.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_modif.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_modif.Location = new System.Drawing.Point(10, 114);
+            this.b_modif.Margin = new System.Windows.Forms.Padding(10);
+            this.b_modif.Name = "b_modif";
+            this.b_modif.Size = new System.Drawing.Size(210, 33);
+            this.b_modif.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_modif.TabIndex = 2;
+            this.b_modif.Text = "Modificación";
+            // 
+            // b_baja
+            // 
+            this.b_baja.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_baja.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_baja.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_baja.Location = new System.Drawing.Point(10, 62);
+            this.b_baja.Margin = new System.Windows.Forms.Padding(10);
+            this.b_baja.Name = "b_baja";
+            this.b_baja.Size = new System.Drawing.Size(210, 32);
+            this.b_baja.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_baja.TabIndex = 2;
+            this.b_baja.Text = "Baja";
+            // 
+            // b_alta
+            // 
+            this.b_alta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_alta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_alta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_alta.Location = new System.Drawing.Point(10, 10);
+            this.b_alta.Margin = new System.Windows.Forms.Padding(10);
+            this.b_alta.Name = "b_alta";
+            this.b_alta.Size = new System.Drawing.Size(210, 32);
+            this.b_alta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_alta.TabIndex = 1;
+            this.b_alta.Text = "Alta";
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel9.Controls.Add(this.pb_carga, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.b_cargaimg, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(487, 15);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(15);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(206, 133);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // pb_carga
+            // 
+            this.pb_carga.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_carga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_carga.Location = new System.Drawing.Point(3, 3);
+            this.pb_carga.Name = "pb_carga";
+            this.pb_carga.Size = new System.Drawing.Size(200, 97);
+            this.pb_carga.TabIndex = 0;
+            this.pb_carga.TabStop = false;
+            // 
+            // b_cargaimg
+            // 
+            this.b_cargaimg.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.b_cargaimg.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.b_cargaimg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.b_cargaimg.Location = new System.Drawing.Point(3, 106);
+            this.b_cargaimg.Name = "b_cargaimg";
+            this.b_cargaimg.Size = new System.Drawing.Size(200, 24);
+            this.b_cargaimg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.b_cargaimg.TabIndex = 1;
+            this.b_cargaimg.Text = "Cargar imagen";
             // 
             // FProductos
             // 
@@ -607,22 +607,22 @@
             this.Name = "FProductos";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FProductos";
+            this.Text = "Productos";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_carga)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -633,31 +633,31 @@
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cb_cat;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_precio;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_desc;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_razon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_smax;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_smin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX b_agregar;
+        private DevComponents.DotNetBar.ButtonX b_modif;
+        private DevComponents.DotNetBar.ButtonX b_baja;
+        private DevComponents.DotNetBar.ButtonX b_alta;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevComponents.DotNetBar.SuperTabControl superTabControl1;
-        private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
+        private DevComponents.DotNetBar.SuperTabControlPanel stcp_prod;
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX b_agrega;
+        private DevComponents.DotNetBar.ButtonX b_ver;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cb_unidad;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_sact;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
+        private System.Windows.Forms.PictureBox pb_carga;
+        private DevComponents.DotNetBar.ButtonX b_cargaimg;
     }
 }
