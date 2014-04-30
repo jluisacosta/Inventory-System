@@ -7,5 +7,3 @@ and p.id_producto = mpp.id_producto
 and mpp.id_materia = mp.id_materia
 and op.id_empleado = e.id_empleado
 and op.id_orden_produccion =  50000
-
-
