@@ -1,6 +1,6 @@
-﻿namespace Inventarios.Reportes.Ordenes_Compra
+﻿namespace Inventarios.Reportes.Orden_Produccion
 {
-    partial class FOrdenes_Compra
+    partial class FOrden_Produccion
     {
         /// <summary>
         /// Required designer variable.
@@ -36,21 +36,29 @@
             this.crv.ActiveViewIndex = -1;
             this.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crv.Location = new System.Drawing.Point(0, 0);
             this.crv.Name = "crv";
+            this.crv.ShowCloseButton = false;
+            this.crv.ShowGotoPageButton = false;
+            this.crv.ShowGroupTreeButton = false;
+            this.crv.ShowPageNavigateButtons = false;
+            this.crv.ShowParameterPanelButton = false;
+            this.crv.ShowRefreshButton = false;
+            this.crv.ShowTextSearchButton = false;
             this.crv.Size = new System.Drawing.Size(977, 778);
             this.crv.TabIndex = 0;
             this.crv.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // FOrdenes_Compra
+            // FOrden_Produccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 778);
             this.Controls.Add(this.crv);
-            this.Name = "FOrdenes_Compra";
+            this.Name = "FOrden_Produccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Orden de compra";
+            this.Text = "FOrden_Produccion";
             this.ResumeLayout(false);
 
         }
@@ -58,7 +66,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
-
-
     }
 }
