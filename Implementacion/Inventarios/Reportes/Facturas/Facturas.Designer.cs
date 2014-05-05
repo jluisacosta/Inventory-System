@@ -1,6 +1,6 @@
-﻿namespace Inventarios.Reportes.Ordenes_Compra
+﻿namespace Inventarios.Reportes.Facturas
 {
-    partial class FOrdenes_Compra
+    partial class Facturas
     {
         /// <summary>
         /// Required designer variable.
@@ -36,21 +36,22 @@
             this.crv.ActiveViewIndex = -1;
             this.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crv.Location = new System.Drawing.Point(0, 0);
             this.crv.Name = "crv";
             this.crv.Size = new System.Drawing.Size(977, 778);
             this.crv.TabIndex = 0;
             this.crv.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // FOrdenes_Compra
+            // Facturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 778);
             this.Controls.Add(this.crv);
-            this.Name = "FOrdenes_Compra";
+            this.Name = "Facturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Orden de compra";
+            this.Text = "Facturas";
             this.ResumeLayout(false);
 
         }
@@ -58,7 +59,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
-
-
     }
 }

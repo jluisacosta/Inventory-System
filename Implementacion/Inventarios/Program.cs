@@ -7,6 +7,8 @@ using Inventarios.Reportes.Movimientos;
 using Inventarios.Reportes.Ordenes_Compra;
 using Inventarios.Reportes.Facturas_Clientes;
 using Inventarios.Reportes.Proveedores_Activos;
+using Inventarios.Reportes.Orden_Produccion;
+using Inventarios.Reportes.Facturas;
 
 namespace Inventarios
 {

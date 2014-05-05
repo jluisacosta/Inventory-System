@@ -118,6 +118,18 @@
     <Compile Include="Reportes\Corte\FCorte.designer.cs">
       <DependentUpon>FCorte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Facturas\crFacturas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crFacturas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Facturas\Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Facturas\Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Facturas_Clientes\cr_Facturas_Clientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +177,18 @@
     </Compile>
     <Compile Include="Reportes\Ordenes_Compra\FOrdenes_Compra.Designer.cs">
       <DependentUpon>FOrdenes_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Orden_Produccion\crOrdenProduccion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crOrdenProduccion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Orden_Produccion\FOrden_Produccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Orden_Produccion\FOrden_Produccion.Designer.cs">
+      <DependentUpon>FOrden_Produccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Proveedores_Activos\cr_Proveedores_Act.cs">
       <AutoGen>True</AutoGen>
@@ -231,6 +255,13 @@
     <EmbeddedResource Include="Reportes\Corte\FCorte.resx">
       <DependentUpon>FCorte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Facturas\crFacturas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crFacturas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Facturas\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Facturas_Clientes\cr_Facturas_Clientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>cr_Facturas_Clientes.cs</LastGenOutput>
@@ -258,6 +289,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ordenes_Compra\FOrdenes_Compra.resx">
       <DependentUpon>FOrdenes_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Orden_Produccion\crOrdenProduccion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crOrdenProduccion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Orden_Produccion\FOrden_Produccion.resx">
+      <DependentUpon>FOrden_Produccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Proveedores_Activos\cr_Proveedores_Act.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
