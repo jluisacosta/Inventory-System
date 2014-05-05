@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Inventarios.dataSet_inventariosTableAdapters;
+using Inventarios.Reportes.Pruebas;
 
 namespace Inventarios.Reportes.Corte
 {
@@ -17,7 +18,7 @@ namespace Inventarios.Reportes.Corte
         dataSet_inventarios ds;
 
         CorteTableAdapter corte;
-        crCorte reporte;
+        crGrafico reporte;
 
         public FCorte()
         {
@@ -25,7 +26,7 @@ namespace Inventarios.Reportes.Corte
             con = new MySqlConnection("server=localhost;user id=root;password=root;database=si_inventarios");
             ds = new dataSet_inventarios();
             corte = new CorteTableAdapter();
-            reporte = new crCorte();
+            reporte = new crGrafico();
         }
 
         public void cargarReporte()

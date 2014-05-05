@@ -178,6 +178,12 @@
     <Compile Include="Reportes\Proveedores_Activos\FProveedores_Act.Designer.cs">
       <DependentUpon>FProveedores_Act.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Pruebas\crGrafico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crGrafico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\VentasProductos\FMasV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Proveedores_Activos\FProveedores_Act.resx">
       <DependentUpon>FProveedores_Act.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pruebas\crGrafico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crGrafico.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VentasProductos\FMasV.resx">
       <DependentUpon>FMasV.cs</DependentUpon>

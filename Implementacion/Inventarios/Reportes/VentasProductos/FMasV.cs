@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Inventarios.dataSet_inventariosTableAdapters;
 using Inventarios.Reportes.VentasProductos;
+using Inventarios.Reportes.Pruebas;
 
 namespace Inventarios.Reportes.Movimientos
 {
