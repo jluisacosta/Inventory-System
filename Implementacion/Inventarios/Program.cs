@@ -8,6 +8,7 @@ using Inventarios.Reportes.Ordenes_Compra;
 using Inventarios.Reportes.Facturas_Clientes;
 using Inventarios.Reportes.Proveedores_Activos;
 using Inventarios.Reportes.Orden_Produccion;
+using Inventarios.Reportes.Facturas;
 
 namespace Inventarios
 {
@@ -21,7 +22,7 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FOrden_Produccion(10));
+            Application.Run(new Facturas(10));
         }
     }
 }
