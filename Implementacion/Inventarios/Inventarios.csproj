@@ -80,6 +80,18 @@
     <Compile Include="Formularios\FAgregaMateria.Designer.cs">
       <DependentUpon>FAgregaMateria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FClientes.Designer.cs">
+      <DependentUpon>FClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FEmpleados.Designer.cs">
+      <DependentUpon>FEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FAgregaMateria.resx">
       <DependentUpon>FAgregaMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FClientes.resx">
+      <DependentUpon>FClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FEmpleados.resx">
+      <DependentUpon>FEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FOrdenCompra.resx">
       <DependentUpon>FOrdenCompra.cs</DependentUpon>
