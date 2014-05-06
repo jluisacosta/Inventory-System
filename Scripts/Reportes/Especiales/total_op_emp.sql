@@ -12,4 +12,3 @@ and op.id_producto = 6
 and op.fecha_inicio >= '2004/01/02' and op.fecha_inicio < '2005/03/03'
 group by op.id_empleado
 
-

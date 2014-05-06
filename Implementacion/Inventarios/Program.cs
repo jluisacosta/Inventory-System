@@ -9,6 +9,7 @@ using Inventarios.Reportes.Facturas_Clientes;
 using Inventarios.Reportes.Proveedores_Activos;
 using Inventarios.Reportes.Orden_Produccion;
 using Inventarios.Reportes.Facturas;
+using Inventarios.Reportes.Pruebas;
 
 namespace Inventarios
 {
@@ -22,7 +23,7 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FReportes());
+            Application.Run(new FPrueba1());
         }
     }
 }

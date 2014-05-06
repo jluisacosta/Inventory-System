@@ -44,6 +44,8 @@
     <Reference Include="DevComponents.DotNetBar2, Version=11.4.0.9, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.Instrumentation, Version=11.4.0.9, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -220,6 +222,12 @@
       <DependentUpon>crGrafico.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\Pruebas\FPrueba1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pruebas\FPrueba1.Designer.cs">
+      <DependentUpon>FPrueba1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\VentasProductos\FMasV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +334,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crGrafico.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pruebas\FPrueba1.resx">
+      <DependentUpon>FPrueba1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pruebas\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\VentasProductos\FMasV.resx">
       <DependentUpon>FMasV.cs</DependentUpon>
     </EmbeddedResource>

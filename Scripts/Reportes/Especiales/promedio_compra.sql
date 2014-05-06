@@ -8,4 +8,4 @@ where c.id_cliente = f.id_cliente
 and f.id_venta = v.id_venta
 and v.fecha >= '2004/01/02' and v.fecha < '2004/02/02'
 group by f.id_cliente
-order by promedio desc 
+order by promedio desc

@@ -5,8 +5,8 @@
         partial class CorteDataTable
         {
         }
-    
-        partial class DataTable1DataTable
+
+        partial class Ventas_EmpleadoDataTable
         {
         }
     }
