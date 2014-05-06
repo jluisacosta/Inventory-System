@@ -665,6 +665,17 @@ WHERE     (f.id_factura = @id_fact)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Porcentaje_Prov" msprop:Generator_TableClassName="Porcentaje_ProvDataTable" msprop:Generator_TableVarName="tablePorcentaje_Prov" msprop:Generator_TablePropName="Porcentaje_Prov" msprop:Generator_RowDeletingName="Porcentaje_ProvRowDeleting" msprop:Generator_UserTableName="Porcentaje_Prov" msprop:Generator_RowChangingName="Porcentaje_ProvRowChanging" msprop:Generator_RowEvHandlerName="Porcentaje_ProvRowChangeEventHandler" msprop:Generator_RowDeletedName="Porcentaje_ProvRowDeleted" msprop:Generator_RowEvArgName="Porcentaje_ProvRowChangeEvent" msprop:Generator_RowChangedName="Porcentaje_ProvRowChanged" msprop:Generator_RowClassName="Porcentaje_ProvRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_materia" msprop:Generator_ColumnVarNameInTable="columnid_materia" msprop:Generator_ColumnPropNameInRow="id_materia" msprop:Generator_ColumnPropNameInTable="id_materiaColumn" msprop:Generator_UserColumnName="id_materia" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="razon_social" msprop:Generator_ColumnVarNameInTable="columnrazon_social" msprop:Generator_ColumnPropNameInRow="razon_social" msprop:Generator_ColumnPropNameInTable="razon_socialColumn" msprop:Generator_UserColumnName="razon_social" type="xs:string" minOccurs="0" />
+              <xs:element name="ordenes" msprop:Generator_ColumnVarNameInTable="columnordenes" msprop:Generator_ColumnPropNameInRow="ordenes" msprop:Generator_ColumnPropNameInTable="ordenesColumn" msprop:Generator_UserColumnName="ordenes" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

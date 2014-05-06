@@ -9,6 +9,7 @@ using Inventarios.Reportes.Facturas_Clientes;
 using Inventarios.Reportes.Proveedores_Activos;
 using Inventarios.Reportes.Orden_Produccion;
 using Inventarios.Reportes.Facturas;
+using Inventarios.Reportes.Especiales.Porcentaje_prov;
 
 namespace Inventarios
 {
