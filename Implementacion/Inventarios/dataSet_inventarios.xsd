@@ -676,6 +676,16 @@ WHERE     (f.id_factura = @id_fact)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="VentasEmp" msprop:Generator_TableClassName="VentasEmpDataTable" msprop:Generator_TableVarName="tableVentasEmp" msprop:Generator_TablePropName="VentasEmp" msprop:Generator_RowDeletingName="VentasEmpRowDeleting" msprop:Generator_UserTableName="VentasEmp" msprop:Generator_RowChangingName="VentasEmpRowChanging" msprop:Generator_RowEvHandlerName="VentasEmpRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasEmpRowDeleted" msprop:Generator_RowEvArgName="VentasEmpRowChangeEvent" msprop:Generator_RowChangedName="VentasEmpRowChanged" msprop:Generator_RowClassName="VentasEmpRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="n_ventas" msprop:Generator_ColumnVarNameInTable="columnn_ventas" msprop:Generator_ColumnPropNameInRow="n_ventas" msprop:Generator_ColumnPropNameInTable="n_ventasColumn" msprop:Generator_UserColumnName="n_ventas" type="xs:int" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
