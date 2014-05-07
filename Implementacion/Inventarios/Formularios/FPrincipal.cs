@@ -23,5 +23,13 @@ namespace Inventarios.Formularios
             cli.MdiParent = this;
             cli.Show();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            FReportes repo = new FReportes();
+
+            repo.MdiParent = this;
+            repo.Show();
+        }
     }
 }
