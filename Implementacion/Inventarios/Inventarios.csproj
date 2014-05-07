@@ -92,6 +92,12 @@
     <Compile Include="Formularios\FEmpleados.Designer.cs">
       <DependentUpon>FEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FMateriasPrimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FMateriasPrimas.Designer.cs">
+      <DependentUpon>FMateriasPrimas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="Formularios\FProductos.Designer.cs">
       <DependentUpon>FProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FProveedores.Designer.cs">
+      <DependentUpon>FProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FReceta.cs">
       <SubType>Form</SubType>
@@ -256,11 +268,17 @@
     <EmbeddedResource Include="Formularios\FEmpleados.resx">
       <DependentUpon>FEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FMateriasPrimas.resx">
+      <DependentUpon>FMateriasPrimas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FOrdenCompra.resx">
       <DependentUpon>FOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FProductos.resx">
       <DependentUpon>FProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FProveedores.resx">
+      <DependentUpon>FProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FReceta.resx">
       <DependentUpon>FReceta.cs</DependentUpon>
