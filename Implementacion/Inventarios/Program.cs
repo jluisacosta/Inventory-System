@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Inventarios.Formularios;
-using Inventarios.Reportes.Movimientos;
-using Inventarios.Reportes.Ordenes_Compra;
-using Inventarios.Reportes.Facturas_Clientes;
-using Inventarios.Reportes.Proveedores_Activos;
-using Inventarios.Reportes.Orden_Produccion;
-using Inventarios.Reportes.Facturas;
-using Inventarios.Reportes.Especiales.Porcentaje_prov;
 
 namespace Inventarios
 {

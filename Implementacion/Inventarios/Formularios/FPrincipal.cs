@@ -9,16 +9,19 @@ using System.Windows.Forms;
 
 namespace Inventarios.Formularios
 {
-    public partial class FEmpleados : Form
+    public partial class FPrincipal : Form
     {
-        public FEmpleados()
+        public FPrincipal()
         {
             InitializeComponent();
         }
 
-        private void b_alta_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            
+            FClientes cli = new FClientes();
+
+            cli.MdiParent = this;
+            cli.Show();
         }
     }
 }

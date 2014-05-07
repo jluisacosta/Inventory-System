@@ -30,31 +30,31 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.sgc_emp = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pb_emp = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_depto = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_email = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_tel = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cb_tipo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.tb_direccion = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dti_fecha = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.tb_nombre = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_id = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.b_modif = new DevComponents.DotNetBar.ButtonX();
             this.b_baja = new DevComponents.DotNetBar.ButtonX();
             this.b_alta = new DevComponents.DotNetBar.ButtonX();
-            this.sgc_emp = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.dti_fecha = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.tb_id = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_depto = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_emp)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dti_fecha)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -112,6 +112,18 @@
             // 
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 2;
+            // 
+            // sgc_emp
+            // 
+            this.sgc_emp.BackColor = System.Drawing.Color.White;
+            this.sgc_emp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sgc_emp.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.sgc_emp.ForeColor = System.Drawing.Color.Black;
+            this.sgc_emp.Location = new System.Drawing.Point(15, 15);
+            this.sgc_emp.Name = "sgc_emp";
+            this.sgc_emp.Size = new System.Drawing.Size(944, 462);
+            this.sgc_emp.TabIndex = 1;
+            this.sgc_emp.Text = "superGridControl1";
             // 
             // groupPanel1
             // 
@@ -209,6 +221,24 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(452, 143);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // tb_depto
+            // 
+            this.tb_depto.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_depto.Border.Class = "TextBoxBorder";
+            this.tb_depto.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_depto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_depto.ForeColor = System.Drawing.Color.Black;
+            this.tb_depto.Location = new System.Drawing.Point(229, 108);
+            this.tb_depto.Name = "tb_depto";
+            this.tb_depto.PreventEnterBeep = true;
+            this.tb_depto.ReadOnly = true;
+            this.tb_depto.Size = new System.Drawing.Size(220, 20);
+            this.tb_depto.TabIndex = 26;
+            this.tb_depto.WatermarkText = "Departamento";
+            // 
             // tb_email
             // 
             this.tb_email.BackColor = System.Drawing.Color.White;
@@ -274,6 +304,56 @@
             this.tb_direccion.TabIndex = 14;
             this.tb_direccion.WatermarkText = "Dirección";
             // 
+            // dti_fecha
+            // 
+            // 
+            // 
+            // 
+            this.dti_fecha.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dti_fecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dti_fecha.ButtonDropDown.Visible = true;
+            this.dti_fecha.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dti_fecha.IsPopupCalendarOpen = false;
+            this.dti_fecha.Location = new System.Drawing.Point(3, 108);
+            // 
+            // 
+            // 
+            this.dti_fecha.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dti_fecha.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dti_fecha.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.MonthCalendar.DisplayMonth = new System.DateTime(2014, 5, 1, 0, 0, 0, 0);
+            this.dti_fecha.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dti_fecha.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dti_fecha.MonthCalendar.TodayButtonVisible = true;
+            this.dti_fecha.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dti_fecha.Name = "dti_fecha";
+            this.dti_fecha.Size = new System.Drawing.Size(220, 20);
+            this.dti_fecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dti_fecha.TabIndex = 19;
+            this.dti_fecha.WatermarkText = "Fecha de nacimiento";
+            // 
             // tb_nombre
             // 
             // 
@@ -287,6 +367,21 @@
             this.tb_nombre.Size = new System.Drawing.Size(220, 14);
             this.tb_nombre.TabIndex = 18;
             this.tb_nombre.WatermarkText = "Nombre";
+            // 
+            // tb_id
+            // 
+            // 
+            // 
+            // 
+            this.tb_id.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_id.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_id.Location = new System.Drawing.Point(3, 3);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.PreventEnterBeep = true;
+            this.tb_id.ReadOnly = true;
+            this.tb_id.Size = new System.Drawing.Size(220, 14);
+            this.tb_id.TabIndex = 25;
+            this.tb_id.WatermarkText = "Id empleado";
             // 
             // tableLayoutPanel5
             // 
@@ -344,101 +439,7 @@
             this.b_alta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_alta.TabIndex = 1;
             this.b_alta.Text = "Alta";
-            // 
-            // sgc_emp
-            // 
-            this.sgc_emp.BackColor = System.Drawing.Color.White;
-            this.sgc_emp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sgc_emp.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.sgc_emp.ForeColor = System.Drawing.Color.Black;
-            this.sgc_emp.Location = new System.Drawing.Point(15, 15);
-            this.sgc_emp.Name = "sgc_emp";
-            this.sgc_emp.Size = new System.Drawing.Size(944, 462);
-            this.sgc_emp.TabIndex = 1;
-            this.sgc_emp.Text = "superGridControl1";
-            // 
-            // dti_fecha
-            // 
-            // 
-            // 
-            // 
-            this.dti_fecha.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dti_fecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dti_fecha.ButtonDropDown.Visible = true;
-            this.dti_fecha.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dti_fecha.IsPopupCalendarOpen = false;
-            this.dti_fecha.Location = new System.Drawing.Point(3, 108);
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dti_fecha.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.MonthCalendar.DisplayMonth = new System.DateTime(2014, 5, 1, 0, 0, 0, 0);
-            this.dti_fecha.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dti_fecha.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.MonthCalendar.TodayButtonVisible = true;
-            this.dti_fecha.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dti_fecha.Name = "dti_fecha";
-            this.dti_fecha.Size = new System.Drawing.Size(220, 20);
-            this.dti_fecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dti_fecha.TabIndex = 19;
-            this.dti_fecha.WatermarkText = "Fecha de nacimiento";
-            // 
-            // tb_id
-            // 
-            // 
-            // 
-            // 
-            this.tb_id.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_id.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_id.Location = new System.Drawing.Point(3, 3);
-            this.tb_id.Name = "tb_id";
-            this.tb_id.PreventEnterBeep = true;
-            this.tb_id.ReadOnly = true;
-            this.tb_id.Size = new System.Drawing.Size(220, 14);
-            this.tb_id.TabIndex = 25;
-            this.tb_id.WatermarkText = "Id empleado";
-            // 
-            // tb_depto
-            // 
-            this.tb_depto.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_depto.Border.Class = "TextBoxBorder";
-            this.tb_depto.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_depto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_depto.ForeColor = System.Drawing.Color.Black;
-            this.tb_depto.Location = new System.Drawing.Point(229, 108);
-            this.tb_depto.Name = "tb_depto";
-            this.tb_depto.PreventEnterBeep = true;
-            this.tb_depto.ReadOnly = true;
-            this.tb_depto.Size = new System.Drawing.Size(220, 20);
-            this.tb_depto.TabIndex = 26;
-            this.tb_depto.WatermarkText = "Departamento";
+            this.b_alta.Click += new System.EventHandler(this.b_alta_Click);
             // 
             // FEmpleados
             // 
@@ -456,8 +457,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_emp)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dti_fecha)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
