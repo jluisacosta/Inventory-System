@@ -15,5 +15,10 @@ namespace Inventarios.Formularios
         {
             InitializeComponent();
         }
+
+        private void b_alta_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
