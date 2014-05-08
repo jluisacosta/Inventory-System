@@ -1,4 +1,4 @@
-
+use si_inventarios;
 
 select mp.id_materia,mp.nombre,p.razon_social,count(mp.id_materia) as ordenes,sum(oc.costo_total) as Total
 from materias_primas mp, ordenes_compra oc, detalle_compra dc, proveedores p

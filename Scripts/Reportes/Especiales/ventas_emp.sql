@@ -5,3 +5,7 @@ where e.id_empleado = v.id_empleado
 and v.fecha >= '2004/01/01'
 and v.fecha <= '2004/01/01'
 group by e.id_empleado
+
+select * from clientes
+
+update Clientes set ciudad = 'Mexico', cp = 12135 where id_cliente = 300

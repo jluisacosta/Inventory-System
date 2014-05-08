@@ -132,6 +132,18 @@
     <Compile Include="Reportes\Corte\FCorte.designer.cs">
       <DependentUpon>FCorte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Especiales\Porcentaje_prov\crPorcentaje.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crPorcentaje.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Especiales\Porcentaje_prov\FPorcentaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Especiales\Porcentaje_prov\FPorcentaje.Designer.cs">
+      <DependentUpon>FPorcentaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Facturas\crFacturas.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -280,6 +292,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Corte\FCorte.resx">
       <DependentUpon>FCorte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Especiales\Porcentaje_prov\crPorcentaje.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPorcentaje.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Especiales\Porcentaje_prov\FPorcentaje.resx">
+      <DependentUpon>FPorcentaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Facturas\crFacturas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

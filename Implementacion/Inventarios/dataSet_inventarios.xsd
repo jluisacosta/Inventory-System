@@ -691,6 +691,7 @@ GROUP BY e.id_empleado</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+<<<<<<< HEAD
         <xs:element name="Ventas_Empleado" msprop:Generator_TableClassName="Ventas_EmpleadoDataTable" msprop:Generator_TableVarName="tableVentas_Empleado" msprop:Generator_TablePropName="Ventas_Empleado" msprop:Generator_RowDeletingName="Ventas_EmpleadoRowDeleting" msprop:Generator_UserTableName="Ventas_Empleado" msprop:Generator_RowChangingName="Ventas_EmpleadoRowChanging" msprop:Generator_RowEvHandlerName="Ventas_EmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="Ventas_EmpleadoRowDeleted" msprop:Generator_RowEvArgName="Ventas_EmpleadoRowChangeEvent" msprop:Generator_RowChangedName="Ventas_EmpleadoRowChanged" msprop:Generator_RowClassName="Ventas_EmpleadoRow">
           <xs:complexType>
             <xs:sequence>
@@ -704,6 +705,16 @@ GROUP BY e.id_empleado</CommandText>
               </xs:element>
               <xs:element name="n_ventas" msprop:Generator_ColumnVarNameInTable="columnn_ventas" msprop:Generator_ColumnPropNameInRow="n_ventas" msprop:Generator_ColumnPropNameInTable="n_ventasColumn" msprop:Generator_UserColumnName="n_ventas" type="xs:long" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" />
+=======
+        <xs:element name="Porcentaje_Prov" msprop:Generator_TableClassName="Porcentaje_ProvDataTable" msprop:Generator_TableVarName="tablePorcentaje_Prov" msprop:Generator_TablePropName="Porcentaje_Prov" msprop:Generator_RowDeletingName="Porcentaje_ProvRowDeleting" msprop:Generator_UserTableName="Porcentaje_Prov" msprop:Generator_RowChangingName="Porcentaje_ProvRowChanging" msprop:Generator_RowEvHandlerName="Porcentaje_ProvRowChangeEventHandler" msprop:Generator_RowDeletedName="Porcentaje_ProvRowDeleted" msprop:Generator_RowEvArgName="Porcentaje_ProvRowChangeEvent" msprop:Generator_RowChangedName="Porcentaje_ProvRowChanged" msprop:Generator_RowClassName="Porcentaje_ProvRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_materia" msprop:Generator_ColumnVarNameInTable="columnid_materia" msprop:Generator_ColumnPropNameInRow="id_materia" msprop:Generator_ColumnPropNameInTable="id_materiaColumn" msprop:Generator_UserColumnName="id_materia" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="razon_social" msprop:Generator_ColumnVarNameInTable="columnrazon_social" msprop:Generator_ColumnPropNameInRow="razon_social" msprop:Generator_ColumnPropNameInTable="razon_socialColumn" msprop:Generator_UserColumnName="razon_social" type="xs:string" minOccurs="0" />
+              <xs:element name="ordenes" msprop:Generator_ColumnVarNameInTable="columnordenes" msprop:Generator_ColumnPropNameInRow="ordenes" msprop:Generator_ColumnPropNameInTable="ordenesColumn" msprop:Generator_UserColumnName="ordenes" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:double" minOccurs="0" />
+>>>>>>> f30243cc61b400b2b8f77c712dea428bd9ab79f8
             </xs:sequence>
           </xs:complexType>
         </xs:element>
