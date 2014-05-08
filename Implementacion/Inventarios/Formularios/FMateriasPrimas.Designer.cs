@@ -1,6 +1,6 @@
 ﻿namespace Inventarios.Formularios
 {
-    partial class FEmpleados
+    partial class FMateriasPrimas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,31 +30,36 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.sgc_emp = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.sgc_mp = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pb_emp = new System.Windows.Forms.PictureBox();
+            this.pb_mp = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tb_depto = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_email = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_tel = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cb_tipo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.tb_direccion = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dti_fecha = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.tb_desc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_dir = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nombre = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_id = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_precio = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.b_modif = new DevComponents.DotNetBar.ButtonX();
             this.b_baja = new DevComponents.DotNetBar.ButtonX();
             this.b_alta = new DevComponents.DotNetBar.ButtonX();
+            this.cb_prov = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_smax = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_smin = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.cb_unidad = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.tb_sact = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_emp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mp)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dti_fecha)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,14 +75,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(986, 736);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // groupPanel3
             // 
             this.groupPanel3.BackColor = System.Drawing.Color.White;
             this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel3.Controls.Add(this.sgc_emp);
+            this.groupPanel3.Controls.Add(this.sgc_mp);
             this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel3.Location = new System.Drawing.Point(3, 235);
             this.groupPanel3.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
@@ -113,17 +118,17 @@
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 2;
             // 
-            // sgc_emp
+            // sgc_mp
             // 
-            this.sgc_emp.BackColor = System.Drawing.Color.White;
-            this.sgc_emp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sgc_emp.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.sgc_emp.ForeColor = System.Drawing.Color.Black;
-            this.sgc_emp.Location = new System.Drawing.Point(15, 15);
-            this.sgc_emp.Name = "sgc_emp";
-            this.sgc_emp.Size = new System.Drawing.Size(944, 462);
-            this.sgc_emp.TabIndex = 1;
-            this.sgc_emp.Text = "superGridControl1";
+            this.sgc_mp.BackColor = System.Drawing.Color.White;
+            this.sgc_mp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sgc_mp.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.sgc_mp.ForeColor = System.Drawing.Color.Black;
+            this.sgc_mp.Location = new System.Drawing.Point(15, 15);
+            this.sgc_mp.Name = "sgc_mp";
+            this.sgc_mp.Size = new System.Drawing.Size(944, 462);
+            this.sgc_mp.TabIndex = 1;
+            this.sgc_mp.Text = "superGridControl1";
             // 
             // groupPanel1
             // 
@@ -164,7 +169,7 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 1;
-            this.groupPanel1.Text = "Datos del empleado";
+            this.groupPanel1.Text = "Datos de la materia prima";
             // 
             // tableLayoutPanel2
             // 
@@ -173,7 +178,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.pb_emp, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pb_mp, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,30 +190,30 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(944, 163);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // pb_emp
+            // pb_mp
             // 
-            this.pb_emp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pb_emp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb_emp.Location = new System.Drawing.Point(487, 15);
-            this.pb_emp.Margin = new System.Windows.Forms.Padding(15);
-            this.pb_emp.Name = "pb_emp";
-            this.pb_emp.Size = new System.Drawing.Size(206, 133);
-            this.pb_emp.TabIndex = 3;
-            this.pb_emp.TabStop = false;
+            this.pb_mp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_mp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_mp.Location = new System.Drawing.Point(487, 15);
+            this.pb_mp.Margin = new System.Windows.Forms.Padding(15);
+            this.pb_mp.Name = "pb_mp";
+            this.pb_mp.Size = new System.Drawing.Size(206, 133);
+            this.pb_mp.TabIndex = 3;
+            this.pb_mp.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.tb_depto, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.tb_email, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.tb_tel, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.cb_tipo, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.tb_direccion, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.dti_fecha, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.tb_nombre, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.tb_desc, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.tb_dir, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tb_nombre, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tb_id, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tb_precio, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.cb_prov, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(10, 10);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(10);
@@ -218,154 +223,59 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(452, 143);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // tb_depto
+            // tb_desc
             // 
-            this.tb_depto.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_depto.Border.Class = "TextBoxBorder";
-            this.tb_depto.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_depto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_depto.ForeColor = System.Drawing.Color.Black;
-            this.tb_depto.Location = new System.Drawing.Point(229, 108);
-            this.tb_depto.Name = "tb_depto";
-            this.tb_depto.PreventEnterBeep = true;
-            this.tb_depto.ReadOnly = true;
-            this.tb_depto.Size = new System.Drawing.Size(220, 20);
-            this.tb_depto.TabIndex = 26;
-            this.tb_depto.WatermarkText = "Departamento";
-            // 
-            // tb_email
-            // 
-            this.tb_email.BackColor = System.Drawing.Color.White;
+            this.tb_desc.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_email.Border.Class = "TextBoxBorder";
-            this.tb_email.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_email.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_email.ForeColor = System.Drawing.Color.Black;
-            this.tb_email.Location = new System.Drawing.Point(3, 73);
-            this.tb_email.Name = "tb_email";
-            this.tb_email.PreventEnterBeep = true;
-            this.tb_email.Size = new System.Drawing.Size(220, 20);
-            this.tb_email.TabIndex = 24;
-            this.tb_email.WatermarkText = "E-mail";
+            this.tb_desc.Border.Class = "TextBoxBorder";
+            this.tb_desc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_desc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_desc.ForeColor = System.Drawing.Color.Black;
+            this.tb_desc.Location = new System.Drawing.Point(3, 73);
+            this.tb_desc.Name = "tb_desc";
+            this.tb_desc.PreventEnterBeep = true;
+            this.tb_desc.Size = new System.Drawing.Size(220, 20);
+            this.tb_desc.TabIndex = 24;
+            this.tb_desc.WatermarkText = "Descripción";
             // 
-            // tb_tel
+            // tb_dir
             // 
-            this.tb_tel.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_tel.Border.Class = "TextBoxBorder";
-            this.tb_tel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_tel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_tel.ForeColor = System.Drawing.Color.Black;
-            this.tb_tel.Location = new System.Drawing.Point(229, 38);
-            this.tb_tel.Name = "tb_tel";
-            this.tb_tel.PreventEnterBeep = true;
-            this.tb_tel.Size = new System.Drawing.Size(220, 20);
-            this.tb_tel.TabIndex = 23;
-            this.tb_tel.WatermarkText = "Teléfono";
-            // 
-            // cb_tipo
-            // 
-            this.cb_tipo.DisplayMember = "Text";
-            this.cb_tipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cb_tipo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_tipo.FormattingEnabled = true;
-            this.cb_tipo.ItemHeight = 14;
-            this.cb_tipo.Location = new System.Drawing.Point(229, 73);
-            this.cb_tipo.Name = "cb_tipo";
-            this.cb_tipo.Size = new System.Drawing.Size(220, 20);
-            this.cb_tipo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tipo.TabIndex = 22;
-            this.cb_tipo.WatermarkText = "Puesto";
-            // 
-            // tb_direccion
-            // 
-            this.tb_direccion.BackColor = System.Drawing.Color.White;
+            this.tb_dir.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_direccion.Border.Class = "TextBoxBorder";
-            this.tb_direccion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_direccion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_direccion.ForeColor = System.Drawing.Color.Black;
-            this.tb_direccion.Location = new System.Drawing.Point(3, 38);
-            this.tb_direccion.Name = "tb_direccion";
-            this.tb_direccion.PreventEnterBeep = true;
-            this.tb_direccion.Size = new System.Drawing.Size(220, 20);
-            this.tb_direccion.TabIndex = 14;
-            this.tb_direccion.WatermarkText = "Dirección";
-            // 
-            // dti_fecha
-            // 
-            // 
-            // 
-            // 
-            this.dti_fecha.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dti_fecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dti_fecha.ButtonDropDown.Visible = true;
-            this.dti_fecha.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dti_fecha.IsPopupCalendarOpen = false;
-            this.dti_fecha.Location = new System.Drawing.Point(3, 108);
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dti_fecha.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dti_fecha.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.MonthCalendar.DisplayMonth = new System.DateTime(2014, 5, 1, 0, 0, 0, 0);
-            this.dti_fecha.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dti_fecha.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dti_fecha.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dti_fecha.MonthCalendar.TodayButtonVisible = true;
-            this.dti_fecha.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dti_fecha.Name = "dti_fecha";
-            this.dti_fecha.Size = new System.Drawing.Size(220, 20);
-            this.dti_fecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dti_fecha.TabIndex = 19;
-            this.dti_fecha.WatermarkText = "Fecha de nacimiento";
+            this.tb_dir.Border.Class = "TextBoxBorder";
+            this.tb_dir.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_dir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_dir.ForeColor = System.Drawing.Color.Black;
+            this.tb_dir.Location = new System.Drawing.Point(229, 38);
+            this.tb_dir.Name = "tb_dir";
+            this.tb_dir.PreventEnterBeep = true;
+            this.tb_dir.Size = new System.Drawing.Size(220, 20);
+            this.tb_dir.TabIndex = 23;
+            this.tb_dir.WatermarkText = "Dirección";
             // 
             // tb_nombre
             // 
+            this.tb_nombre.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
+            this.tb_nombre.Border.Class = "TextBoxBorder";
             this.tb_nombre.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nombre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_nombre.Location = new System.Drawing.Point(229, 3);
+            this.tb_nombre.ForeColor = System.Drawing.Color.Black;
+            this.tb_nombre.Location = new System.Drawing.Point(3, 38);
             this.tb_nombre.Name = "tb_nombre";
             this.tb_nombre.PreventEnterBeep = true;
-            this.tb_nombre.Size = new System.Drawing.Size(220, 14);
-            this.tb_nombre.TabIndex = 18;
+            this.tb_nombre.Size = new System.Drawing.Size(220, 20);
+            this.tb_nombre.TabIndex = 14;
             this.tb_nombre.WatermarkText = "Nombre";
             // 
             // tb_id
@@ -381,7 +291,24 @@
             this.tb_id.ReadOnly = true;
             this.tb_id.Size = new System.Drawing.Size(220, 14);
             this.tb_id.TabIndex = 25;
-            this.tb_id.WatermarkText = "Id empleado";
+            this.tb_id.WatermarkText = "Id Materia Prima";
+            // 
+            // tb_precio
+            // 
+            this.tb_precio.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_precio.Border.Class = "TextBoxBorder";
+            this.tb_precio.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_precio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_precio.ForeColor = System.Drawing.Color.Black;
+            this.tb_precio.Location = new System.Drawing.Point(229, 73);
+            this.tb_precio.Name = "tb_precio";
+            this.tb_precio.PreventEnterBeep = true;
+            this.tb_precio.Size = new System.Drawing.Size(220, 20);
+            this.tb_precio.TabIndex = 26;
+            this.tb_precio.WatermarkText = "$ Precio";
             // 
             // tableLayoutPanel5
             // 
@@ -439,26 +366,139 @@
             this.b_alta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_alta.TabIndex = 1;
             this.b_alta.Text = "Alta";
-            this.b_alta.Click += new System.EventHandler(this.b_alta_Click);
             // 
-            // FEmpleados
+            // cb_prov
+            // 
+            this.cb_prov.DisplayMember = "Text";
+            this.cb_prov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_prov.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_prov.FormattingEnabled = true;
+            this.cb_prov.ItemHeight = 14;
+            this.cb_prov.Location = new System.Drawing.Point(229, 3);
+            this.cb_prov.Name = "cb_prov";
+            this.cb_prov.Size = new System.Drawing.Size(220, 20);
+            this.cb_prov.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_prov.TabIndex = 30;
+            this.cb_prov.WatermarkText = "Proveedor";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tb_smax, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tb_smin, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(226, 105);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(226, 38);
+            this.tableLayoutPanel4.TabIndex = 31;
+            // 
+            // tb_smax
+            // 
+            this.tb_smax.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_smax.Border.Class = "TextBoxBorder";
+            this.tb_smax.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_smax.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_smax.ForeColor = System.Drawing.Color.Black;
+            this.tb_smax.Location = new System.Drawing.Point(116, 3);
+            this.tb_smax.Name = "tb_smax";
+            this.tb_smax.PreventEnterBeep = true;
+            this.tb_smax.Size = new System.Drawing.Size(107, 20);
+            this.tb_smax.TabIndex = 16;
+            this.tb_smax.WatermarkText = "Stock máximo";
+            // 
+            // tb_smin
+            // 
+            this.tb_smin.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_smin.Border.Class = "TextBoxBorder";
+            this.tb_smin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_smin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_smin.ForeColor = System.Drawing.Color.Black;
+            this.tb_smin.Location = new System.Drawing.Point(3, 3);
+            this.tb_smin.Name = "tb_smin";
+            this.tb_smin.PreventEnterBeep = true;
+            this.tb_smin.Size = new System.Drawing.Size(107, 20);
+            this.tb_smin.TabIndex = 15;
+            this.tb_smin.WatermarkText = "Stock mínimo";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.cb_unidad, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tb_sact, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 105);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(226, 38);
+            this.tableLayoutPanel10.TabIndex = 32;
+            // 
+            // cb_unidad
+            // 
+            this.cb_unidad.DisplayMember = "Text";
+            this.cb_unidad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_unidad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_unidad.FormattingEnabled = true;
+            this.cb_unidad.ItemHeight = 14;
+            this.cb_unidad.Location = new System.Drawing.Point(116, 3);
+            this.cb_unidad.Name = "cb_unidad";
+            this.cb_unidad.Size = new System.Drawing.Size(107, 20);
+            this.cb_unidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_unidad.TabIndex = 16;
+            this.cb_unidad.WatermarkText = "Unidad";
+            // 
+            // tb_sact
+            // 
+            this.tb_sact.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_sact.Border.Class = "TextBoxBorder";
+            this.tb_sact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_sact.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_sact.ForeColor = System.Drawing.Color.Black;
+            this.tb_sact.Location = new System.Drawing.Point(3, 3);
+            this.tb_sact.Name = "tb_sact";
+            this.tb_sact.PreventEnterBeep = true;
+            this.tb_sact.Size = new System.Drawing.Size(107, 20);
+            this.tb_sact.TabIndex = 15;
+            this.tb_sact.WatermarkText = "Stock actual";
+            // 
+            // FMateriasPrimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1016, 766);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FEmpleados";
+            this.Name = "FMateriasPrimas";
             this.Padding = new System.Windows.Forms.Padding(15);
-            this.Text = "Empleados";
+            this.Text = "Catálogo de materias primas";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_emp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mp)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dti_fecha)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -467,22 +507,26 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl sgc_mp;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.PictureBox pb_mp;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_direccion;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_desc;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_dir;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_nombre;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_id;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_precio;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private DevComponents.DotNetBar.ButtonX b_modif;
         private DevComponents.DotNetBar.ButtonX b_baja;
         private DevComponents.DotNetBar.ButtonX b_alta;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_nombre;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cb_tipo;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_tel;
-        private System.Windows.Forms.PictureBox pb_emp;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_email;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl sgc_emp;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dti_fecha;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_id;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_depto;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cb_prov;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_smax;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_smin;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cb_unidad;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_sact;
     }
 }

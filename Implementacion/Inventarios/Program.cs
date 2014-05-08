@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Inventarios.Formularios;
+<<<<<<< HEAD
 using Inventarios.Reportes.Movimientos;
 using Inventarios.Reportes.Ordenes_Compra;
 using Inventarios.Reportes.Facturas_Clientes;
@@ -14,6 +15,8 @@ using Inventarios.Reportes.Pruebas;
 =======
 using Inventarios.Reportes.Especiales.Porcentaje_prov;
 >>>>>>> f30243cc61b400b2b8f77c712dea428bd9ab79f8
+=======
+>>>>>>> af07e65e0538c5d1a86e72aebed7444b19e5ffec
 
 namespace Inventarios
 {
@@ -27,7 +30,11 @@ namespace Inventarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FPrueba1());
+=======
+            Application.Run(new FPrincipal());
+>>>>>>> af07e65e0538c5d1a86e72aebed7444b19e5ffec
         }
     }
 }

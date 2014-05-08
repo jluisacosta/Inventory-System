@@ -35,18 +35,18 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pb_cli = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tb_rfc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_ciudad = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cp = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_email = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_tel = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_direccion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_rs = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_id = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_rfc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.b_modif = new DevComponents.DotNetBar.ButtonX();
             this.b_baja = new DevComponents.DotNetBar.ButtonX();
             this.b_alta = new DevComponents.DotNetBar.ButtonX();
-            this.tb_cp = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_ciudad = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -221,22 +221,39 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(452, 143);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // tb_rfc
+            // tb_ciudad
             // 
-            this.tb_rfc.BackColor = System.Drawing.Color.White;
+            this.tb_ciudad.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_rfc.Border.Class = "TextBoxBorder";
-            this.tb_rfc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_rfc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_rfc.ForeColor = System.Drawing.Color.Black;
-            this.tb_rfc.Location = new System.Drawing.Point(229, 73);
-            this.tb_rfc.Name = "tb_rfc";
-            this.tb_rfc.PreventEnterBeep = true;
-            this.tb_rfc.Size = new System.Drawing.Size(220, 20);
-            this.tb_rfc.TabIndex = 26;
-            this.tb_rfc.WatermarkText = "R.F.C.";
+            this.tb_ciudad.Border.Class = "TextBoxBorder";
+            this.tb_ciudad.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_ciudad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_ciudad.ForeColor = System.Drawing.Color.Black;
+            this.tb_ciudad.Location = new System.Drawing.Point(3, 108);
+            this.tb_ciudad.Name = "tb_ciudad";
+            this.tb_ciudad.PreventEnterBeep = true;
+            this.tb_ciudad.Size = new System.Drawing.Size(220, 20);
+            this.tb_ciudad.TabIndex = 28;
+            this.tb_ciudad.WatermarkText = "Ciudad";
+            // 
+            // tb_cp
+            // 
+            this.tb_cp.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cp.Border.Class = "TextBoxBorder";
+            this.tb_cp.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_cp.ForeColor = System.Drawing.Color.Black;
+            this.tb_cp.Location = new System.Drawing.Point(229, 108);
+            this.tb_cp.Name = "tb_cp";
+            this.tb_cp.PreventEnterBeep = true;
+            this.tb_cp.Size = new System.Drawing.Size(220, 20);
+            this.tb_cp.TabIndex = 27;
+            this.tb_cp.WatermarkText = "Código postal";
             // 
             // tb_email
             // 
@@ -316,7 +333,25 @@
             this.tb_id.ReadOnly = true;
             this.tb_id.Size = new System.Drawing.Size(220, 14);
             this.tb_id.TabIndex = 25;
+            this.tb_id.Text = "300";
             this.tb_id.WatermarkText = "Id Cliente";
+            // 
+            // tb_rfc
+            // 
+            this.tb_rfc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_rfc.Border.Class = "TextBoxBorder";
+            this.tb_rfc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_rfc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_rfc.ForeColor = System.Drawing.Color.Black;
+            this.tb_rfc.Location = new System.Drawing.Point(229, 73);
+            this.tb_rfc.Name = "tb_rfc";
+            this.tb_rfc.PreventEnterBeep = true;
+            this.tb_rfc.Size = new System.Drawing.Size(220, 20);
+            this.tb_rfc.TabIndex = 26;
+            this.tb_rfc.WatermarkText = "R.F.C.";
             // 
             // tableLayoutPanel5
             // 
@@ -348,6 +383,7 @@
             this.b_modif.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_modif.TabIndex = 2;
             this.b_modif.Text = "Modificación";
+            this.b_modif.Click += new System.EventHandler(this.b_modif_Click);
             // 
             // b_baja
             // 
@@ -361,6 +397,7 @@
             this.b_baja.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_baja.TabIndex = 2;
             this.b_baja.Text = "Baja";
+            this.b_baja.Click += new System.EventHandler(this.b_baja_Click);
             // 
             // b_alta
             // 
@@ -374,40 +411,7 @@
             this.b_alta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.b_alta.TabIndex = 1;
             this.b_alta.Text = "Alta";
-            // 
-            // tb_cp
-            // 
-            this.tb_cp.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cp.Border.Class = "TextBoxBorder";
-            this.tb_cp.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_cp.ForeColor = System.Drawing.Color.Black;
-            this.tb_cp.Location = new System.Drawing.Point(229, 108);
-            this.tb_cp.Name = "tb_cp";
-            this.tb_cp.PreventEnterBeep = true;
-            this.tb_cp.Size = new System.Drawing.Size(220, 20);
-            this.tb_cp.TabIndex = 27;
-            this.tb_cp.WatermarkText = "Código postal";
-            // 
-            // tb_ciudad
-            // 
-            this.tb_ciudad.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_ciudad.Border.Class = "TextBoxBorder";
-            this.tb_ciudad.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_ciudad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_ciudad.ForeColor = System.Drawing.Color.Black;
-            this.tb_ciudad.Location = new System.Drawing.Point(3, 108);
-            this.tb_ciudad.Name = "tb_ciudad";
-            this.tb_ciudad.PreventEnterBeep = true;
-            this.tb_ciudad.Size = new System.Drawing.Size(220, 20);
-            this.tb_ciudad.TabIndex = 28;
-            this.tb_ciudad.WatermarkText = "Ciudad";
+            this.b_alta.Click += new System.EventHandler(this.b_alta_Click);
             // 
             // FClientes
             // 
@@ -418,7 +422,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FClientes";
             this.Padding = new System.Windows.Forms.Padding(15);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FClientes_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);

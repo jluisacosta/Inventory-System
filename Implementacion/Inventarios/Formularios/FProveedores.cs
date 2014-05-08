@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace Inventarios.Formularios
 {
-    public partial class FEmpleados : Form
+    public partial class FProveedores : Form
     {
-        public FEmpleados()
+        public FProveedores()
         {
             InitializeComponent();
-        }
-
-        private void b_alta_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
