@@ -13,3 +13,4 @@ SET @bandAux = TRUE;
 call iniSimulacion();
 #SELECT MOD(YEAR(@fechaAct), 2);
 
+select * from ordenes_compra
