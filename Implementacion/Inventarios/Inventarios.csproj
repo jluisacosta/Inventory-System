@@ -163,6 +163,18 @@
     <Compile Include="Reportes\Especiales\Porcentaje_prov\FPorcentaje.Designer.cs">
       <DependentUpon>FPorcentaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Especiales\Promedio_comp\crPromedio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crPromedio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Especiales\Promedio_comp\FPromedio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Especiales\Promedio_comp\FPromedio.Designer.cs">
+      <DependentUpon>FPromedio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Especiales\Ventas_emp\crVentasEmp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -339,6 +351,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Especiales\Porcentaje_prov\FPorcentaje.resx">
       <DependentUpon>FPorcentaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Especiales\Promedio_comp\crPromedio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPromedio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Especiales\Promedio_comp\FPromedio.resx">
+      <DependentUpon>FPromedio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Especiales\Ventas_emp\crVentasEmp.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

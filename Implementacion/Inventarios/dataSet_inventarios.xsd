@@ -728,6 +728,19 @@ GROUP BY e.id_empleado</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="PromedioCompra" msprop:Generator_TableClassName="PromedioCompraDataTable" msprop:Generator_TableVarName="tablePromedioCompra" msprop:Generator_TablePropName="PromedioCompra" msprop:Generator_RowDeletingName="PromedioCompraRowDeleting" msprop:Generator_UserTableName="PromedioCompra" msprop:Generator_RowChangingName="PromedioCompraRowChanging" msprop:Generator_RowEvHandlerName="PromedioCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="PromedioCompraRowDeleted" msprop:Generator_RowEvArgName="PromedioCompraRowChangeEvent" msprop:Generator_RowChangedName="PromedioCompraRowChanged" msprop:Generator_RowClassName="PromedioCompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_cliente" msprop:Generator_ColumnVarNameInTable="columnid_cliente" msprop:Generator_ColumnPropNameInRow="id_cliente" msprop:Generator_ColumnPropNameInTable="id_clienteColumn" msprop:Generator_UserColumnName="id_cliente" type="xs:int" minOccurs="0" />
+              <xs:element name="razon_social" msprop:Generator_ColumnVarNameInTable="columnrazon_social" msprop:Generator_ColumnPropNameInRow="razon_social" msprop:Generator_ColumnPropNameInTable="razon_socialColumn" msprop:Generator_UserColumnName="razon_social" type="xs:string" minOccurs="0" />
+              <xs:element name="rfc" msprop:Generator_ColumnVarNameInTable="columnrfc" msprop:Generator_ColumnPropNameInRow="rfc" msprop:Generator_ColumnPropNameInTable="rfcColumn" msprop:Generator_UserColumnName="rfc" type="xs:string" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:string" minOccurs="0" />
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" type="xs:string" minOccurs="0" />
+              <xs:element name="ventas" msprop:Generator_ColumnVarNameInTable="columnventas" msprop:Generator_ColumnPropNameInRow="ventas" msprop:Generator_ColumnPropNameInTable="ventasColumn" msprop:Generator_UserColumnName="ventas" type="xs:int" minOccurs="0" />
+              <xs:element name="promedio" msprop:Generator_ColumnVarNameInTable="columnpromedio" msprop:Generator_ColumnPropNameInRow="promedio" msprop:Generator_ColumnPropNameInTable="promedioColumn" msprop:Generator_UserColumnName="promedio" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
