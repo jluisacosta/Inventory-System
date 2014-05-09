@@ -4391,8 +4391,6 @@ namespace Inventarios {
         
         /// <summary>
         ///Represents the strongly named DataTable class.
-<<<<<<< HEAD
-=======
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
@@ -5316,7 +5314,6 @@ namespace Inventarios {
         
         /// <summary>
         ///Represents strongly named DataRow class.
->>>>>>> f30243cc61b400b2b8f77c712dea428bd9ab79f8
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
